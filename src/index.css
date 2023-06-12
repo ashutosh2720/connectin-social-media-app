@@ -4,11 +4,14 @@
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+
 
 body {
   margin: 0;
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Cinzel', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: #000000; */

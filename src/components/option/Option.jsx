@@ -4,6 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import CreateIcon from '@mui/icons-material/Create';
 import Fade from '@mui/material/Fade';
+import DialogBox from '../dialogBox/DialogBox';
 
 export default function FadeMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -35,7 +36,7 @@ export default function FadeMenu() {
                 onClose={handleClose}
                 TransitionComponent={Fade}
             >
-                <MenuItem onClick={handleClose}>Edit</MenuItem>
+                <MenuItem > <DialogBox /></MenuItem>
                 <MenuItem onClick={handleClose}>Delete</MenuItem>
 
             </Menu>

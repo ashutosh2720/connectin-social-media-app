@@ -8,19 +8,24 @@ import Home from "./pages/home/Home";
 import Explore from "./pages/explore/Explore";
 import Bookmark from "./pages/bookmark/Bookmark";
 import LikedPost from "./pages/likedPost/LikedPost";
-
+import Login from "./pages/login/Login";
+import Error from "./pages/error/Error";
+import Mockman from "mockman-js";
 
 function App() {
   return (
-    <div >
+    <div>
       <Navbar />
       <Routes>
+        <Route path="/mockman" element={<Mockman />} />
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/bookmark" element={<Bookmark />} />
         <Route path="/liked" element={<LikedPost />} />
-      </Routes >
-      {/* <Footer /> */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/error" element={<Error />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

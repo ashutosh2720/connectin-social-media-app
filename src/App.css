@@ -3,12 +3,12 @@
 }
 
 .light-theme {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.968);
   color: black;
 }
 
 .dark-theme {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.904);
   color: white;
 
 }
