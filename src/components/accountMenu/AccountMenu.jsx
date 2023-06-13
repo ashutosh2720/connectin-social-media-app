@@ -11,10 +11,17 @@ import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
+import { useGlobalLogin } from '../../contexts/login-context';
 
 export default function AccountMenu() {
+    const { userToken, logoutUser, userDetail } = useGlobalLogin()
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+
+    const logoutAction = () => {
+        logoutUser()
+
+    }
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -76,23 +83,11 @@ export default function AccountMenu() {
                 <MenuItem onClick={handleClose}>
                     <Avatar /> Profile
                 </MenuItem>
-                <MenuItem onClick={handleClose}>
-                    <Avatar /> My account
-                </MenuItem>
+
                 <Divider />
-                <MenuItem onClick={handleClose}>
-                    <ListItemIcon>
-                        <PersonAdd fontSize="small" />
-                    </ListItemIcon>
-                    Add another account
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                    <ListItemIcon>
-                        <Settings fontSize="small" />
-                    </ListItemIcon>
-                    Settings
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
+
+
+                <MenuItem onClick={logoutAction}>
                     <ListItemIcon>
                         <Logout fontSize="small" />
                     </ListItemIcon>

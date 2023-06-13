@@ -16,10 +16,11 @@ const LeftSidebar = () => {
             {" "}
             <div className="left flex justify-start item-start  flex-col gap-5	">
 
-                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black">
+                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black ">
                     <HomeOutlinedIcon
                         fontSize="large"
                         className="cursor-pointer text-black-400"
+                        o
                     />
                     <div className="name flex justify-center item-center relative top-1 text-md">
                         <p>Home</p>

@@ -10,9 +10,14 @@ import PersonSearchOutlinedIcon from "@mui/icons-material/PersonSearchOutlined";
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import Switch from "../switch/Switch";
 import { useGlobalTheme } from "../../contexts/Theme-context";
+import { useGlobalLogin } from "../../contexts/login-context";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const { theme, handleTheme } = useGlobalTheme()
+    const { userToken } = useGlobalLogin()
+    const navigate = useNavigate()
+
 
     useEffect(() => {
         document.body.className = theme;
@@ -48,9 +53,12 @@ const Navbar = () => {
                         </div>
                     </Tooltip>
                     <div className="theme xs:hidden sm:hidden">
-                        <Tooltip title="account">
-                            <AccountMenu cla />
-                        </Tooltip>
+                        {userToken ? (<Tooltip title="account">
+                            <AccountMenu />
+                        </Tooltip>) :
+                            (<Tooltip title="account">
+                                <button onClick={() => navigate('/login')} className="border rounded pl-2 pr-2 pb-1 bg-cyan-700 text-white hover:bg-blue-900" >Login</button>
+                            </Tooltip>)}
                     </div>
                 </div>
             </div>

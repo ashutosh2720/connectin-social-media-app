@@ -5,6 +5,8 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { ThemeProvider } from "./contexts/Theme-context";
+import { LoginProvider } from './contexts/login-context';
+import { PostProvider } from "./contexts/post-context";
 
 // Call make Server
 makeServer();
@@ -12,9 +14,13 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <LoginProvider>
+        <PostProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </PostProvider>
+      </LoginProvider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")

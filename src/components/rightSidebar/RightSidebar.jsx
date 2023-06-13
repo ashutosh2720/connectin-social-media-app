@@ -7,10 +7,10 @@ const RightSidebar = () => {
     return (
         <div className="right-side  flex justify-around flex-col">
             <div className='navigation flex justify-around gap-5  p-5 max-w-50 item-center  '>
-                <h1 className='border p-2 rounded cursor-pointer hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white' > Tranding</h1>
-                <h1 className='border p-2 rounded w-20 cursor-pointer hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white'>Latest</h1>
+                <h1 className='border p-2 rounded cursor-pointer hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white text-center' > Tranding</h1>
+                <h1 className='border p-2 rounded w-20 cursor-pointer hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white text-center'>Latest</h1>
             </div>
-            <div className="suggestion  flex justify-around items-start p-5 gap-5 flex-col ">
+            <div className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black border-2 border-black-800'}suggestion  flex justify-around items-start p-5 gap-5 flex-col`}>
                 <h1>Suggestion for you</h1>
                 <div className="suggestion-items flex justify-center items-center flex-col gap-5">
                     <div className="users flex justify-center items-start gap-">

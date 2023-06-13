@@ -9,7 +9,9 @@ export const posts = [
   {
     _id: "xhzTkUi2Nt",
     content: "Nice Weather Today!!",
-    mediaURL: "",
+    mediaURL:
+      "https://giffiles.alphacoders.com/140/14018.gif",
+
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -34,7 +36,7 @@ export const posts = [
     _id: "siFFxfYI1s",
     content: "Started my Baking journey! Look what I made.",
     mediaURL:
-      "https://res.cloudinary.com/dtrjdcrme/video/upload/v1652188886/upload-socialmedia/oikev6eomsgahnvxcijd.mp4",
+      "https://scontent.fvns2-1.fna.fbcdn.net/v/t39.30808-6/337262442_999080971058518_9091879633088665080_n.jpg?stp=c0.139.843.843a_dst-jpg_p843x403&_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=3tHadmGRsRgAX8PbqXw&_nc_ht=scontent.fvns2-1.fna&oh=00_AfBumW1TiaLqVlhoj5S_KaC3xgP7ewALX1R2LA0T3ebaEQ&oe=648D05D4",
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -49,7 +51,7 @@ export const posts = [
     _id: "3XHvLP1fg",
     content: "I made this cake for my friend's birthday. Check it out",
     mediaURL:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1652188492/upload-socialmedia/cakegif_q11mfm.webp",
+      "https://i.gifer.com/7nWZ.gif",
     likes: {
       likeCount: 1,
       likedBy: [],
@@ -89,7 +91,7 @@ export const posts = [
     _id: "3XHvLP9kC",
     content: "Yayy! Its my Birthday Today. Made this cake for myself!",
     mediaURL:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1647014336/ecommerce/chocolatecake4.webp",
+      "https://scontent.fvns2-1.fna.fbcdn.net/v/t39.30808-6/318541774_109521598667941_5596671863762518347_n.jpg?stp=c0.93.1080.1080a_dst-jpg_s851x315&_nc_cat=111&ccb=1-7&_nc_sid=da31f3&_nc_ohc=peB8eu4LhLwAX9J-NhF&_nc_ht=scontent.fvns2-1.fna&oh=00_AfAnEDdjebGZT4E5tLo1-mbv7CPa5_wOzgbFt4tIN-CQ8Q&oe=648D544D",
     likes: {
       likeCount: 2,
       likedBy: [],
@@ -167,7 +169,7 @@ export const posts = [
     _id: "IyUlYXTrzZ",
     content: "Who's up for Pineapple Pastry?",
     mediaURL:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1647014828/ecommerce/pineapplemuffin1.webp",
+      "https://scontent.fvns2-1.fna.fbcdn.net/v/t39.30808-6/332213073_570144121831877_454660744082516000_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=e3f864&_nc_ohc=l4KpxIfIvwIAX9hP39X&_nc_ht=scontent.fvns2-1.fna&oh=00_AfCMFASKgcWSikM2kPLM1e1xRmJXL2k4sjzoTHLbx-L1Lg&oe=648D170B",
     likes: {
       likeCount: 10,
       likedBy: [],
