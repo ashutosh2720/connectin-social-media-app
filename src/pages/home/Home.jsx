@@ -19,15 +19,17 @@ import PostCard from "../../components/postCard/PostCard";
 function Home() {
     const { theme } = useGlobalTheme();
     const { postsData } = useGlobalPost()
+    const homeData = postsData.filter((post) => post.username === 'adarshbalika')
     return (
         <div className="home flex justify-around items-start h-full w-full sm:flex-wrap ">
             <div className="max-w-50 sticky left-10 top-20  p-9 sm:hidden xs:hidden min-h-full border-r-2 h-screen rounded">
                 <LeftSidebar />
             </div>
-            <div className="mid   flex justify-center items-center flex-col  gap-2 ">
+            <div className="mid  w-[100%] flex justify-center items-center flex-col  gap-2 ">
 
                 {
-                    postsData.map((post) =>
+                    homeData.map((post) =>
+
                         <PostCard post={post} />
                     )
                 }

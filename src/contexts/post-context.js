@@ -16,6 +16,46 @@ const PostProvider = ({ children }) => {
             console.log(error);
         }
     };
+    const NewPost = async (postData) => {
+
+        const encodedToken = localStorage.getItem("anixCartUserToken");
+        try {
+            const { data } = await axios.post(
+                `/api/posts`,
+                { postData },
+                { headers: { authorization: encodedToken } }
+            );
+            setPostsData(data.posts)
+
+            // notifySuccess("Item added to cart");
+        } catch (err) {
+            // navigate('/sign')
+            // notifyWarn('please login to add items')
+        }
+
+    };
+    const DeletePost = async (postId) => {
+
+
+        const encodedToken = localStorage.getItem("anixCartUserToken");
+        try {
+            const res = await axios.delete(`/api/posts/${postId}`, {
+                headers: { authorization: encodedToken }
+            });
+            console.log(res)
+            // setPostsData(data.posts)
+
+
+            // notifySuccess("Item added to cart");
+        } catch (err) {
+            console.log(err)
+            // navigate('/sign')
+            // notifyWarn('please login to add items')
+        }
+
+    };
+
+
 
     useEffect(() => {
         Posts()
@@ -24,7 +64,9 @@ const PostProvider = ({ children }) => {
     return (
         <postContext.Provider
             value={{
-                postsData
+                postsData,
+                NewPost,
+                DeletePost
 
             }}
         >

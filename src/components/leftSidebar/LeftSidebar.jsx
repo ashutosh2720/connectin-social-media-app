@@ -15,22 +15,19 @@ const LeftSidebar = () => {
         <>
             {" "}
             <div className="left flex justify-start item-start  flex-col gap-5	">
-
-                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black ">
+                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black  " onClick={() => navigate('/')}>
                     <HomeOutlinedIcon
                         fontSize="large"
                         className="cursor-pointer text-black-400"
-                        o
                     />
                     <div className="name flex justify-center item-center relative top-1 text-md">
                         <p>Home</p>
                     </div>
                 </div>
 
-
-                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black">
+                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black" onClick={() => navigate("/explore")}>
                     <ExploreOutlinedIcon
-                        onClick={() => navigate("/explore")}
+
                         fontSize="large"
                         className="cursor-pointer text-black-400"
                     />
@@ -39,11 +36,9 @@ const LeftSidebar = () => {
                     </div>
                 </div>
 
-
-
-                <div className="home flex justify-start item-center gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black">
+                <div className="home flex justify-start item-center gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black" onClick={() => navigate("/bookmark")}>
                     <BookmarkBorderOutlinedIcon
-                        onClick={() => navigate("/bookmark")}
+
                         fontSize="large"
                         className="cursor-pointer text-black-400"
                     />
@@ -52,10 +47,9 @@ const LeftSidebar = () => {
                     </div>
                 </div>
 
-
-                <div className="home flex justify-start item-center gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black">
+                <div className="home flex justify-start item-center gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black" onClick={() => navigate("/liked")}>
                     <FavoriteIcon
-                        onClick={() => navigate("/liked")}
+
                         fontSize="large"
                         className="cursor-pointer text-black-400"
                     />
@@ -64,11 +58,11 @@ const LeftSidebar = () => {
                     </div>
                 </div>
 
-
                 <div className="home flex justify-start item-center gap-3  cursor-pointer  hover:text-black">
-                    <h1 className="w-full rounded text-center p-1  bg-cyan-700 text-white">Post</h1>
+                    <h1 className="w-full rounded text-center p-1  bg-cyan-700 text-white">
+                        <PostDialogBox />
+                    </h1>
                 </div>
-
             </div>
         </>
     );

@@ -10,6 +10,9 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import IosShareIcon from '@mui/icons-material/IosShare';
+import { useGlobalTheme } from '../../contexts/Theme-context';
+import { useGlobalPost } from '../../contexts/post-context';
+import { useState } from 'react';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -50,6 +53,11 @@ BootstrapDialogTitle.propTypes = {
 };
 
 export default function PostDialogBox() {
+    const [newPost, setNewPost] = React.useState()
+    const [newPosrData, setNewPostData] = useState()
+
+    const { theme } = useGlobalTheme()
+    const { NewPost } = useGlobalPost()
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -67,12 +75,17 @@ export default function PostDialogBox() {
                 aria-labelledby="customized-dialog-title"
                 open={open}
             >
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur commodi saepe sapiente eius, dolores ipsa ut rerum non voluptatum temporibus, sequi quasi earum magni. </h1>
-                <DialogActions>
-                    <Button autoFocus onClick={handleClose}>
-                        <IosShareIcon />
-                    </Button>
-                </DialogActions>
+                <div className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black border-2 border-black-800'} p-6  rounded-lg`}>
+                    <h1 className="p-10">edit post</h1>
+                    <input value={newPost} type="text" name="" id="" className='p-10' onChange={(e) => setNewPost(e.target.value)} />
+                    <hr className='w-[100%]' />
+                    <DialogActions>
+
+                        <h1 className="bg-cyan-800 text-white border rounded pl-2 pr-2 pb-1 hover:bg-cyan-600 cursor-pointer" onClick={() => NewPost({ content: newPost })}>
+                            Post
+                        </h1>
+                    </DialogActions>
+                </div>
             </BootstrapDialog>
         </div>
     );

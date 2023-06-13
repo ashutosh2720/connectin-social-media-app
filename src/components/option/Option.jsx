@@ -5,8 +5,11 @@ import MenuItem from '@mui/material/MenuItem';
 import CreateIcon from '@mui/icons-material/Create';
 import Fade from '@mui/material/Fade';
 import DialogBox from '../dialogBox/DialogBox';
+import { useGlobalPost } from '../../contexts/post-context';
 
-export default function FadeMenu() {
+export default function FadeMenu({ post }) {
+
+    const { DeletePost } = useGlobalPost()
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -37,7 +40,7 @@ export default function FadeMenu() {
                 TransitionComponent={Fade}
             >
                 <MenuItem > <DialogBox /></MenuItem>
-                <MenuItem onClick={handleClose}>Delete</MenuItem>
+                <MenuItem onClick={() => DeletePost(post._id)}>Delete</MenuItem>
 
             </Menu>
         </div>

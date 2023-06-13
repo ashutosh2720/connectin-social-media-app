@@ -17,10 +17,12 @@ import { useGlobalPost } from "../../contexts/post-context";
 
 
 const PostCard = ({ post }) => {
+    const { DeletePost } = useGlobalPost()
+    console.log(post)
     return (
         <div className="content w-2/3 flex flex-col gap-2  border-2 xs:w-full sm:w-full p-3">
             <div className="option flex justify-end items-end ">
-                <FadeMenu />
+                <FadeMenu post={post} /> <h1 onClick={() => DeletePost(post._id)} >delete</h1>
             </div>
             <h1>{post.username}</h1>
             <p>
