@@ -14,31 +14,40 @@ import RightSidebar from "../../components/rightSidebar/RightSidebar";
 import { useGlobalTheme } from "../../contexts/Theme-context";
 import DialogBox from "../../components/dialogBox/DialogBox";
 import { useGlobalPost } from "../../contexts/post-context";
-
+import { useGlobalLogin } from "../../contexts/login-context";
+import { useGlobalBookMark } from "../../contexts/bookMark-context";
 
 const PostCard = ({ post }) => {
-    const { DeletePost } = useGlobalPost()
-    console.log(post)
+    const { addToBooksMark } = useGlobalBookMark();
     return (
         <div className="content w-2/3 flex flex-col gap-2  border-2 xs:w-full sm:w-full p-3">
             <div className="option flex justify-end items-end ">
-                <FadeMenu post={post} /> <h1 onClick={() => DeletePost(post._id)} >delete</h1>
+                <FadeMenu post={post} />
             </div>
-            <h1>{post.username}</h1>
-            <p>
-                {post.content}
-            </p>
+            <div className="user-detail">
+                <img src={post.avatar} alt="" /> {post.createdAt}
+                <h1>{post.username}</h1>
+            </div>
+            <p>{post.content}</p>
             <img src={post.mediaURL} alt="" />
 
             <hr />
             <div className="socialbtn flex justify-around item start">
-                <ThumbUpOffAltIcon className="cursor-pointer" />
-                <BookmarkBorderOutlinedIcon className="cursor-pointer" />
-                <ShareOutlinedIcon className="cursor-pointer" />
-                <CommentOutlinedIcon className="cursor-pointer" />
+                <div >
+                    <ThumbUpOffAltIcon className="cursor-pointer" />
+                </div>
+                <div onClick={() => addToBooksMark(post._id)}>
+                    <BookmarkBorderOutlinedIcon className="cursor-pointer" />
+                </div>
+                <div>
+                    <ShareOutlinedIcon className="cursor-pointer" />
+                </div>
+                <div>
+                    <CommentOutlinedIcon className="cursor-pointer" />
+                </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default PostCard
+export default PostCard;

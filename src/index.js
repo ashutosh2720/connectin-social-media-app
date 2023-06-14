@@ -7,6 +7,7 @@ import { makeServer } from "./server";
 import { ThemeProvider } from "./contexts/Theme-context";
 import { LoginProvider } from './contexts/login-context';
 import { PostProvider } from "./contexts/post-context";
+import { BookMarkProvider } from "./contexts/bookMark-context";
 
 // Call make Server
 makeServer();
@@ -16,9 +17,11 @@ ReactDOM.render(
     <ThemeProvider>
       <LoginProvider>
         <PostProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
+          <BookMarkProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </BookMarkProvider>
         </PostProvider>
       </LoginProvider>
     </ThemeProvider>

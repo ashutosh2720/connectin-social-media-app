@@ -16,13 +16,13 @@ const PostProvider = ({ children }) => {
             console.log(error);
         }
     };
-    const NewPost = async (postData) => {
+    const NewPost = async (post) => {
 
         const encodedToken = localStorage.getItem("anixCartUserToken");
         try {
             const { data } = await axios.post(
                 `/api/posts`,
-                { postData },
+                { postData: post },
                 { headers: { authorization: encodedToken } }
             );
             setPostsData(data.posts)
@@ -39,11 +39,11 @@ const PostProvider = ({ children }) => {
 
         const encodedToken = localStorage.getItem("anixCartUserToken");
         try {
-            const res = await axios.delete(`/api/posts/${postId}`, {
+            const { data } = await axios.delete(`/api/posts/${postId}`, {
                 headers: { authorization: encodedToken }
             });
-            console.log(res)
-            // setPostsData(data.posts)
+
+            setPostsData(data.posts)
 
 
             // notifySuccess("Item added to cart");

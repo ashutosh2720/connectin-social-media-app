@@ -24,7 +24,7 @@ const Login = () => {
 
 
     const setInputUsername = (event) => {
-        setInput((prev) => ({ ...prev, email: event.target.value }))
+        setInput((prev) => ({ ...prev, username: event.target.value }))
     }
 
     const setInputPassword = (event) => {
@@ -44,7 +44,7 @@ const Login = () => {
                         <input
                             type="email"
                             id="email"
-                            value={input.email}
+                            value={input.username}
                             onChange={setInputUsername}
                             className="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:border-blue-500"
                             required

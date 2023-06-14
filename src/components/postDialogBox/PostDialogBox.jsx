@@ -13,6 +13,7 @@ import IosShareIcon from '@mui/icons-material/IosShare';
 import { useGlobalTheme } from '../../contexts/Theme-context';
 import { useGlobalPost } from '../../contexts/post-context';
 import { useState } from 'react';
+import { useGlobalLogin } from '../../contexts/login-context';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -55,6 +56,8 @@ BootstrapDialogTitle.propTypes = {
 export default function PostDialogBox() {
     const [newPost, setNewPost] = React.useState()
     const [newPosrData, setNewPostData] = useState()
+    const { userDetail } = useGlobalLogin()
+    console.log(userDetail)
 
     const { theme } = useGlobalTheme()
     const { NewPost } = useGlobalPost()
@@ -81,7 +84,7 @@ export default function PostDialogBox() {
                     <hr className='w-[100%]' />
                     <DialogActions>
 
-                        <h1 className="bg-cyan-800 text-white border rounded pl-2 pr-2 pb-1 hover:bg-cyan-600 cursor-pointer" onClick={() => NewPost({ content: newPost })}>
+                        <h1 className="bg-cyan-800 text-white border rounded pl-2 pr-2 pb-1 hover:bg-cyan-600 cursor-pointer" onClick={() => NewPost({ username: userDetail.username, content: newPost })}>
                             Post
                         </h1>
                     </DialogActions>

@@ -27,8 +27,9 @@ const Signup = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        signupHandler()
         // Handle form submission logic here
-        console.log(formData);
+
     };
 
     return (
@@ -70,7 +71,7 @@ const Signup = () => {
                             required
                         />
                     </div>
-                    <button type="submit" onClick={() => signupHandler(formData.name, formData.email, formData.password)}><h3>Sign Up</h3></button>
+                    <button type="submit" >signup</button>
                 </form>
 
                 <p >  Already have an account ➡️<Link to={'/login'}>

@@ -13,6 +13,7 @@ import Error from "./pages/error/Error";
 import Mockman from "mockman-js";
 import { ToastContainer } from "react-toastify";
 import Signup from "./pages/signup/Signup";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/bookmark" element={<Bookmark />} />
         <Route path="/liked" element={<LikedPost />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/error" element={<Error />} />
       </Routes>

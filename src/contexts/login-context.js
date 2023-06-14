@@ -8,8 +8,9 @@ const loginContext = createContext();
 const LoginProvider = ({ children }) => {
     const [userToken, setUserToken] = useState();
     const [userDetail, setUserDetail] = useState();
+    console.log(userDetail)
     const [input, setInput] = useState({
-        email: "",
+        username: "",
         password: "",
     });
 
@@ -24,6 +25,7 @@ const LoginProvider = ({ children }) => {
         theme: "light",
     };
 
+
     const notifyInfo = (content) => toast.info(content, toastify);
     const notifySuccess = (content) => toast.success(content, toastify);
     const notifyWarn = (content) => toast.warn(content, toastify);
@@ -33,21 +35,22 @@ const LoginProvider = ({ children }) => {
         let token = localStorage.getItem("anixCartUserToken");
         if (token) {
             setUserToken(token);
-            // setUserDetail(JSON.parse(localStorage.getItem("foundUser")));
+            setUserDetail(JSON.parse(localStorage.getItem("foundUser")));
 
         }
     }, [userToken]);
 
     const dummyData = {
-        email: "ashutosh@gmail.com",
+        username: "ashutosh@",
         password: "ashutosh",
     };
     const userLogin = async () => {
         try {
             let { data, status } = await axios.post("/api/auth/login", {
-                email: input.email,
+                username: input.username,
                 password: input.password,
             });
+            console.log(data.foundUser)
             if (status === 200) {
                 localStorage.setItem(
                     "anixCartUserToken",
@@ -55,6 +58,7 @@ const LoginProvider = ({ children }) => {
                 );
                 localStorage.setItem("foundUser", JSON.stringify(data.foundUser));
                 setUserToken(data.encodedToken);
+                console.log(data.encodedToken)
                 setUserDetail(data.foundUser);
                 notifySuccess("Login Successfully");
             }
@@ -88,12 +92,13 @@ const LoginProvider = ({ children }) => {
 
     const signupHandler = async (name, email, password) => {
         try {
-            const { data } = await axios.post(`/api/auth/signup`, { name, email, password });
+            const { data } = await axios.post(`/api/auth/signup`, { "firstName": "ashu", "lastName": "singh", "email": "ashu@gmail.com", "password": "ashu123" });
             localStorage.setItem("anixCartUserToken", JSON.stringify(data.encodedToken));
             localStorage.setItem("foundUser", JSON.stringify(data.createdUser));
             setUserToken(data.encodedToken);
             setUserDetail(data.createdUser);
             notifySuccess("signup Successfully");
+            console.log('signup success')
 
             // saving the encodedToken in the localStorage
             // localStorage.setItem("token", data.encodedToken);
