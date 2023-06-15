@@ -4,14 +4,7 @@ export default function Error() {
     const { theme } = useGlobalTheme()
     return (
         <>
-            {/*
-          This example requires updating your template:
-  
-          ```
-          <html class="h-full">
-          <body class="h-full">
-          ```
-        */}
+
             <main className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black'} grid min-h-full place-items-center  px-6 py-24 sm:py-32 lg:px-8`}>
                 <div className="text-center">
                     <p className="text-base font-semibold text-indigo-600">404</p>

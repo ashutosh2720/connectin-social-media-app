@@ -54,6 +54,26 @@ const PostProvider = ({ children }) => {
         }
 
     };
+    const EditPost = async (postId) => {
+
+
+        const encodedToken = localStorage.getItem("anixCartUserToken");
+        try {
+            const { data } = await axios.post(`/api/posts/edit/${postId}`, {
+                headers: { authorization: encodedToken }
+            });
+            console.log(data)
+
+            setPostsData(data.posts)
+
+
+
+        } catch (err) {
+            console.log(err)
+
+        }
+
+    };
 
 
 
@@ -66,7 +86,8 @@ const PostProvider = ({ children }) => {
             value={{
                 postsData,
                 NewPost,
-                DeletePost
+                DeletePost,
+                EditPost
 
             }}
         >

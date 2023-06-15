@@ -10,6 +10,8 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
 import { useGlobalTheme } from "../../contexts/Theme-context";
+import { useState } from "react";
+import { useGlobalPost } from "../../contexts/post-context";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     "& .MuiDialogContent-root": {
@@ -49,15 +51,33 @@ BootstrapDialogTitle.propTypes = {
     onClose: PropTypes.func.isRequired,
 };
 
-export default function DialogBox() {
+export default function DialogBox(post) {
+    console.log(post)
     const [open, setOpen] = React.useState(false);
+    const [content, setContent] = useState(''); // Initial content state
+    const [isEditing, setIsEditing] = useState(false); // State to track editing mode
+
+
     const { theme } = useGlobalTheme()
+    const { EditPost } = useGlobalPost()
 
     const handleClickOpen = () => {
         setOpen(true);
     };
     const handleClose = () => {
         setOpen(false);
+    };
+    const handleInputChange = (event) => {
+        setContent(event.target.value); // Update content state on input change
+    };
+
+    const handleEditClick = () => {
+        setIsEditing(true); // Enable editing mode
+    };
+
+    const handleSaveClick = () => {
+        setIsEditing(false); // Disable editing mode
+        // Here you can perform additional logic or API calls to save the content
     };
 
     return (
@@ -73,13 +93,10 @@ export default function DialogBox() {
             >
                 <div className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black border-2 border-black-800'} p-5  rounded-lg`}>
                     <h1 className="p-10">edit post</h1>
-                    <h1 className="p-10 ">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-                        commodi saepe sapiente eius, dolores ipsa ut rerum non voluptatum
-                        temporibus, sequi quasi earum magni.{" "}
-                    </h1>
+                    <textarea type="text" name="" id="" value={post.post.content} className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black'}p-10 resize-none outline-none border-none`} onChange={handleInputChange} />
+
                     <DialogActions>
-                        <h1 className="bg-cyan-800 text-white border rounded pl-2 pr-2 pb-1 hover:bg-cyan-600 cursor-pointer">
+                        <h1 className="bg-cyan-800 text-white border rounded pl-2 pr-2 pb-1 hover:bg-cyan-600 cursor-pointer " onClick={() => EditPost(post.post._id)}>
                             update
                         </h1>
                     </DialogActions>

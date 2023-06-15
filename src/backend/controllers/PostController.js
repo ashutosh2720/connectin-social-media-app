@@ -163,24 +163,16 @@ export const likePostHandler = function (schema, request) {
         404,
         {},
         {
-          errors: [
-            "The username you entered is not Registered. Not Found error",
-          ],
-        }
+          errors: ['The username you entered is not Registered. Not Found error'],
+        },
       );
     }
     const postId = request.params.postId;
     const post = schema.posts.findBy({ _id: postId }).attrs;
     if (post.likes.likedBy.some((currUser) => currUser._id === user._id)) {
-      return new Response(
-        400,
-        {},
-        { errors: ["Cannot like a post that is already liked. "] }
-      );
+      return new Response(400, {}, { errors: ['Cannot like a post that is already liked. '] });
     }
-    post.likes.dislikedBy = post.likes.dislikedBy.filter(
-      (currUser) => currUser._id !== user._id
-    );
+    post.likes.dislikedBy = post.likes.dislikedBy.filter((currUser) => currUser._id !== user._id);
     post.likes.likeCount += 1;
     post.likes.likedBy.push(user);
     this.db.posts.update({ _id: postId }, { ...post, updatedAt: formatDate() });
@@ -191,7 +183,7 @@ export const likePostHandler = function (schema, request) {
       {},
       {
         error,
-      }
+      },
     );
   }
 };

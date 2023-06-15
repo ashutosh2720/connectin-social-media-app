@@ -16,24 +16,29 @@ import DialogBox from "../../components/dialogBox/DialogBox";
 import { useGlobalPost } from "../../contexts/post-context";
 import { useGlobalLogin } from "../../contexts/login-context";
 import { useGlobalBookMark } from "../../contexts/bookMark-context";
+import { useGlobalLike } from "../../contexts/liked-context";
 
 const PostCard = ({ post }) => {
     const { addToBooksMark } = useGlobalBookMark();
+    const { addToLike } = useGlobalLike()
+    const { userDetail } = useGlobalLogin()
+    console.log(post)
     return (
         <div className="content w-2/3 flex flex-col gap-2  border-2 xs:w-full sm:w-full p-3">
             <div className="option flex justify-end items-end ">
-                <FadeMenu post={post} />
+                {post.username === userDetail.username ? <FadeMenu post={post} /> : ''}
             </div>
             <div className="user-detail">
                 <img src={post.avatar} alt="" /> {post.createdAt}
                 <h1>{post.username}</h1>
+
             </div>
             <p>{post.content}</p>
             <img src={post.mediaURL} alt="" />
 
             <hr />
             <div className="socialbtn flex justify-around item start">
-                <div >
+                <div onClick={() => addToLike(post._id)}>
                     <ThumbUpOffAltIcon className="cursor-pointer" />
                 </div>
                 <div onClick={() => addToBooksMark(post._id)}>

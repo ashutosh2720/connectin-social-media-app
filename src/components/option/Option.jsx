@@ -39,7 +39,7 @@ export default function FadeMenu({ post }) {
                 onClose={handleClose}
                 TransitionComponent={Fade}
             >
-                <MenuItem > <DialogBox /></MenuItem>
+                <MenuItem > <DialogBox post={post} /></MenuItem>
                 <MenuItem onClick={() => DeletePost(post._id)}>Delete</MenuItem>
 
             </Menu>
