@@ -85,9 +85,7 @@ export const createPostHandler = function (schema, request) {
         likeCount: 0,
         likedBy: [],
         dislikedBy: [],
-
       },
-      comments: [],
       username: user.username,
       createdAt: formatDate(),
       updatedAt: formatDate(),
@@ -163,16 +161,24 @@ export const likePostHandler = function (schema, request) {
         404,
         {},
         {
-          errors: ['The username you entered is not Registered. Not Found error'],
-        },
+          errors: [
+            "The username you entered is not Registered. Not Found error",
+          ],
+        }
       );
     }
     const postId = request.params.postId;
     const post = schema.posts.findBy({ _id: postId }).attrs;
     if (post.likes.likedBy.some((currUser) => currUser._id === user._id)) {
-      return new Response(400, {}, { errors: ['Cannot like a post that is already liked. '] });
+      return new Response(
+        400,
+        {},
+        { errors: ["Cannot like a post that is already liked. "] }
+      );
     }
-    post.likes.dislikedBy = post.likes.dislikedBy.filter((currUser) => currUser._id !== user._id);
+    post.likes.dislikedBy = post.likes.dislikedBy.filter(
+      (currUser) => currUser._id !== user._id
+    );
     post.likes.likeCount += 1;
     post.likes.likedBy.push(user);
     this.db.posts.update({ _id: postId }, { ...post, updatedAt: formatDate() });
@@ -183,7 +189,7 @@ export const likePostHandler = function (schema, request) {
       {},
       {
         error,
-      },
+      }
     );
   }
 };
@@ -284,22 +290,4 @@ export const deletePostHandler = function (schema, request) {
       }
     );
   }
-};
-
-/**
- * This handler handles gets all posts in the db.
- * send GET Request at /api/posts/page/pageNum
- * */
-//=>0,1,2,3
-//1=>0,1,2,3,4,5,6,7
-//2=>0, 1,2,3,4,5,6,7,8,9,10,11
-
-export const getLatestPagedPosts = function (schema, request) {
-  const { pageNum } = request.params;
-
-  const latestPosts = this.db.posts.sort(
-    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-  );
-  const paginatedPosts = latestPosts.slice(0, pageNum * 4 + 4);
-  return new Response(200, {}, { posts: paginatedPosts });
 };

@@ -6,7 +6,7 @@ const RightSidebar = () => {
     const { theme } = useGlobalTheme()
     return (
         <div className="right-side  flex justify-around flex-col">
-            <div className='navigation flex justify-around gap-5  p-5 max-w-50 item-center  '>
+            <div className='navigation flex justify-around gap-5  pt-5 pr-0 max-w-50 item-center  '>
                 <h1 className='border p-2 rounded cursor-pointer hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white text-center' > Tranding</h1>
                 <h1 className='border p-2 rounded w-20 cursor-pointer hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white text-center'>Latest</h1>
             </div>

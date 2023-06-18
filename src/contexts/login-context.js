@@ -8,7 +8,6 @@ const loginContext = createContext();
 const LoginProvider = ({ children }) => {
     const [userToken, setUserToken] = useState();
     const [userDetail, setUserDetail] = useState();
-    console.log(userDetail)
     const [input, setInput] = useState({
         username: "",
         password: "",
@@ -98,7 +97,7 @@ const LoginProvider = ({ children }) => {
             setUserToken(data.encodedToken);
             setUserDetail(data.createdUser);
             notifySuccess("signup Successfully");
-            console.log('signup success')
+
 
             // saving the encodedToken in the localStorage
             // localStorage.setItem("token", data.encodedToken);

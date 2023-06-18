@@ -11,12 +11,14 @@ import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
+import { Link, useNavigate } from "react-router-dom";
 import { useGlobalLogin } from '../../contexts/login-context';
 
 export default function AccountMenu() {
     const { userToken, logoutUser, userDetail } = useGlobalLogin()
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+    const navigate = useNavigate()
 
     const logoutAction = () => {
         logoutUser()
@@ -80,7 +82,7 @@ export default function AccountMenu() {
                 transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={() => { navigate('/profile') }} na>
                     <Avatar /> Profile
                 </MenuItem>
 

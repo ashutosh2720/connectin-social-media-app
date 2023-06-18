@@ -23,8 +23,9 @@ const PostCard = ({ post }) => {
     const { addToLike } = useGlobalLike()
     const { userDetail } = useGlobalLogin()
     console.log(post)
+
     return (
-        <div className="content w-2/3 flex flex-col gap-2  border-2 xs:w-full sm:w-full p-3">
+        <div className="content w-[50%] flex flex-col gap-2  shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md xs:w-full sm:w-full p-3">
             <div className="option flex justify-end items-end ">
                 {post.username === userDetail.username ? <FadeMenu post={post} /> : ''}
             </div>
@@ -42,6 +43,7 @@ const PostCard = ({ post }) => {
                     <ThumbUpOffAltIcon className="cursor-pointer" />
                 </div>
                 <div onClick={() => addToBooksMark(post._id)}>
+
                     <BookmarkBorderOutlinedIcon className="cursor-pointer" />
                 </div>
                 <div>

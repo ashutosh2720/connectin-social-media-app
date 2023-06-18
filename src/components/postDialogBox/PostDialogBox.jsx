@@ -57,7 +57,7 @@ export default function PostDialogBox() {
     const [newPost, setNewPost] = React.useState()
     const [newPosrData, setNewPostData] = useState()
     const { userDetail } = useGlobalLogin()
-    console.log(userDetail)
+
 
     const { theme } = useGlobalTheme()
     const { NewPost } = useGlobalPost()

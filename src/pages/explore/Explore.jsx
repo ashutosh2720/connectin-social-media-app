@@ -30,6 +30,7 @@ function Explore() {
                 {
                     postsData.map((post) =>
                         <PostCard post={post} />
+
                     )
                 }
                 <div

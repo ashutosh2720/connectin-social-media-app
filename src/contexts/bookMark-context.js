@@ -12,8 +12,25 @@ const BookMarkProvider = ({ children }) => {
             const { data } = await axios.post(`/api/users/bookmark/${postId}`, {}, {
                 headers: { authorization: encodedToken },
             });
+
+            setBookMark(data.bookmarks)
+
+
+            // saving the encodedToken in the localStorage
+            // localStorage.setItem("token", data.encodedToken);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    const getBookMark = async (postId) => {
+        const encodedToken = localStorage.getItem("anixCartUserToken");
+        try {
+            const { data } = await axios.post(`/api/users/bookmark/${postId}`, {}, {
+                headers: { authorization: encodedToken },
+            });
             console.log(data.bookmarks)
             setBookMark(data.bookmarks);
+
 
             // saving the encodedToken in the localStorage
             // localStorage.setItem("token", data.encodedToken);
@@ -26,7 +43,8 @@ const BookMarkProvider = ({ children }) => {
         <bookMarkContext.Provider
             value={{
                 addToBooksMark,
-                bookMark
+                bookMark,
+                getBookMark
             }}
         >
             {children}
