@@ -5,11 +5,20 @@ const postContext = createContext();
 
 const PostProvider = ({ children }) => {
     const [postsData, setPostsData] = useState([]);
+    const [users, setUsers] = useState([]);
 
     const Posts = async () => {
         try {
             const { data } = await axios.get(`/api/posts`);
             setPostsData(data.posts);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    const Users = async () => {
+        try {
+            const { data } = await axios.get(`/api/users`);
+            setUsers(data.users);
         } catch (error) {
             console.log(error);
         }
@@ -65,15 +74,19 @@ const PostProvider = ({ children }) => {
 
     useEffect(() => {
         Posts();
+        Users();
     }, []);
 
     return (
         <postContext.Provider
             value={{
                 postsData,
+
                 NewPost,
                 DeletePost,
                 EditPost,
+                users,
+                Users
             }}
         >
             {children}
