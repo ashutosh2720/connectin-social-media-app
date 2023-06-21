@@ -55,7 +55,7 @@ BootstrapDialogTitle.propTypes = {
 
 export default function PostDialogBox() {
     const [newPost, setNewPost] = React.useState()
-    const [newPosrData, setNewPostData] = useState()
+    const [newPostData, setNewPostData] = useState()
     const { userDetail } = useGlobalLogin()
 
 

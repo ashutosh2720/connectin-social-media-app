@@ -19,9 +19,10 @@ import { useGlobalBookMark } from "../../contexts/bookMark-context";
 import { useGlobalLike } from "../../contexts/liked-context";
 
 const PostCard = ({ post }) => {
-    const { addToBooksMark } = useGlobalBookMark();
+    const { addToBooksMark, bookMark, removeBookMark } = useGlobalBookMark();
     const { addToLike } = useGlobalLike()
     const { userDetail } = useGlobalLogin()
+
 
 
     return (
@@ -42,7 +43,7 @@ const PostCard = ({ post }) => {
                 <div onClick={() => addToLike(post._id)}>
                     <ThumbUpOffAltIcon className="cursor-pointer" />
                 </div>
-                <div onClick={() => addToBooksMark(post._id)}>
+                <div onClick={() => bookMark.find((id) => id === post._id) ? removeBookMark(post._id) : addToBooksMark(post._id)}>
 
                     <BookmarkBorderOutlinedIcon className="cursor-pointer" />
                 </div>

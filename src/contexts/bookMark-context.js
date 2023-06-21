@@ -33,7 +33,7 @@ const BookMarkProvider = ({ children }) => {
                     headers: { authorization: encodedToken },
                 }
             );
-            console.log(data.bookmarks);
+
             setBookMark(data.bookmarks);
         } catch (error) {
             console.log(error);
@@ -49,6 +49,7 @@ const BookMarkProvider = ({ children }) => {
                     headers: { authorization: encodedToken },
                 }
             );
+
             console.log(data.bookmarks);
             setBookMark(data.bookmarks);
         } catch (error) {
@@ -62,7 +63,7 @@ const BookMarkProvider = ({ children }) => {
                 addToBooksMark,
                 bookMark,
                 getBookMark,
-                removeBookMark
+                removeBookMark,
             }}
         >
             {children}

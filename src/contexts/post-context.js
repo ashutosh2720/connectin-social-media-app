@@ -58,10 +58,10 @@ const PostProvider = ({ children }) => {
             // notifyWarn('please login to add items')
         }
     };
-    const EditPost = async (postId) => {
+    const EditPost = async (post) => {
         const encodedToken = localStorage.getItem("anixCartUserToken");
         try {
-            const { data } = await axios.post(`/api/posts/edit/${postId}`, {
+            const { data } = await axios.post(`/api/posts/edit/${post}`, { postData: post }, {
                 headers: { authorization: encodedToken },
             });
             console.log(data);
