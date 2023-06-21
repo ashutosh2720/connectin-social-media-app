@@ -28,7 +28,7 @@ const PostCard = ({ post }) => {
     return (
         <div className="content w-[50%] flex flex-col gap-2  shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md xs:w-full sm:w-full p-3">
             <div className="option flex justify-end items-end ">
-                {post.username === userDetail.username ? <FadeMenu post={post} /> : ''}
+                {post.username === userDetail?.username ? <FadeMenu post={post} /> : ''}
             </div>
             <div className="user-detail">
                 <img src={post.avatar} alt="" /> {post.createdAt}
