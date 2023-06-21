@@ -26,8 +26,8 @@ const Navbar = () => {
     return (
         <nav
             className={`${theme === "dark-theme"
-                ? "bg-neutral-900	 text-white"
-                : "bg-white text-black border-2 border-black-800"
+                    ? "bg-neutral-900	 text-white"
+                    : "bg-white text-black border-2 border-black-800"
                 } sticky top-0  min-w-full z-10 flex items-center justify-around h-16 border-2 border-slate-400	 gap-5 pl-10 pr-3`}
         >
             <div className="flex items-center">
@@ -52,14 +52,11 @@ const Navbar = () => {
                     onChange={(e) => setSearchInput(e.target.value)}
                     value={searchInput}
                     className={`${theme === "dark-theme"
-                        ? "bg-neutral-900	 text-white"
-                        : "bg-white-200 text-black border-2 border-black"
-                        } rounded-full h-10 text-black-300 border-2 border-white-100 pl-3 pr-3 outline-none`}
+                            ? "bg-neutral-900 text-white"
+                            : "bg-white text-black border-2 border-black"
+                        } rounded-md     h-10  border-2 border-white-100 pl-3 pr-3 outline-none`}
                 />
-                <SearchBox
-                    searchInput={searchInput}
-                    setSearchInput={setSearchInput}
-                />
+                <SearchBox searchInput={searchInput} setSearchInput={setSearchInput} />
             </div>
             <div className=" md:flex justify-around item-center gap-20">
                 <div className="flex items-center jusity-around">
