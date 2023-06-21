@@ -15,7 +15,7 @@ export const users = [
     bio: "Be yourself!",
     bookmarks: [],
     avatarUrl:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1651473734/socialmedia/avatars/adarsh-balika_dct6gm.webp",
+      "https://i.postimg.cc/Gmy05qwV/IMG-20220817-042650-595.jpg",
     website: "https://romabulani.netlify.app/",
     createdAt: "2022-01-01T10:55:06+05:30",
     updatedAt: formatDate(),
@@ -29,7 +29,7 @@ export const users = [
     bio: "Hello World",
     bookmarks: [],
     avatarUrl:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1651554207/socialmedia/avatars/john-doe_gbkuda.webp",
+      "https://i.postimg.cc/nLhWtk6n/images-3.jpg",
     website: "https://google.com/",
     createdAt: "2022-01-02T10:55:06+05:30",
     updatedAt: formatDate(),
@@ -43,7 +43,7 @@ export const users = [
     bio: "Whats in bio?",
     bookmarks: [],
     avatarUrl:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1651554256/socialmedia/avatars/jane-doe_il3cvx.webp",
+      "https://i.postimg.cc/XY7LZvx8/IMG-20220817-043311-003.jpg",
     website: "https://romabulani.netlify.app/",
     createdAt: "2022-01-01T10:55:06+05:30",
     updatedAt: formatDate(),
@@ -71,7 +71,7 @@ export const users = [
     bio: "Aspiring Frontend Engineer",
     bookmarks: [],
     avatarUrl:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1652525370/socialmedia/avatars/roma.webp",
+      "https://i.postimg.cc/66bpsjgp/IMG-20220814-WA0011.jpg",
     website: "https://romabulani.hashnode.dev/",
     createdAt: "2022-01-04T10:55:06+05:30",
     updatedAt: formatDate(),

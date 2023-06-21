@@ -22,7 +22,7 @@ const PostCard = ({ post }) => {
     const { addToBooksMark } = useGlobalBookMark();
     const { addToLike } = useGlobalLike()
     const { userDetail } = useGlobalLogin()
-    console.log(post)
+
 
     return (
         <div className="content w-[50%] flex flex-col gap-2  shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md xs:w-full sm:w-full p-3">
@@ -35,7 +35,7 @@ const PostCard = ({ post }) => {
 
             </div>
             <p>{post.content}</p>
-            <img src={post.mediaURL} alt="" />
+            <img src={post.mediaURL} alt="" className="rounded-lg" />
 
             <hr />
             <div className="socialbtn flex justify-around item start">
