@@ -1,7 +1,7 @@
 import React from "react";
 import LeftSidebar from "../../components/leftSidebar/LeftSidebar";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
+import BookmarksIcon from '@mui/icons-material/Bookmarks';
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
 import LongMenu from "../../components/option/Option";
@@ -45,7 +45,7 @@ const PostCard = ({ post }) => {
                 </div>
                 <div onClick={() => bookMark.find((id) => id === post._id) ? removeBookMark(post._id) : addToBooksMark(post._id)}>
 
-                    <BookmarkBorderOutlinedIcon className="cursor-pointer" />
+                    <BookmarksIcon className={`${bookMark.find((id) => id === post._id) ? 'text-black' : ' text-gray-300'} cursor-pointer`} />
                 </div>
                 <div>
                     <ShareOutlinedIcon className="cursor-pointer" />

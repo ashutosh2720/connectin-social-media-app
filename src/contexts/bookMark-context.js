@@ -1,10 +1,12 @@
 import React, { createContext, useContext, useState } from "react";
 import axios from "axios";
+import { useGlobalTheme } from "./Theme-context";
 
 const bookMarkContext = createContext();
 
 const BookMarkProvider = ({ children }) => {
     const [bookMark, setBookMark] = useState([]);
+    const { notifySuccess } = useGlobalTheme()
 
     const addToBooksMark = async (postId) => {
         const encodedToken = localStorage.getItem("anixCartUserToken");
@@ -18,6 +20,7 @@ const BookMarkProvider = ({ children }) => {
             );
 
             setBookMark(data.bookmarks);
+            notifySuccess('post added to bookmark')
         } catch (error) {
             console.log(error);
         }
@@ -50,8 +53,9 @@ const BookMarkProvider = ({ children }) => {
                 }
             );
 
-            console.log(data.bookmarks);
+
             setBookMark(data.bookmarks);
+            notifySuccess('post removed  from bookmark')
         } catch (error) {
             console.log(error);
         }
