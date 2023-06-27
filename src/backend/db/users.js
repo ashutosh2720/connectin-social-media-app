@@ -64,7 +64,7 @@ export const users = [
 
   {
     _id: "o5gzWjEeX_",
-    firstName: "abhiehek",
+    firstName: "abhishek",
     lastName: "rana",
     username: "abhishek@",
     password: "abhishek123",
