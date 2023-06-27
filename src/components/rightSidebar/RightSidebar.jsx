@@ -1,69 +1,50 @@
-import React from 'react'
-import { useGlobalTheme } from '../../contexts/Theme-context'
-import WhatshotIcon from '@mui/icons-material/Whatshot';
+import React from "react";
+import { useGlobalTheme } from "../../contexts/Theme-context";
+import WhatshotIcon from "@mui/icons-material/Whatshot";
+import { useGlobalPost } from "../../contexts/post-context";
+import { users } from "../../backend/db/users";
 
 const RightSidebar = () => {
-    const { theme } = useGlobalTheme()
+    const { theme } = useGlobalTheme();
+
     return (
-        <div className="right-side  flex justify-around flex-col">
-            <div className='navigation flex justify-around gap-5  pt-5 pr-0 max-w-50 item-center  '>
-                <h1 className='border p-2 rounded cursor-pointer hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white text-center' > Tranding</h1>
-                <h1 className='border p-2 rounded w-20 cursor-pointer hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white text-center'>Latest</h1>
+        <div className=" right-side w-[100%] flex justify-around flex-col">
+            <div className="navigation flex justify-around gap-5  pt-5 pr-0 max-w-50 item-center  ">
+                <h1 className="border p-2 rounded cursor-pointer hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white text-center">
+                    {" "}
+                    Tranding
+                </h1>
+                <h1 className="border p-2 rounded w-20 cursor-pointer hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white text-center">
+                    Latest
+                </h1>
             </div>
-            <div className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black border-2 border-black-800'}suggestion  flex justify-around items-start p-5 gap-5 flex-col`}>
+            <div
+                className={`${theme === "dark-theme"
+                    ? "bg-neutral-900	 text-white"
+                    : "bg-white text-black border-2 border-black-800"
+                    }suggestion  flex justify-start items-start p-5 gap-5 flex-col`}
+            >
                 <h1>Suggestion for you</h1>
-                <div className="suggestion-items flex justify-center items-center flex-col gap-5">
-                    <div className="users flex justify-center items-start gap-">
-                        <div className="img flex gap-5">
-                            <img src="https://w7.pngwing.com/pngs/831/88/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile-thumbnail.png" alt="" className='rounded-full max-w-[30%] w-28' /><h1>John</h1>
-                        </div>
+                {
+                    users.map((user) =>
+                        <div className="seacrh-item flex  justify-start items-start gap-3 p-1">
+                            <img
+                                src={user.avatarUrl}
+                                alt=""
+                                className="rounded-full h-[40px] w-[40px]"
 
-                        <div className="follow">
-                            <button className='bg-cyan-800 rounded-full pl-2 pr-2' >+follow</button>
-                        </div>
-                    </div>
-                </div>
-                <hr className='w-full' />
-                <div className="suggestion-items flex justify-center items-center flex-col gap-5">
-                    <div className="users flex justify-center items-start gap-">
-                        <div className="img flex gap-5">
-                            <img src="https://w7.pngwing.com/pngs/831/88/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile-thumbnail.png" alt="" className='rounded-full max-w-[30%] w-28' /><h1>Jeni</h1>
-                        </div>
 
-                        <div className="follow">
-                            <button className='bg-cyan-800 rounded-full pl-2 pr-2' >+follow</button>
-                        </div>
-                    </div>
-                </div>
-                <hr className='w-full' />
-                <div className="suggestion-items flex justify-center items-center flex-col gap-5">
-                    <div className="users flex justify-center items-start gap-">
-                        <div className="img flex gap-5">
-                            <img src="https://w7.pngwing.com/pngs/831/88/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile-thumbnail.png" alt="" className='rounded-full max-w-[30%] w-28' /><h1>Amila</h1>
-                        </div>
-
-                        <div className="follow">
-                            <button className='bg-cyan-800 rounded-full pl-2 pr-2' >+follow</button>
-                        </div>
-                    </div>
-                </div>
-                <hr className='w-full' />
-                <div className="suggestion-items flex justify-center items-center flex-col gap-5">
-                    <div className="users flex justify-center items-start gap-">
-                        <div className="img flex gap-5">
-                            <img src="https://w7.pngwing.com/pngs/831/88/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile-thumbnail.png" alt="" className='rounded-full max-w-[30%] w-28' /><h1>John</h1>
-                        </div>
-
-                        <div className="follow">
-                            <button className='bg-cyan-800 rounded-full pl-2 pr-2' >+follow</button>
-                        </div>
-                    </div>
-                </div>
-                <hr className='w-full' />
-
+                            />
+                            <div className="userDetail flex flex-col ">
+                                <h1>{user.firstName}</h1>
+                                <p className=" text-xs"> {user.username}</p>
+                            </div>
+                            <button></button>
+                        </div>)
+                }
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default RightSidebar
+export default RightSidebar;

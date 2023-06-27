@@ -49,7 +49,7 @@ function Home() {
                 className={`${theme === "dark-theme"
                     ? "bg-neutral-900 text-white"
                     : "bg-white text-black "
-                    } right max-w-50  right-5  sm:hidden xs:hidden min-h-full sticky top-20 rounded-md border-l h-screen`}
+                    } right w-[30%]  right-5  sm:hidden xs:hidden min-h-full sticky top-20 rounded-md border-l h-screen`}
             >
                 <RightSidebar />
             </div>
