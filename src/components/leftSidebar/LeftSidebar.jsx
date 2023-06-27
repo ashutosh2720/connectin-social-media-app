@@ -7,55 +7,72 @@ import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlin
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import PostDialogBox from "../postDialogBox/PostDialogBox";
 import IosShareIcon from "@mui/icons-material/IosShare";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+
 
 const LeftSidebar = () => {
-    const navigate = useNavigate();
+
+    const active = ({ isActive }) => ({
+        fontWeight: isActive ? "800" : "200",
+        color: isActive ? "cyan" : "",
+    });
     return (
         <>
             {" "}
             <div className="left flex justify-start item-start pl-10 flex-col gap-5	">
-                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded  cursor-pointer  hover:text-black" onClick={() => navigate('/')}>
-                    <HomeOutlinedIcon
-                        fontSize="large"
-                        className="cursor-pointer text-black-400"
-                    />
-                    <div className="name flex justify-center item-center relative top-1 text-md">
-                        <p>Home</p>
-                    </div>
+                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded  cursor-pointer  hover:text-black" >
+                    <NavLink to={'/'} style={active}>
+
+                        <div className="name flex justify-center item-center gap-2 text-md">
+                            <HomeOutlinedIcon
+                                fontSize="large"
+                                className="cursor-pointer text-black-400"
+                            />
+                            <p>Home</p>
+                        </div>
+                    </NavLink>
                 </div>
 
-                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black" onClick={() => navigate("/explore")}>
-                    <ExploreOutlinedIcon
+                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black">
+                    <NavLink to={'/explore'} style={active}>
 
-                        fontSize="large"
-                        className="cursor-pointer text-black-400"
-                    />
-                    <div className="name flex justify-center item-center relative top-1 text-md">
-                        <p>Explore</p>
-                    </div>
+                        <div className="name flex justify-center item-center gap-2 text-md">
+                            <ExploreOutlinedIcon
+
+                                fontSize="large"
+                                className="cursor-pointer text-black-400"
+                            />
+                            <p>Explore</p>
+                        </div>
+                    </NavLink>
                 </div>
 
-                <div className="home flex justify-start item-center gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black" onClick={() => navigate("/bookmark")}>
-                    <BookmarkBorderOutlinedIcon
+                <div className="home flex justify-start item-center gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black" >
+                    <NavLink to={'/bookmark'} style={active}>
 
-                        fontSize="large"
-                        className="cursor-pointer text-black-400"
-                    />
-                    <div className="name flex justify-center item-center relative top-1 text-md">
-                        <p>Bookmark</p>
-                    </div>
+                        <div className="name flex justify-center item-center gap-2 text-md">
+                            <BookmarkBorderOutlinedIcon
+
+                                fontSize="large"
+                                className="cursor-pointer text-black-400"
+                            />
+                            <p>Bookmark</p>
+                        </div>
+                    </NavLink>
                 </div>
 
-                <div className="home flex justify-start item-center gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black" onClick={() => navigate("/liked")}>
-                    <FavoriteIcon
+                <div className="home flex justify-start item-center gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p-1 cursor-pointer  hover:text-black">
+                    <NavLink to={'/liked'} style={active}>
 
-                        fontSize="large"
-                        className="cursor-pointer text-black-400"
-                    />
-                    <div className="name flex justify-center item-center relative top-1 text-md">
-                        <p>Liked</p>
-                    </div>
+                        <div className="name flex justify-center item-center gap-2 text-md">
+                            <FavoriteIcon
+
+                                fontSize="large"
+                                className="cursor-pointer text-black-400"
+                            />
+                            <p>Liked</p>
+                        </div>
+                    </NavLink>
                 </div>
 
                 <div className="home flex justify-start item-center gap-3  cursor-pointer  hover:text-black">

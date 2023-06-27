@@ -5,7 +5,7 @@ import { useGlobalPost } from "../../contexts/post-context";
 import { users } from "../../backend/db/users";
 
 const RightSidebar = () => {
-    const { theme } = useGlobalTheme();
+    const { theme } = useGlobalTheme()
 
     return (
         <div className=" right-side w-[100%] flex justify-around flex-col">
