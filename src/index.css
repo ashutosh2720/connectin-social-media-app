@@ -11,10 +11,11 @@
 
 body {
   margin: 0;
-  /* font-family: 'Cinzel', serif; */
+  font-family: 'Cinzel', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: #000000; */
+  font-size: 1.1rem;
 }
 
 code {

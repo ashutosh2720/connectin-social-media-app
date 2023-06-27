@@ -1,11 +1,13 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useGlobalPost } from "../../contexts/post-context";
 import { useGlobalTheme } from "../../contexts/Theme-context";
 
 const SearchBox = ({ searchInput, setSearchInput }) => {
     const { theme } = useGlobalTheme();
     const { users } = useGlobalPost();
+    const navigate = useNavigate();
+
 
     let searchData = users.filter(({ username }) =>
         username.includes(searchInput)
@@ -25,16 +27,17 @@ const SearchBox = ({ searchInput, setSearchInput }) => {
             {searchInput ? (
                 searchData.length !== 0 ? (
                     <div className="search-data flex flex-col overflow-y-auto max-h-full ">
-                        {searchData.map(({ username, avatarUrl, firstName }) => (
+                        {searchData.map(({ _id, username, avatarUrl, firstName }) => (
                             <Link
                                 className="ind-search-product "
                                 onClick={() => setSearchInput("")}
                             >
-                                <div className="seacrh-item flex  justify-start items-start gap-5 p-2">
+                                <div className="seacrh-item flex  justify-start items-start gap-5 p-2" onClick={() => navigate(`/profile/${username}`)}>
                                     <img
                                         src={avatarUrl}
                                         alt=""
                                         className="rounded-full h-[40px] w-[40px]"
+
 
                                     />
                                     <div className="userDetail flex flex-col ">

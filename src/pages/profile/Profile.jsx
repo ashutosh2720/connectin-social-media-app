@@ -26,30 +26,32 @@ function Profile() {
     const post = postsData.filter((item) => item.username === username);
     const user = users.find((item) => item.username === username);
     console.log(users);
-
-    // const homeData = postsData.filter((post) => post.username === 'adarshbalika')
     return (
         <div className="home flex justify-around items-start h-full w-full sm:flex-wrap ">
             <div className="max-w-50 sticky left-10 top-20  p-9 sm:hidden xs:hidden min-h-full border-r-2 h-screen rounded">
                 <LeftSidebar />
             </div>
             <div className="mid  w-[100%] flex justify-center items-center flex-col  gap-2 ">
-                <div className="profile w-[66%] bg-white flex flex-col justify-center items-center p-4 ">
-                    <div className="profile-detail">
+                <div className={`${theme === "dark-theme"
+                    ? "bg-neutral-900	 text-white"
+                    : "bg-white text-black border rounded-md border-black-800"
+                    }profile w-[50%]  flex flex-col justify-center items-start p-5 gap-2`} >
+                    <div className="profile-detail flex flex-col justify-center items-start gap-3  ">
                         {" "}
                         <img
-                            src="
-                    "
+                            src={user.avatarUrl}
                             alt=""
+                            className="h-[110px] w-[110px] rounded-full"
                         />
-                        <h1>{user?.firstName}</h1>
-                        <h1>{user?.lastName}</h1>
+                        <h1 className="text-3xl text-gray-300">{user?.firstName} {user?.lastName}</h1>
+                        <h1 className=" text-xl text-gray-400">{user.username}</h1>
+
                     </div>
-                    <div className="about">Be carefull</div>
-                    <div className=" w-[50%]  post-folllowig-folloers flex justify-around items-center  ">
-                        <div className="post">post</div>
-                        <div className="folllowers">Followers</div>
-                        <div className="foollowing">Following</div>
+                    <div className="about text-xl text-gray-400">Be carefull</div>
+                    <div className=" w-[100%]  post-folllowig-folloers flex justify-between items-center gap-4 ">
+                        <div className="post text-xl text-gray-400 flex">200 Post</div>
+                        <div className="folllowers text-xl text-gray-400"> 30.5M Followers</div>
+                        <div className="foollowing text-xl text-gray-400">100 Following</div>
                     </div>
                 </div>
 

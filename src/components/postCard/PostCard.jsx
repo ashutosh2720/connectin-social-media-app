@@ -1,7 +1,8 @@
 import React from "react";
 import LeftSidebar from "../../components/leftSidebar/LeftSidebar";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import BookmarksIcon from '@mui/icons-material/Bookmarks';
+import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
+import BookmarkRemoveIcon from '@mui/icons-material/BookmarkRemove';
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
 import LongMenu from "../../components/option/Option";
@@ -18,6 +19,7 @@ import { useGlobalLogin } from "../../contexts/login-context";
 import { useGlobalBookMark } from "../../contexts/bookMark-context";
 import { useGlobalLike } from "../../contexts/liked-context";
 import { useNavigate } from "react-router-dom";
+import { users } from "../../backend/db/users";
 
 
 const PostCard = ({ post }) => {
@@ -25,8 +27,10 @@ const PostCard = ({ post }) => {
     const { addToBooksMark, bookMark, removeBookMark } = useGlobalBookMark();
     const { addToLike } = useGlobalLike()
     const { userDetail } = useGlobalLogin()
-
     const navigate = useNavigate();
+
+    const user = users.find((item) => item.username === post.username)
+    console.log(user)
 
 
 
@@ -36,9 +40,9 @@ const PostCard = ({ post }) => {
             <div className="option flex justify-end items-end ">
                 {post.username === userDetail?.username ? <FadeMenu post={post} /> : ''}
             </div>
-            <div className="user-detail cursor-pointer" onClick={() => navigate(`/profile/${post.username}`)}>
-                <img src={post.avatar} alt="" /> {post.createdAt}
-                <h1>{post?.username}</h1>
+            <div className="user-detail cursor-pointer flex justify-start items-center gap-3" onClick={() => navigate(`/profile/${post.username}`)}>
+                <img src={user.avatarUrl} alt="" className="h-[40px] w-[40px] rounded-full" />
+                <h1 className="text-md font-bold text-gray-600 font-serif">{user?.firstName} {user.lastName}</h1>
 
             </div>
             <div className="content cursor-pointer " onClick={() => navigate(`/PostDesscription/${post._id}`)}>
@@ -51,9 +55,10 @@ const PostCard = ({ post }) => {
                 <div onClick={() => addToLike(post._id)}>
                     <ThumbUpOffAltIcon className="cursor-pointer" />
                 </div>
-                <div onClick={() => bookMark.find((id) => id === post._id) ? removeBookMark(post._id) : addToBooksMark(post._id)}>
+                <div className="
+                cursor-pointer" onClick={() => bookMark.find((id) => id === post._id) ? removeBookMark(post._id) : addToBooksMark(post._id)}>
 
-                    <BookmarksIcon className={`${bookMark.find((id) => id === post._id) ? 'text-black' : ' text-gray-300'} cursor-pointer`} />
+                    {bookMark.find((id) => id === post._id) ? <BookmarkRemoveIcon /> : <BookmarkAddOutlinedIcon className="text-gray-600" />}
                 </div>
                 <div>
                     <ShareOutlinedIcon className="cursor-pointer" />
