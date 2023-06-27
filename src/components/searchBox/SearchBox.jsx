@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useGlobalPost } from "../../contexts/post-context";
 import { useGlobalTheme } from "../../contexts/Theme-context";
 
@@ -18,8 +18,8 @@ const SearchBox = ({ searchInput, setSearchInput }) => {
     return (
         <div
             className={`${theme === "dark-theme"
-                    ? "bg-neutral-900 text-white"
-                    : "bg-white text-black border-2 border-black-800"
+                ? "bg-neutral-900 text-white"
+                : "bg-white text-black border-2 border-black-800"
                 }search-model absolute  top-[50px]  w-[15%] z-300 overflow-y-auto shadow-md rounded-md text-lg`}
         >
             {searchInput ? (
@@ -35,6 +35,7 @@ const SearchBox = ({ searchInput, setSearchInput }) => {
                                         src={avatarUrl}
                                         alt=""
                                         className="rounded-full h-[40px] w-[40px]"
+
                                     />
                                     <div className="userDetail flex flex-col ">
                                         <h1>{firstName}</h1>

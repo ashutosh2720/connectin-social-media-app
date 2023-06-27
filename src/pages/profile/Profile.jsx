@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LeftSidebar from "../../components/leftSidebar/LeftSidebar";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
@@ -15,10 +15,17 @@ import { useGlobalTheme } from "../../contexts/Theme-context";
 import DialogBox from "../../components/dialogBox/DialogBox";
 import { useGlobalPost } from "../../contexts/post-context";
 import PostCard from "../../components/postCard/PostCard";
+import { useParams } from "react-router-dom";
+import { users } from "../../backend/db/users";
 
 function Profile() {
     const { theme } = useGlobalTheme();
-    const { postsData } = useGlobalPost()
+    const { postsData } = useGlobalPost();
+    const { username } = useParams();
+
+    const post = postsData.filter((item) => item.username === username);
+    const user = users.find((item) => item.username === username);
+    console.log(users);
 
     // const homeData = postsData.filter((post) => post.username === 'adarshbalika')
     return (
@@ -28,8 +35,16 @@ function Profile() {
             </div>
             <div className="mid  w-[100%] flex justify-center items-center flex-col  gap-2 ">
                 <div className="profile w-[66%] bg-white flex flex-col justify-center items-center p-4 ">
-                    <div className="profile-detail"> <img src="
-                    " alt="" /> Ashutosh Singh</div>
+                    <div className="profile-detail">
+                        {" "}
+                        <img
+                            src="
+                    "
+                            alt=""
+                        />
+                        <h1>{user?.firstName}</h1>
+                        <h1>{user?.lastName}</h1>
+                    </div>
                     <div className="about">Be carefull</div>
                     <div className=" w-[50%]  post-folllowig-folloers flex justify-around items-center  ">
                         <div className="post">post</div>
@@ -38,12 +53,9 @@ function Profile() {
                     </div>
                 </div>
 
-                {
-                    postsData.map((post) =>
-
-                        <PostCard post={post} />
-                    )
-                }
+                {post.map((post) => (
+                    <PostCard post={post} />
+                ))}
                 <div
                     className={`${theme === "dark-theme"
                         ? "bg-neutral-900  text-white"

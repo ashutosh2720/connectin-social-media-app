@@ -15,7 +15,7 @@ const LeftSidebar = () => {
         <>
             {" "}
             <div className="left flex justify-start item-start pl-10 flex-col gap-5	">
-                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded p- cursor-pointer  hover:text-black  " onClick={() => navigate('/')}>
+                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded  cursor-pointer  hover:text-black" onClick={() => navigate('/')}>
                     <HomeOutlinedIcon
                         fontSize="large"
                         className="cursor-pointer text-black-400"

@@ -17,11 +17,17 @@ import { useGlobalPost } from "../../contexts/post-context";
 import { useGlobalLogin } from "../../contexts/login-context";
 import { useGlobalBookMark } from "../../contexts/bookMark-context";
 import { useGlobalLike } from "../../contexts/liked-context";
+import { useNavigate } from "react-router-dom";
+
 
 const PostCard = ({ post }) => {
+
     const { addToBooksMark, bookMark, removeBookMark } = useGlobalBookMark();
     const { addToLike } = useGlobalLike()
     const { userDetail } = useGlobalLogin()
+
+    const navigate = useNavigate();
+
 
 
 
@@ -30,13 +36,15 @@ const PostCard = ({ post }) => {
             <div className="option flex justify-end items-end ">
                 {post.username === userDetail?.username ? <FadeMenu post={post} /> : ''}
             </div>
-            <div className="user-detail">
+            <div className="user-detail cursor-pointer" onClick={() => navigate(`/profile/${post.username}`)}>
                 <img src={post.avatar} alt="" /> {post.createdAt}
-                <h1>{post.username}</h1>
+                <h1>{post?.username}</h1>
 
             </div>
-            <p>{post.content}</p>
-            <img src={post.mediaURL} alt="" className="rounded-lg" />
+            <div className="content cursor-pointer " onClick={() => navigate(`/PostDesscription/${post._id}`)}>
+                <p>{post?.content}</p>
+                <img src={post?.mediaURL} alt="" className="rounded-lg" />
+            </div>
 
             <hr />
             <div className="socialbtn flex justify-around item start">

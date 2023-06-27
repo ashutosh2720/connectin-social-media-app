@@ -99,10 +99,6 @@ const LoginProvider = ({ children }) => {
             notifySuccess("signup Successfully");
 
 
-            // saving the encodedToken in the localStorage
-            // localStorage.setItem("token", data.encodedToken);
-
-
         } catch (error) {
             console.log(error);
         }

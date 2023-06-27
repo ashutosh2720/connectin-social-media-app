@@ -15,24 +15,22 @@ import { useGlobalTheme } from "../../contexts/Theme-context";
 import DialogBox from "../../components/dialogBox/DialogBox";
 import { useGlobalPost } from "../../contexts/post-context";
 import PostCard from "../../components/postCard/PostCard";
+import { useGlobalLogin } from "../../contexts/login-context";
+import { useParams } from "react-router-dom";
 
-function Explore() {
-    const { theme } = useGlobalTheme();
+function PostDescription() {
     const { postsData } = useGlobalPost()
+    const { postId } = useParams();
+    const { theme } = useGlobalTheme();
+    const post = postsData.find((item) => item._id === postId);
 
     return (
         <div className="home flex justify-around items-start h-full w-full sm:flex-wrap ">
             <div className="max-w-50 sticky left-10 top-20  p-9 sm:hidden xs:hidden min-h-full border-r-2 h-screen rounded">
                 <LeftSidebar />
             </div>
-            <div className="mid w-[100%]  flex justify-center items-center flex-col  gap-2 ">
-
-                {
-                    postsData.map((post) =>
-                        <PostCard post={post} />
-
-                    )
-                }
+            <div className="mid  w-[100%]  flex justify-center items-center flex-col  gap-2 ">
+                <PostCard post={post} />
                 <div
                     className={`${theme === "dark-theme"
                         ? "bg-neutral-900  text-white"
@@ -46,7 +44,7 @@ function Explore() {
                 className={`${theme === "dark-theme"
                     ? "bg-neutral-900 text-white"
                     : "bg-white text-black "
-                    }right max-w-50 sticky right-10 top-12 sm:hidden xs:hidden min-h-full sticky top-20 rounded-md border-l-2 h-screen`}
+                    } right max-w-50  right-5  sm:hidden xs:hidden min-h-full sticky top-20 rounded-md border-l h-screen`}
             >
                 <RightSidebar />
             </div>
@@ -54,4 +52,4 @@ function Explore() {
     );
 }
 
-export default Explore;
+export default PostDescription;
