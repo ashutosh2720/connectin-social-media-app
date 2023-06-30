@@ -30,10 +30,10 @@ function Profile() {
     const { username } = useParams();
     const { userDetail } = useGlobalLogin()
     const { userData, FollowUser, UnfollowUser } = useGlobalUser()
-    console.log(userData)
+
     const post = postsData.filter((item) => item.username === username);
     const user = userData.find((item) => item.username === username);
-    console.log(user)
+
 
 
     return (
@@ -49,7 +49,7 @@ function Profile() {
                     <div className="profile-detail flex flex-col justify-center items-start gap-3  ">
                         {" "}
                         <img
-                            src={user.avatarUrl}
+                            src={user?.avatarUrl}
                             alt=""
                             className="h-[110px] w-[110px] rounded-full"
                         />
@@ -63,7 +63,8 @@ function Profile() {
                         <h1 className=" text-xl text-gray-400">{user.username}</h1>
 
                     </div>
-                    <div className="about text-xl">Be carefull</div>
+                    <div className="about text-xl">{user.bio}</div>
+                    <div className="about text-xl">{user.website}</div>
                     <div className=" w-[100%]  post-folllowig-folloers flex justify-between items-center gap-4 ">
                         <div className="post text-xl flex">200 Post</div>
                         <div className="folllowers text-xl"> 30.5M Followers</div>

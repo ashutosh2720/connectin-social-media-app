@@ -19,15 +19,15 @@ ReactDOM.render(
     <BrowserRouter>
       <ThemeProvider>
         <LoginProvider>
-          <PostProvider>
-            <UserProvider>
+          <UserProvider>
+            <PostProvider>
               <BookMarkProvider>
                 <LikeProvider>
                   <App />
                 </LikeProvider>
               </BookMarkProvider>
-            </UserProvider>
-          </PostProvider>
+            </PostProvider>
+          </UserProvider>
         </LoginProvider>
       </ThemeProvider>
     </BrowserRouter>

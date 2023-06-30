@@ -13,7 +13,6 @@ const UserProvider = ({ children }) => {
         try {
             const { data } = await axios.get(`/api/users`);
             setUserdata(data.users);
-            console.log(data.users);
         } catch (error) {
             console.log(error);
         }
@@ -24,16 +23,15 @@ const UserProvider = ({ children }) => {
         try {
             const { data } = await axios.post(
                 `/api/users/edit`,
-                { postData: userData },
+                { userData: userData },
                 {
                     headers: { authorization: encodedToken },
                 }
             );
 
             Users();
-            setUserdata(data.user);
+            console.log(data.user)
 
-            console.log(userData);
         } catch (err) {
             console.log(err);
         }
@@ -72,7 +70,7 @@ const UserProvider = ({ children }) => {
 
     return (
         <userContext.Provider
-            value={{ userData, setUserdata, EditProfile, FollowUser, UnfollowUser }}
+            value={{ userData, EditProfile, FollowUser, UnfollowUser }}
         >
             {children}
         </userContext.Provider>

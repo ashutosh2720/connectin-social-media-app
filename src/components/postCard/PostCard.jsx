@@ -31,7 +31,7 @@ const PostCard = ({ post }) => {
     const navigate = useNavigate();
 
     const user = userData?.find((item) => item.username === post?.username);
-    console.log(userData);
+
 
     return (
         <div className="content w-[50%] flex flex-col gap-2  shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md xs:w-full sm:w-full p-3">
@@ -40,7 +40,7 @@ const PostCard = ({ post }) => {
             </div>
             <div
                 className="user-detail cursor-pointer flex justify-start items-center gap-3"
-                onClick={() => navigate(`/profile/${post.username}`)}
+                onClick={() => navigate(`/profile/${post?.username}`)}
             >
                 <img
                     src={user?.avatarUrl}
@@ -48,7 +48,7 @@ const PostCard = ({ post }) => {
                     className="h-[40px] w-[40px] rounded-full"
                 />
                 <h1 className="text-md font-bold text-gray-600 font-serif">
-                    {user?.firstName} {user.lastName}
+                    {user?.firstName} {user?.lastName}
                 </h1>
             </div>
             <div
