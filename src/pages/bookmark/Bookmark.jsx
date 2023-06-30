@@ -30,8 +30,8 @@ const Bookmark = () => {
             </div>
             <div className="mid  xs:w-[100%]  flex justify-center items-center flex-col  gap-2 ">
 
-                {
-                    bookMark.map((postId) => (
+                {bookMark.length ?
+                    (bookMark.map((postId) => (
 
                         <PostCard
                             post={postsData?.find(
@@ -39,7 +39,7 @@ const Bookmark = () => {
                             )}
                         />
 
-                    ))
+                    ))) : <div>Bookmark is Empty</div>
                 }
                 <div
                     className={`${theme === "dark-theme"

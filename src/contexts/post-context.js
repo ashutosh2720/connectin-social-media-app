@@ -1,11 +1,17 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { useGlobalLogin } from "./login-context";
 
 const postContext = createContext();
 
 const PostProvider = ({ children }) => {
     const [postsData, setPostsData] = useState([]);
+    const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [users, setUsers] = useState([]);
+
+    const Profilehandler = () => {
+        setIsProfileOpen(!isProfileOpen);
+    };
 
     const Posts = async () => {
         try {
@@ -58,12 +64,33 @@ const PostProvider = ({ children }) => {
             // notifyWarn('please login to add items')
         }
     };
-    const EditPost = async (post) => {
+    const EditPost = async (post, postId) => {
         const encodedToken = localStorage.getItem("anixCartUserToken");
         try {
-            const { data } = await axios.post(`/api/posts/edit/${post}`, { postData: post }, {
-                headers: { authorization: encodedToken },
-            });
+            const { data } = await axios.post(
+                `/api/posts/edit/${postId}`,
+                { postData: post },
+                {
+                    headers: { authorization: encodedToken },
+                }
+            );
+            console.log(data);
+
+            setPostsData(data.posts);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+    const EditProfile = async (userData) => {
+        const encodedToken = localStorage.getItem("anixCartUserToken");
+        try {
+            const { data } = await axios.post(
+                `/api/users/edit`,
+                { postData: userData },
+                {
+                    headers: { authorization: encodedToken },
+                }
+            );
             console.log(data);
 
             setPostsData(data.posts);
@@ -81,12 +108,14 @@ const PostProvider = ({ children }) => {
         <postContext.Provider
             value={{
                 postsData,
-
                 NewPost,
                 DeletePost,
                 EditPost,
                 users,
-                Users
+                Users,
+                isProfileOpen,
+                setIsProfileOpen,
+                Profilehandler,
             }}
         >
             {children}

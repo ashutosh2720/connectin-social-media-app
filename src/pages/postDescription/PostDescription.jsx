@@ -31,6 +31,17 @@ function PostDescription() {
             </div>
             <div className="mid  w-[100%]  flex justify-center items-center flex-col  gap-2 ">
                 <PostCard post={post} />
+                <div className="comments shadow-md p-10 w-[550px] flex flex-col gap-2">
+                    <p className="text-gray-400">comments</p>
+                    {
+                        post?.comments?.map((comment) =>
+                            <div className="commentData">
+
+                                <h1 className="text-2xl">{comment.username}</h1>
+                                <h1>{comment.text}</h1>
+                            </div>)
+                    }
+                </div>
                 <div
                     className={`${theme === "dark-theme"
                         ? "bg-neutral-900  text-white"

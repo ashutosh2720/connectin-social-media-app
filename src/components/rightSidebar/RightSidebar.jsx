@@ -27,7 +27,7 @@ const RightSidebar = () => {
                 <h1>Suggestion for you</h1>
                 {
                     users.map((user) =>
-                        <div className="seacrh-item flex  justify-start items-start gap-3 p-1">
+                        <div className="seacrh-item flex  justify-between items-start gap-3 p-1">
                             <img
                                 src={user.avatarUrl}
                                 alt=""
@@ -39,7 +39,7 @@ const RightSidebar = () => {
                                 <h1>{user.firstName}</h1>
                                 <p className=" text-xs"> {user.username}</p>
                             </div>
-                            <button></button>
+                            <button className="border rounded-md pl-2 pr-2">follow</button>
                         </div>)
                 }
             </div>

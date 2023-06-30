@@ -51,11 +51,11 @@ BootstrapDialogTitle.propTypes = {
     onClose: PropTypes.func.isRequired,
 };
 
-export default function DialogBox(post) {
+export default function DialogBox({ post }) {
     console.log(post)
 
     const [open, setOpen] = React.useState(false);
-    const [content, setContent] = useState(post.post.content); // Initial content state
+    const [content, setContent] = useState(post.content); // Initial content state
     const [isEditing, setIsEditing] = useState(false); // State to track editing mode
 
 
@@ -97,7 +97,7 @@ export default function DialogBox(post) {
                     <textarea type="text" name="" id="" value={content} className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black'}p-10 resize-none outline-none border-none`} onChange={handleInputChange} />
 
                     <DialogActions>
-                        <h1 className="bg-cyan-800 text-white border rounded pl-2 pr-2 pb-1 hover:bg-cyan-600 cursor-pointer " onClick={() => EditPost({ username: post.username, content: content })}>
+                        <h1 className="bg-cyan-800 text-white border rounded pl-2 pr-2 pb-1 hover:bg-cyan-600 cursor-pointer " onClick={() => EditPost({ content: content }, post._id)}>
                             update
                         </h1>
                     </DialogActions>

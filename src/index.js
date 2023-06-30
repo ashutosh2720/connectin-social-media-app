@@ -9,6 +9,7 @@ import { LoginProvider } from "./contexts/login-context";
 import { PostProvider } from "./contexts/post-context";
 import { BookMarkProvider } from "./contexts/bookMark-context";
 import { LikeProvider } from "./contexts/liked-context";
+import { UserProvider } from "./contexts/user-context";
 
 // Call make Server
 makeServer();
@@ -19,11 +20,13 @@ ReactDOM.render(
       <ThemeProvider>
         <LoginProvider>
           <PostProvider>
-            <BookMarkProvider>
-              <LikeProvider>
-                <App />
-              </LikeProvider>
-            </BookMarkProvider>
+            <UserProvider>
+              <BookMarkProvider>
+                <LikeProvider>
+                  <App />
+                </LikeProvider>
+              </BookMarkProvider>
+            </UserProvider>
           </PostProvider>
         </LoginProvider>
       </ThemeProvider>
