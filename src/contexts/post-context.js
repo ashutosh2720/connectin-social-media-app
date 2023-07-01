@@ -109,6 +109,7 @@ const PostProvider = ({ children }) => {
             value={{
                 postsData,
                 NewPost,
+                Posts,
                 DeletePost,
                 EditPost,
                 users,

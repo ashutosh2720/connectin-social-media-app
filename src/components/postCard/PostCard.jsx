@@ -8,6 +8,7 @@ import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
 import LongMenu from "../../components/option/Option";
 import FadeMenu from "../../components/option/Option";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import BottomSide from "../../components/bottomSideBar/BottomSide";
 import AccountMenu from "../../components/accountMenu/AccountMenu";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
@@ -24,11 +25,13 @@ import { useGlobalUser } from "../../contexts/user-context";
 
 const PostCard = ({ post }) => {
     const { addToBooksMark, bookMark, removeBookMark } = useGlobalBookMark();
-    const { addToLike } = useGlobalLike();
+    const { addToLike, disLike } = useGlobalLike();
     const { userDetail } = useGlobalLogin();
     const { userData } = useGlobalUser();
 
     const navigate = useNavigate();
+
+    const isLiked = post.likes.likedBy.find((item) => item._id === userDetail._id)
 
     const user = userData?.find((item) => item.username === post?.username);
 
@@ -61,8 +64,8 @@ const PostCard = ({ post }) => {
 
             <hr />
             <div className="socialbtn flex justify-around item start">
-                <div onClick={() => addToLike(post._id)}>
-                    {post?.likes?.likeCount} <ThumbUpOffAltIcon className="cursor-pointer" />
+                <div onClick={() => isLiked ? disLike(post._id) : addToLike(post._id)}>
+                    {post?.likes?.likeCount} {isLiked ? <ThumbUpIcon className="cursor-pointer  text-cyan-600" /> : <ThumbUpOffAltIcon className="cursor-pointer" />}
                 </div>
                 <div
                     className="

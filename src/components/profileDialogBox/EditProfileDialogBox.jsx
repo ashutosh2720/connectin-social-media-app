@@ -6,7 +6,6 @@ import { useGlobalUser } from '../../contexts/user-context'
 import { useGlobalTheme } from '../../contexts/Theme-context'
 
 function EditProfileDialogBox({ user }) {
-
     const { Profilehandler } = useGlobalPost()
     const { theme } = useGlobalTheme()
     const { EditProfile } = useGlobalUser()
@@ -26,6 +25,7 @@ function EditProfileDialogBox({ user }) {
             <div className="content flex flex-col justify-around items-start p-3 shadow-md gap-5 rounded-md ">
                 <div className="avtar flex justify-center items-center gap-2">
                     <h1>Avtar</h1>
+                    <input type="file" name="" id="" className='cursor-pointer' />
                     <img src={user?.avatarUrl} alt="" className='h-[40px] w-[40px] rounded-full' />
                 </div>
                 <div className="name flex justify-center items-center gap-2">
@@ -48,7 +48,7 @@ function EditProfileDialogBox({ user }) {
                         } pl-2  pr-2 border`} onChange={(e) => setWeb(e.target.value)} />
                 </div>
                 <div className="update flex justify-end items-end">
-                    <h1 className='border rounded-md  pl-2 pr-2 text-right cursor-pointer' onClick={updatedhandler} >Update</h1>
+                    <h1 className='border rounded-md  pl-2 pr-2 text-right cursor-pointer' onClick={updatedhandler}>Update</h1>
                 </div>
             </div>
         </div>
