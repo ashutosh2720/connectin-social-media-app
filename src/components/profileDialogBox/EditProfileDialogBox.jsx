@@ -3,10 +3,12 @@ import { useGlobalLogin } from '../../contexts/login-context'
 import { useGlobalPost } from '../../contexts/post-context'
 import { useState } from 'react'
 import { useGlobalUser } from '../../contexts/user-context'
+import { useGlobalTheme } from '../../contexts/Theme-context'
 
 function EditProfileDialogBox({ user }) {
 
     const { Profilehandler } = useGlobalPost()
+    const { theme } = useGlobalTheme()
     const { EditProfile } = useGlobalUser()
     const [bio, setBio] = useState(user.bio)
     const [web, setWeb] = useState(user.website)
@@ -17,7 +19,10 @@ function EditProfileDialogBox({ user }) {
     }
 
     return (
-        <div className='  fixed bg-white top-[30%] left-[50%]' >
+        <div className={` ${theme === "dark-theme"
+            ? "bg-neutral-900 shadow-slate-200 rounded-md border border-white	 text-white"
+            : "bg-white text-black border-2 border-black-800 shadow-black"
+            } fixed top-[30%] left-[40%]`} >
             <div className="content flex flex-col justify-around items-start p-3 shadow-md gap-5 rounded-md ">
                 <div className="avtar flex justify-center items-center gap-2">
                     <h1>Avtar</h1>
@@ -27,14 +32,20 @@ function EditProfileDialogBox({ user }) {
                     <h1>Name : </h1> <h1>{user?.firstName} {user?.lastName}</h1>
                 </div>
                 <div className="username flex justify-center items-center gap-2">
-                    <h1>Username:</h1> <h1>{user?.username}</h1>
+                    <h1>Username:</h1> <h1  >{user?.username}</h1>
                 </div>
                 <div className="bio flex justify-center items-center gap-2">
-                    <h1>Bio: </h1> <input type="text" value={bio} className='border' onChange={(e) => setBio(e.target.value)} />
+                    <h1>Bio: </h1> <input type="text" value={bio} className={`${theme === "dark-theme"
+                        ? "bg-neutral-900	 text-white"
+                        : "bg-white text-black border-2 border-black-800"
+                        } pl-2 border`} claN onChange={(e) => setBio(e.target.value)} />
                 </div>
                 <div className="website flex justify-center items-center gap-2">
                     <h1>Website: </h1>
-                    <input type="text" value={web} className='border' onChange={(e) => setWeb(e.target.value)} />
+                    <input type="text" value={web} className={`${theme === "dark-theme"
+                        ? "bg-neutral-900	 text-white"
+                        : "bg-white text-black border-2 border-black-800"
+                        } pl-2  pr-2 border`} onChange={(e) => setWeb(e.target.value)} />
                 </div>
                 <div className="update flex justify-end items-end">
                     <h1 className='border rounded-md  pl-2 pr-2 text-right cursor-pointer' onClick={updatedhandler} >Update</h1>
