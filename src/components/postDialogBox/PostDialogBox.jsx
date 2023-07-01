@@ -24,6 +24,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     },
 }));
 
+
 function BootstrapDialogTitle(props) {
     const { children, onClose, ...other } = props;
 
@@ -63,6 +64,13 @@ export default function PostDialogBox() {
     const { NewPost } = useGlobalPost()
     const [open, setOpen] = React.useState(false);
 
+    function handlePost() {
+        NewPost({ username: userDetail.username, content: newPost })
+        setOpen(false);
+
+
+    }
+
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -85,7 +93,9 @@ export default function PostDialogBox() {
                     <hr className='w-[100%]' />
                     <DialogActions>
 
-                        <h1 className="bg-cyan-800  text-white border rounded pl-2 pr-2 pb-1 hover:bg-cyan-600 cursor-pointer" onClick={() => NewPost({ username: userDetail.username, content: newPost })}>
+                        <h1 className="bg-cyan-800  text-white border rounded pl-2 pr-2 pb-1 hover:bg-cyan-600 cursor-pointer" onClick={handlePost}
+
+                        >
                             Post
                         </h1>
                     </DialogActions>

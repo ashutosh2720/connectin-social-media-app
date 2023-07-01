@@ -2,13 +2,17 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useGlobalLogin } from "./login-context";
 
+
 const postContext = createContext();
 
 const PostProvider = ({ children }) => {
+    const { notifySuccess } = useGlobalLogin()
+
+
     const [postsData, setPostsData] = useState([]);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [users, setUsers] = useState([]);
-
+    // const notifySuccess = (content) => toast.success(content, toastify);
     const Profilehandler = () => {
         setIsProfileOpen(!isProfileOpen);
     };
@@ -40,6 +44,7 @@ const PostProvider = ({ children }) => {
             );
 
             setPostsData(data.posts);
+            notifySuccess('post created sucessfully')
 
             // notifySuccess("Item added to cart");
         } catch (err) {
@@ -56,6 +61,7 @@ const PostProvider = ({ children }) => {
             });
 
             setPostsData(data.posts);
+            notifySuccess('post deleted sucessfully')
 
             // notifySuccess("Item added to cart");
         } catch (err) {
@@ -77,6 +83,7 @@ const PostProvider = ({ children }) => {
             console.log(data);
 
             setPostsData(data.posts);
+            notifySuccess('post edited sucessfully')
         } catch (err) {
             console.log(err);
         }
@@ -94,6 +101,7 @@ const PostProvider = ({ children }) => {
             console.log(data);
 
             setPostsData(data.posts);
+            notifySuccess('profile updated sucessfully')
         } catch (err) {
             console.log(err);
         }

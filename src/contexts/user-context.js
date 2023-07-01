@@ -3,16 +3,20 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
+import { useGlobalLogin } from "./login-context";
 
 const userContext = createContext();
 
 const UserProvider = ({ children }) => {
     const [userData, setUserdata] = useState([]);
+    const { notifySuccess } = useGlobalLogin()
+
 
     const Users = async () => {
         try {
             const { data } = await axios.get(`/api/users`);
             setUserdata(data.users);
+            console.log(data.users)
         } catch (error) {
             console.log(error);
         }
@@ -28,7 +32,7 @@ const UserProvider = ({ children }) => {
                     headers: { authorization: encodedToken },
                 }
             );
-
+            notifySuccess('profile updated successfully')
             Users();
             console.log(data.user)
 
@@ -47,6 +51,7 @@ const UserProvider = ({ children }) => {
             Users()
 
             console.log(data);
+            notifySuccess('followed user')
         } catch (error) {
             console.log(error);
         }
@@ -59,6 +64,7 @@ const UserProvider = ({ children }) => {
                 headers: { authorization: encodedToken },
             });
             Users();
+            notifySuccess('unfollowed user ')
             console.log(data)
         } catch (error) {
             console.log(error);
