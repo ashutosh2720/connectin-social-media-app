@@ -22,11 +22,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/mockman" element={<Mockman />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/bookmark" element={<Bookmark />} />
         <Route path="/liked" element={<LikedPost />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="/profile/:username" element={<Profile />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/error" element={<Error />} />

@@ -83,7 +83,7 @@ const PostCard = ({ post }) => {
                     <ShareOutlinedIcon className="cursor-pointer" />
                 </div>
                 <div>
-                    {post.comments.length} <CommentOutlinedIcon className="cursor-pointer" />
+                    <CommentOutlinedIcon className="cursor-pointer" />
                 </div>
             </div>
         </div>

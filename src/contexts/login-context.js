@@ -1,11 +1,16 @@
 import axios from "axios";
 import React, { useState, createContext, useContext, useEffect } from "react";
+import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const loginContext = createContext();
 
+
 const LoginProvider = ({ children }) => {
+
+    const navigate = useNavigate();
     const [userToken, setUserToken] = useState();
     const [userDetail, setUserDetail] = useState();
     const [input, setInput] = useState({
@@ -36,6 +41,9 @@ const LoginProvider = ({ children }) => {
             setUserToken(token);
             setUserDetail(JSON.parse(localStorage.getItem("foundUser")));
 
+        }
+        else {
+            navigate('/')
         }
     }, [userToken]);
 
@@ -78,6 +86,8 @@ const LoginProvider = ({ children }) => {
             userName: "",
             password: "",
         });
+        navigate('/home')
+
     };
 
     const logoutUser = () => {

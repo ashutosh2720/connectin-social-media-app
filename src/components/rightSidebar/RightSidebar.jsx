@@ -3,9 +3,17 @@ import { useGlobalTheme } from "../../contexts/Theme-context";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
 import { useGlobalPost } from "../../contexts/post-context";
 import { users } from "../../backend/db/users";
+import { useGlobalUser } from "../../contexts/user-context";
+import { useGlobalLogin } from "../../contexts/login-context";
 
 const RightSidebar = () => {
     const { theme } = useGlobalTheme()
+    const { userDetail } = useGlobalLogin()
+    const { userData, FollowUser } = useGlobalUser()
+
+    // const isFollowing = userData?.followers.find(user => user?._id === userDetail?._id)
+
+
 
     return (
         <div className=" right-side w-[100%] flex justify-around flex-col">
@@ -26,7 +34,7 @@ const RightSidebar = () => {
             >
                 <h1>Suggestion for you</h1>
                 {
-                    users.map((user) =>
+                    userData.map((user) =>
                         <div className="seacrh-item flex  justify-between items-start gap-3 p-1">
                             <img
                                 src={user.avatarUrl}
@@ -39,8 +47,10 @@ const RightSidebar = () => {
                                 <h1>{user.firstName}</h1>
                                 <p className=" text-xs"> {user.username}</p>
                             </div>
-                            <button className="border rounded-md pl-2 pr-2">follow</button>
-                        </div>)
+                            <button className="border rounded-md pl-2 pr-2" onClick={() => FollowUser(user._id)} >follow</button>
+                        </div>
+
+                    )
                 }
             </div>
         </div>

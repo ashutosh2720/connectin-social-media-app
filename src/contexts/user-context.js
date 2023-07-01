@@ -41,9 +41,10 @@ const UserProvider = ({ children }) => {
         const encodedToken = localStorage.getItem("anixCartUserToken");
 
         try {
-            const { data } = await axios.post(`/api/users/follow/${userId}`, {
+            const { data } = await axios.post(`/api/users/follow/${userId}`, {}, {
                 headers: { authorization: encodedToken },
             });
+            Users()
 
             console.log(data);
         } catch (error) {
@@ -54,11 +55,11 @@ const UserProvider = ({ children }) => {
     const UnfollowUser = async (userId) => {
         const encodedToken = localStorage.getItem("anixCartUserToken");
         try {
-            const { data } = await axios.post(`/api/users/unfollow/${userId}`, {
+            const { data } = await axios.post(`/api/users/unfollow/${userId}`, {}, {
                 headers: { authorization: encodedToken },
             });
-            setUserdata(data.users);
-            console.log(data.users);
+            Users();
+            console.log(data)
         } catch (error) {
             console.log(error);
         }

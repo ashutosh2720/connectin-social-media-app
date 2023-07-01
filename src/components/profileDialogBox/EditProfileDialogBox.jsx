@@ -11,6 +11,11 @@ function EditProfileDialogBox({ user }) {
     const [bio, setBio] = useState(user.bio)
     const [web, setWeb] = useState(user.website)
 
+    const updatedhandler = () => {
+        EditProfile({ ...user, bio: bio, website: web })
+        Profilehandler()
+    }
+
     return (
         <div className='  fixed bg-white top-[30%] left-[50%]' >
             <div className="content flex flex-col justify-around items-start p-3 shadow-md gap-5 rounded-md ">
@@ -32,7 +37,7 @@ function EditProfileDialogBox({ user }) {
                     <input type="text" value={web} className='border' onChange={(e) => setWeb(e.target.value)} />
                 </div>
                 <div className="update flex justify-end items-end">
-                    <h1 className='border rounded-md  pl-2 pr-2 text-right cursor-pointer' onClick={() => EditProfile({ ...user, bio: bio, website: web })} >Update</h1>
+                    <h1 className='border rounded-md  pl-2 pr-2 text-right cursor-pointer' onClick={updatedhandler} >Update</h1>
                 </div>
             </div>
         </div>

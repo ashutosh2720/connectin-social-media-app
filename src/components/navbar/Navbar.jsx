@@ -26,8 +26,8 @@ const Navbar = () => {
     return (
         <nav
             className={`${theme === "dark-theme"
-                    ? "bg-neutral-900	 text-white"
-                    : "bg-white text-black border-2 border-black-800"
+                ? "bg-neutral-900	 text-white"
+                : "bg-white text-black border-2 border-black-800"
                 } sticky top-0  min-w-full z-10 flex items-center justify-around h-16 border-2 border-slate-400	 gap-5 pl-10 pr-3`}
         >
             <div className="flex items-center">
@@ -52,8 +52,8 @@ const Navbar = () => {
                     onChange={(e) => setSearchInput(e.target.value)}
                     value={searchInput}
                     className={`${theme === "dark-theme"
-                            ? "bg-neutral-900 text-white"
-                            : "bg-white text-black border-2 border-black"
+                        ? "bg-neutral-900 text-white"
+                        : "bg-white text-black border-2 border-black"
                         } rounded-md     h-10  border-2 border-white-100 pl-3 pr-3 outline-none`}
                 />
                 <SearchBox searchInput={searchInput} setSearchInput={setSearchInput} />
@@ -70,16 +70,7 @@ const Navbar = () => {
                             <Tooltip title="account">
                                 <AccountMenu />
                             </Tooltip>
-                        ) : (
-                            <Tooltip title="account">
-                                <button
-                                    onClick={() => navigate("/login")}
-                                    className="border rounded pl-2 pr-2 pb-1 bg-cyan-700 text-white hover:bg-blue-900"
-                                >
-                                    Login
-                                </button>
-                            </Tooltip>
-                        )}
+                        ) : ''}
                     </div>
                 </div>
             </div>
