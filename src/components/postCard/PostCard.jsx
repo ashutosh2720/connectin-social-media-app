@@ -62,7 +62,7 @@ const PostCard = ({ post }) => {
             <hr />
             <div className="socialbtn flex justify-around item start">
                 <div onClick={() => addToLike(post._id)}>
-                    <ThumbUpOffAltIcon className="cursor-pointer" />
+                    {post?.likes?.likeCount} <ThumbUpOffAltIcon className="cursor-pointer" />
                 </div>
                 <div
                     className="
@@ -83,7 +83,7 @@ const PostCard = ({ post }) => {
                     <ShareOutlinedIcon className="cursor-pointer" />
                 </div>
                 <div>
-                    <CommentOutlinedIcon className="cursor-pointer" />
+                    {post?.comments?.length} < CommentOutlinedIcon className="cursor-pointer" />
                 </div>
             </div>
         </div>
