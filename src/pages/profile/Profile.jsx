@@ -34,6 +34,7 @@ function Profile() {
     const post = postsData.filter((item) => item.username === username);
     const user = userData.find((item) => item.username === username);
 
+
     const isFollowing = user?.followers?.find(
         (user) => user?._id === userDetail?._id
     );
@@ -81,14 +82,14 @@ function Profile() {
                             )}
                             {isProfileOpen && <EditProfileDialogBox user={user} />}
                         </div>
-                        <h1 className=" text-xl text-gray-400">{user.username}</h1>
+                        <h1 className=" text-xl text-gray-400">{user?.username}</h1>
                     </div>
-                    <div className="about text-xl">{user.bio}</div>
-                    <div className="about text-xl">{user.website}</div>
+                    <div className="about text-xl">{user?.bio}</div>
+                    <div className="about text-xl">{user?.website}</div>
                     <div className=" w-[100%]  post-folllowig-folloers flex justify-between items-center gap-4 ">
-                        <div className="post text-xl flex">200 Post</div>
-                        <div className="folllowers text-xl"> 30.5M Followers</div>
-                        <div className="foollowing text-xl">100 Following</div>
+                        <div className="post text-xl flex"><h1 className="text-xl text-gray-500">{post?.length} posts</h1></div>
+                        <div className="folllowers text-xl"><h1 className="text-xl text-gray-500"> {user?.followers?.length} Followers</h1></div>
+                        <div className="foollowing text-xl"><h1 className="text-xl text-gray-500">  {user?.following?.length} Following</h1></div>
                     </div>
                 </div>
 
