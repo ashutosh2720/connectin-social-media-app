@@ -34,13 +34,13 @@ function LikedPost() {
                 <LeftSidebar />
             </div>
             <div className="mid  w-[100%] flex justify-center items-center flex-col  gap-2 ">
-                {likedPost?.map((post) => (
+                {likedPost?.length ? likedPost.map((post) => (
                     <PostCard post={post} />
-                ))}
+                )) : <div className="empty"><h1 className="text-2xl">Nothing in Liked page</h1></div>}
                 <div
                     className={`${theme === "dark-theme"
-                            ? "bg-neutral-900  text-white"
-                            : "bg-white text-black border-2 border-black"
+                        ? "bg-neutral-900  text-white"
+                        : "bg-white text-black border-2 border-black"
                         }bottom fixed bottom-0 min-w-full bg-black lg:hidden xl:hidden 2xl:hidden flex justify-around items-center`}
                 >
                     <BottomSide />
@@ -48,8 +48,8 @@ function LikedPost() {
             </div>
             <div
                 className={`${theme === "dark-theme"
-                        ? "bg-neutral-900 text-white"
-                        : "bg-white text-black "
+                    ? "bg-neutral-900 text-white"
+                    : "bg-white text-black "
                     }right max-w-50 sticky right-10 top-12 sm:hidden xs:hidden min-h-full sticky top-20 rounded-md border-l-2 h-screen`}
             >
                 <RightSidebar />

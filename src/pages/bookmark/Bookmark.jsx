@@ -39,7 +39,7 @@ const Bookmark = () => {
                             )}
                         />
 
-                    ))) : <div>Bookmark is Empty</div>
+                    ))) : <div><h1 className='text-2xl'>Bookmark is Empty</h1></div>
                 }
                 <div
                     className={`${theme === "dark-theme"

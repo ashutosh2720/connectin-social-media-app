@@ -125,6 +125,7 @@ const LoginProvider = ({ children }) => {
                 setInput,
                 dummyData,
                 userDetail,
+                setUserDetail,
                 userToken,
                 loginAction,
                 logoutUser,

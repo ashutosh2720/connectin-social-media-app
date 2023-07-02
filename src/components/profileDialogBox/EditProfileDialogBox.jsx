@@ -6,15 +6,23 @@ import { useGlobalUser } from '../../contexts/user-context'
 import { useGlobalTheme } from '../../contexts/Theme-context'
 
 function EditProfileDialogBox({ user }) {
+
+    const [avatar, setAvatar] = useState(user.avatarUrl)
     const { Profilehandler } = useGlobalPost()
     const { theme } = useGlobalTheme()
     const { EditProfile } = useGlobalUser()
     const [bio, setBio] = useState(user.bio)
     const [web, setWeb] = useState(user.website)
 
+
     const updatedhandler = () => {
-        EditProfile({ ...user, bio: bio, website: web })
+        EditProfile({ ...user, avatarUrl: avatar, bio: bio, website: web })
         Profilehandler()
+
+    }
+    const mediahandler = (e) => {
+        const objectURL = URL.createObjectURL(e.target.files[0])
+        setAvatar(objectURL)
     }
 
     return (
@@ -25,8 +33,8 @@ function EditProfileDialogBox({ user }) {
             <div className="content flex flex-col justify-around items-start p-3 shadow-md gap-5 rounded-md ">
                 <div className="avtar flex justify-center items-center gap-2">
                     <h1>Avtar</h1>
-                    <input type="file" name="" id="" className='cursor-pointer' />
-                    <img src={user?.avatarUrl} alt="" className='h-[40px] w-[40px] rounded-full' />
+                    <input type="file" name="" id="" className='cursor-pointer' onChange={mediahandler} />
+                    <img src={avatar} alt="" className='h-[40px] w-[40px] rounded-full' />
                 </div>
                 <div className="name flex justify-center items-center gap-2">
                     <h1>Name : </h1> <h1>{user?.firstName} {user?.lastName}</h1>

@@ -16,7 +16,7 @@ export const users = [
     bookmarks: [],
     avatarUrl:
       "https://i.postimg.cc/Gmy05qwV/IMG-20220817-042650-595.jpg",
-    website: "https://romabulani.netlify.app/",
+    website: "https://ashutosh.netlify.app/",
     createdAt: "2022-01-01T10:55:06+05:30",
     updatedAt: formatDate(),
   },

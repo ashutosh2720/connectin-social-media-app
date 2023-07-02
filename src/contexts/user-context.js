@@ -9,14 +9,14 @@ const userContext = createContext();
 
 const UserProvider = ({ children }) => {
     const [userData, setUserdata] = useState([]);
-    const { notifySuccess } = useGlobalLogin()
-
+    const { notifySuccess, setUserDetail } = useGlobalLogin();
+    const { userDetail } = useGlobalLogin();
 
     const Users = async () => {
         try {
             const { data } = await axios.get(`/api/users`);
             setUserdata(data.users);
-            console.log(data.users)
+            console.log(data.users);
         } catch (error) {
             console.log(error);
         }
@@ -32,10 +32,9 @@ const UserProvider = ({ children }) => {
                     headers: { authorization: encodedToken },
                 }
             );
-            notifySuccess('profile updated successfully')
+            notifySuccess("profile updated successfully");
             Users();
-            console.log(data.user)
-
+            console.log(data.user);
         } catch (err) {
             console.log(err);
         }
@@ -45,13 +44,18 @@ const UserProvider = ({ children }) => {
         const encodedToken = localStorage.getItem("anixCartUserToken");
 
         try {
-            const { data } = await axios.post(`/api/users/follow/${userId}`, {}, {
-                headers: { authorization: encodedToken },
-            });
-            Users()
+            const { data } = await axios.post(
+                `/api/users/follow/${userId}`,
+                {},
+                {
+                    headers: { authorization: encodedToken },
+                }
+            );
+            Users();
 
-            console.log(data);
-            notifySuccess('followed user')
+            setUserDetail(data.user);
+
+            notifySuccess("followed user");
         } catch (error) {
             console.log(error);
         }
@@ -60,17 +64,27 @@ const UserProvider = ({ children }) => {
     const UnfollowUser = async (userId) => {
         const encodedToken = localStorage.getItem("anixCartUserToken");
         try {
-            const { data } = await axios.post(`/api/users/unfollow/${userId}`, {}, {
-                headers: { authorization: encodedToken },
-            });
+            const { data } = await axios.post(
+                `/api/users/unfollow/${userId}`,
+                {},
+                {
+                    headers: { authorization: encodedToken },
+                }
+            );
             Users();
-            notifySuccess('unfollowed user ')
-            console.log(data)
+            setUserDetail(data.user);
+            notifySuccess("unfollowed user ");
         } catch (error) {
             console.log(error);
         }
     };
 
+    const isFollow = (username) => {
+        return (
+            userDetail?.followers?.some((user) => user?.username === username) ||
+            userDetail?.following?.some((user) => user?.username === username)
+        );
+    };
 
     useEffect(() => {
         Users();
@@ -78,7 +92,7 @@ const UserProvider = ({ children }) => {
 
     return (
         <userContext.Provider
-            value={{ userData, EditProfile, FollowUser, UnfollowUser }}
+            value={{ userData, EditProfile, FollowUser, UnfollowUser, isFollow }}
         >
             {children}
         </userContext.Provider>

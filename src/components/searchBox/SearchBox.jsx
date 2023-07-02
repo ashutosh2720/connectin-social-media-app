@@ -30,7 +30,7 @@ const SearchBox = ({ searchInput, setSearchInput }) => {
                 searchData.length !== 0 ? (
                     <div className="search-data flex flex-col overflow-y-auto max-h-full ">
                         {searchData.map(({ _id, username, avatarUrl, firstName }) => (
-                            <Link
+                            <div
                                 className="ind-search-product "
                                 onClick={() => setSearchInput("")}
                             >
@@ -38,7 +38,8 @@ const SearchBox = ({ searchInput, setSearchInput }) => {
                                     <img
                                         src={avatarUrl}
                                         alt=""
-                                        className="rounded-full h-[40px] w-[40px]"
+                                        className="rounded-full h-[40px] w-[40px] cursor-pointer"
+                                        onClick={() => navigate(`/profile/${username}`)}
 
 
                                     />
@@ -48,7 +49,7 @@ const SearchBox = ({ searchInput, setSearchInput }) => {
                                     </div>
                                 </div>
                                 <hr className="w-[100%]" />
-                            </Link>
+                            </div>
                         ))}
                     </div>
                 ) : (

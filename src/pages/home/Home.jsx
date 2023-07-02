@@ -16,13 +16,16 @@ import DialogBox from "../../components/dialogBox/DialogBox";
 import { useGlobalPost } from "../../contexts/post-context";
 import PostCard from "../../components/postCard/PostCard";
 import { useGlobalLogin } from "../../contexts/login-context";
+import { useGlobalUser } from "../../contexts/user-context";
 
 function Home() {
     const { theme } = useGlobalTheme();
     const { postsData } = useGlobalPost()
     const { userDetail } = useGlobalLogin()
-    console.log(userDetail)
-    const homeData = postsData?.filter((post) => post.username === userDetail.username)
+    const { isFollow } = useGlobalUser()
+
+    const homeData = postsData?.filter(post => isFollow(post?.username) || post?.username === userDetail?.username)
+    console.log(homeData)
     return (
         <div className="home flex justify-around items-start h-full w-full sm:flex-wrap ">
             <div className="max-w-50 sticky left-10 top-20  p-9 sm:hidden xs:hidden min-h-full border-r-2 h-screen rounded">
@@ -31,7 +34,7 @@ function Home() {
             <div className="mid  w-[100%]  flex justify-center items-center flex-col  gap-2 ">
 
                 {
-                    homeData.map((post) =>
+                    homeData?.map((post) =>
 
                         <PostCard post={post} />
                     )

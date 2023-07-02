@@ -28,7 +28,7 @@ function Profile() {
     const { theme } = useGlobalTheme();
     const { postsData } = useGlobalPost();
     const { username } = useParams();
-    const { userDetail } = useGlobalLogin();
+    const { userDetail, logoutUser, logoutAction } = useGlobalLogin();
     const { userData, FollowUser, UnfollowUser } = useGlobalUser();
 
     const post = postsData.filter((item) => item.username === username);
@@ -70,7 +70,9 @@ function Profile() {
                                     >
                                         Edit profile
                                     </button>{" "}
-                                    <LogoutIcon className="cursor-pointer" />
+                                    <div className="logout" onClick={logoutUser}>
+                                        <LogoutIcon className="cursor-pointer" />
+                                    </div>
                                 </div>
                             ) : (
                                 <button
