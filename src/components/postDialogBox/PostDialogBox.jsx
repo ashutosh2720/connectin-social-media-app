@@ -89,7 +89,7 @@ export default function PostDialogBox() {
                 <div className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black border-2 border-black-800'} p-6  rounded-lg`}>
                     <h1 className="p-10">post</h1>
                     {/* <input value={newPost} type="text" name="" id="" className='p-10' onChange={(e) => setNewPost(e.target.value)} /> */}
-                    <textarea className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black'} p-3 resize-none outline-none border-none`} placeholder='whats happening' id=" add-post-input-filed" cols="30" rows="10" onChange={(e) => setNewPost(e.target.value)}  ></textarea>
+                    <textarea className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black'} p-3 resize-none outline-none border-none`} placeholder='whats happening' id=" add-post-input-filed" cols="30" rows="10" onChange={(e) => setNewPost(e.target.value)}></textarea>
                     <hr className='w-[100%]' />
                     <DialogActions>
 

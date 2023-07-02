@@ -64,6 +64,7 @@ const PostCard = ({ post }) => {
             <div className="socialbtn flex justify-around item start">
                 <div onClick={() => isLiked ? disLike(post._id) : addToLike(post._id)}>
                     {post?.likes?.likeCount} {isLiked ? <ThumbUpIcon className="cursor-pointer  text-cyan-600" /> : <ThumbUpOffAltIcon className="cursor-pointer" />}
+
                 </div>
                 <div
                     className="

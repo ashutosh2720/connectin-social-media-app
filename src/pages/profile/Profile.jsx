@@ -22,6 +22,7 @@ import { useGlobalLogin } from "../../contexts/login-context";
 import EditProfileDialogBox from "../../components/profileDialogBox/EditProfileDialogBox";
 import { useState } from "react";
 import { useGlobalUser } from "../../contexts/user-context";
+import FollowersModal from "../../components/folllowersModal/FollowersModal";
 
 function Profile() {
     const { isProfileOpen, setIsProfileOpen, Profilehandler } = useGlobalPost();
@@ -30,6 +31,8 @@ function Profile() {
     const { username } = useParams();
     const { userDetail, logoutUser, logoutAction } = useGlobalLogin();
     const { userData, FollowUser, UnfollowUser } = useGlobalUser();
+    const [modal, setModal] = useState(false)
+
 
     const post = postsData.filter((item) => item.username === username);
     const user = userData.find((item) => item.username === username);
@@ -88,9 +91,10 @@ function Profile() {
                     </div>
                     <div className="about text-xl">{user?.bio}</div>
                     <div className="about text-xl">{user?.website}</div>
-                    <div className=" w-[100%]  post-folllowig-folloers flex justify-between items-center gap-4 ">
+                    <div className=" w-[100%]  post-folllowig-folloers flex justify-between items-center gap-4 " >
                         <div className="post text-xl flex"><h1 className="text-xl text-gray-500">{post?.length} posts</h1></div>
-                        <div className="folllowers text-xl"><h1 className="text-xl text-gray-500"> {user?.followers?.length} Followers</h1></div>
+                        <div className="folllowers text-xl"><h1 className="text-xl text-gray-500 cursor-pointer" onClick={() => setModal(true)} > {user?.followers?.length} Followers</h1></div>
+                        {modal && <div className="cursor-pointer" onClick={() => setModal(false)}><FollowersModal user={user} /></div>}
                         <div className="foollowing text-xl"><h1 className="text-xl text-gray-500">  {user?.following?.length} Following</h1></div>
                     </div>
                 </div>
