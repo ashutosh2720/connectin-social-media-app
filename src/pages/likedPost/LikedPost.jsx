@@ -16,34 +16,31 @@ import DialogBox from "../../components/dialogBox/DialogBox";
 import { useGlobalPost } from "../../contexts/post-context";
 import PostCard from "../../components/postCard/PostCard";
 import { useGlobalLike } from "../../contexts/liked-context";
+import { useGlobalLogin } from "../../contexts/login-context";
 
 function LikedPost() {
     const { theme } = useGlobalTheme();
-    const { likePost, likePostId } = useGlobalLike()
+    const { likePost, likePostId } = useGlobalLike();
+    const { userDetail } = useGlobalLogin();
+    const { postsData } = useGlobalPost();
 
-    // const homeData = postsData.filter((post) => post.username === 'adarshbalika')
+    const likedPost = postsData?.filter((post) =>
+        post?.likes?.likedBy.find((item) => item._id === userDetail?._id)
+    );
+    console.log(postsData);
     return (
         <div className="home flex justify-around items-start h-full w-full sm:flex-wrap ">
             <div className="max-w-50 sticky left-10 top-20  p-9 sm:hidden xs:hidden min-h-full border-r-2 h-screen rounded">
                 <LeftSidebar />
             </div>
             <div className="mid  w-[100%] flex justify-center items-center flex-col  gap-2 ">
-
-                {
-                    likePost.map((postId) => (
-
-                        <PostCard
-                            post={likePost?.find(
-                                (post) => post._id === postId
-                            )}
-                        />
-
-                    ))
-                }
+                {likedPost?.map((post) => (
+                    <PostCard post={post} />
+                ))}
                 <div
                     className={`${theme === "dark-theme"
-                        ? "bg-neutral-900  text-white"
-                        : "bg-white text-black border-2 border-black"
+                            ? "bg-neutral-900  text-white"
+                            : "bg-white text-black border-2 border-black"
                         }bottom fixed bottom-0 min-w-full bg-black lg:hidden xl:hidden 2xl:hidden flex justify-around items-center`}
                 >
                     <BottomSide />
@@ -51,8 +48,8 @@ function LikedPost() {
             </div>
             <div
                 className={`${theme === "dark-theme"
-                    ? "bg-neutral-900 text-white"
-                    : "bg-white text-black "
+                        ? "bg-neutral-900 text-white"
+                        : "bg-white text-black "
                     }right max-w-50 sticky right-10 top-12 sm:hidden xs:hidden min-h-full sticky top-20 rounded-md border-l-2 h-screen`}
             >
                 <RightSidebar />
