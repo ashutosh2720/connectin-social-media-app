@@ -33,9 +33,9 @@ const Login = () => {
 
 
     return (
-        <div className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black'} flex min-h-screen w-full flex-row-reverse justify-center items-center`}>
+        <div className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black'} flex min-h-screen w-full flex-row-reverse border border-black justify-center items-center`}>
             <div className={` ${theme === 'dark-theme' ? 'bg-neutral-900 text-white' : 'bg-white text-black'} lg:min-w-full xs:min-w-full flex  justify-center items-center`}>
-                <form className="  flex xs:min-w-[90%] sm:min-w-[90%] md:min-w-[90%] lg:w-[90%] flex-col justify-center items-center my-10 shadow-lg shadow-cyan-100/50 rounded-md	gap-5  p-20">
+                <form className="  flex xs:min-w-[90%] sm:min-w-[90%] md:min-w-[90%] lg:w-[90%] flex-col justify-center items-center my-10 shadow-lg shadow-cyan-100/50 border border-black rounded-md	gap-5  p-20">
                     <h2 className="text-2xl font-bold mb-6">Sign In</h2>
                     <div className="mb-4">
                         <label htmlFor="email" className="block ">
@@ -46,7 +46,7 @@ const Login = () => {
                             id="email"
                             value={input.username}
                             onChange={setInputUsername}
-                            className="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:border-blue-500"
+                            className="w-full border border-gray-700 px-3 py-2 rounded-md focus:outline-none focus:border-blue-500"
                             required
                         />
                     </div>
@@ -59,7 +59,7 @@ const Login = () => {
                             id="password"
                             value={input.password}
                             onChange={setInputPassword}
-                            className="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:border-blue-500"
+                            className="w-full border border-gray-700 px-3 py-2 rounded-md focus:outline-none focus:border-blue-500"
                             required
                         />
                     </div>

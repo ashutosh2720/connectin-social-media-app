@@ -99,14 +99,15 @@ const LoginProvider = ({ children }) => {
         notifyInfo("Logout Successfull!");
     };
 
-    const signupHandler = async (name, email, password) => {
+    const signupHandler = async (firstName, lastName, email, password) => {
         try {
-            const { data } = await axios.post(`/api/auth/signup`, { "firstName": "ashu", "lastName": "singh", "email": "ashu@gmail.com", "password": "ashu123" });
+            const { data } = await axios.post(`/api/auth/signup`, { firstName, lastName, email, password });
             localStorage.setItem("anixCartUserToken", JSON.stringify(data.encodedToken));
             localStorage.setItem("foundUser", JSON.stringify(data.createdUser));
             setUserToken(data.encodedToken);
             setUserDetail(data.createdUser);
             notifySuccess("signup Successfully");
+            console.log(data)
 
 
         } catch (error) {
