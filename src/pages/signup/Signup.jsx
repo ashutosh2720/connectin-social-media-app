@@ -3,16 +3,18 @@ import './Signup.css';
 import { Link, useNavigate, Navigate } from 'react-router-dom';
 import { useGlobalLogin } from '../../contexts/login-context';
 import { useEffect } from 'react';
+import { useGlobalTheme } from '../../contexts/Theme-context';
 
 const Signup = () => {
 
     const { input, setInput, dummyData, loginAction, userToken, signupHandler } = useGlobalLogin()
+    const { theme } = useGlobalTheme()
 
     const navigate = useNavigate()
 
     useEffect(() => {
         if (userToken) {
-            navigate('/');
+            navigate('/home');
         }
     }, [userToken])
     const [formData, setFormData] = useState({
@@ -34,7 +36,10 @@ const Signup = () => {
 
     return (
         <div className="signup">
-            <div className="signup-form-container">
+            <div className={`${theme === "dark-theme"
+                ? "bg-neutral-900	 text-white"
+                : "bg-white text-black border-2 border-black-800"
+                } signup-form-container`}>
                 <h2>Create an account</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
@@ -74,7 +79,7 @@ const Signup = () => {
                     <button type="submit" >signup</button>
                 </form>
 
-                <p >  Already have an account ➡️<Link to={'/login'}>
+                <p >  Already have an account ➡️<Link to={'/'}>
                     Signin</Link></p>
             </div>
         </div>
