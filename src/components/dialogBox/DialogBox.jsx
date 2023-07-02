@@ -63,6 +63,7 @@ export default function DialogBox({ post }) {
     const { EditPost } = useGlobalPost()
 
     const handleClickOpen = () => {
+
         setOpen(true);
     };
     const handleClose = () => {

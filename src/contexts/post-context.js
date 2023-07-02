@@ -80,7 +80,7 @@ const PostProvider = ({ children }) => {
                     headers: { authorization: encodedToken },
                 }
             );
-            console.log(data);
+
 
             setPostsData(data.posts);
             notifySuccess('post edited sucessfully')

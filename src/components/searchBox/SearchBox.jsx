@@ -8,9 +8,11 @@ const SearchBox = ({ searchInput, setSearchInput }) => {
     const { users } = useGlobalPost();
     const navigate = useNavigate();
 
+    function handleSearch() {
 
-    let searchData = users.filter(({ username }) =>
-        username.includes(searchInput)
+    }
+    let searchData = users?.filter(({ username }) =>
+        username?.includes(searchInput)
     );
 
     if (searchData.length === 0) {

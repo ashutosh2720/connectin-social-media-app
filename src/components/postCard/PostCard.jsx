@@ -30,9 +30,7 @@ const PostCard = ({ post }) => {
     const { userData } = useGlobalUser();
 
     const navigate = useNavigate();
-
     const isLiked = post.likes.likedBy.find((item) => item._id === userDetail._id)
-
     const user = userData?.find((item) => item.username === post?.username);
 
 
