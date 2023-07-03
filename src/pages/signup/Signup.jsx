@@ -20,6 +20,7 @@ const Signup = () => {
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
+        username: "",
         name: "",
         email: "",
         password: "",
@@ -48,7 +49,7 @@ const Signup = () => {
                     <div className="form-group">
                         <label htmlFor="name">First name</label>
                         <input
-                            className="border border-black"
+                            className={` ${theme === 'dark-theme' ? 'bg-neutral-900 text-white' : 'bg-white text-black'} w-full border border-gray-700 px-3 py-2 rounded-md focus:outline-none focus:border-blue-500`}
                             type="text"
                             id="firstName"
                             name="firstName"
@@ -60,7 +61,7 @@ const Signup = () => {
                     <div className="form-group">
                         <label htmlFor="name">Last name</label>
                         <input
-                            className="border border-black"
+                            className={` ${theme === 'dark-theme' ? 'bg-neutral-900 text-white' : 'bg-white text-black'} w-full border border-gray-700 px-3 py-2 rounded-md focus:outline-none focus:border-blue-500`}
                             type="text"
                             id="lastName"
                             name="lastName"
@@ -69,11 +70,23 @@ const Signup = () => {
                             required
                         />
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="name">user name</label>
+                        <input
+                            className={` ${theme === 'dark-theme' ? 'bg-neutral-900 text-white' : 'bg-white text-black'} w-full border border-gray-700 px-3 py-2 rounded-md focus:outline-none focus:border-blue-500`}
+                            type="text"
+                            id="username"
+                            name="username"
+                            value={formData.username}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
 
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input
-                            className="border border-black"
+                            className={` ${theme === 'dark-theme' ? 'bg-neutral-900 text-white' : 'bg-white text-black'} w-full border border-gray-700 px-3 py-2 rounded-md focus:outline-none focus:border-blue-500`}
                             type="email"
                             id="email"
                             name="email"
@@ -86,7 +99,7 @@ const Signup = () => {
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
                         <input
-                            className="border border-black"
+                            className={` ${theme === 'dark-theme' ? 'bg-neutral-900 text-white' : 'bg-white text-black'} w-full border border-gray-700 px-3 py-2 rounded-md focus:outline-none focus:border-blue-500`}
                             type="password"
                             id="password"
                             name="password"
@@ -95,7 +108,7 @@ const Signup = () => {
                             required
                         />
                     </div>
-                    <button type="submit" onClick={() => signupHandler(formData.firstName, formData.lastName, formData.email, formData.password)}>signup</button>
+                    <button type="submit" onClick={() => signupHandler(formData.firstName, formData.lastName, formData.username, formData.email, formData.password)}>signup</button>
                 </form>
 
                 <p>

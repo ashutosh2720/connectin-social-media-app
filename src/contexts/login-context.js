@@ -11,6 +11,7 @@ const loginContext = createContext();
 const LoginProvider = ({ children }) => {
 
     const navigate = useNavigate();
+    const [userData, setUserdata] = useState([]);
     const [userToken, setUserToken] = useState();
     const [userDetail, setUserDetail] = useState();
     const [input, setInput] = useState({
@@ -51,6 +52,19 @@ const LoginProvider = ({ children }) => {
         username: "ashutosh@",
         password: "ashutosh",
     };
+
+
+
+    const Users = async () => {
+        try {
+            const { data } = await axios.get(`/api/users`);
+            setUserdata(data.users);
+            console.log(data.users);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     const userLogin = async () => {
         try {
             let { data, status } = await axios.post("/api/auth/login", {
@@ -99,13 +113,14 @@ const LoginProvider = ({ children }) => {
         notifyInfo("Logout Successfull!");
     };
 
-    const signupHandler = async (firstName, lastName, email, password) => {
+    const signupHandler = async (firstName, lastName, username, email, password) => {
         try {
-            const { data } = await axios.post(`/api/auth/signup`, { firstName, lastName, email, password });
+            const { data } = await axios.post(`/api/auth/signup`, { firstName, lastName, username, email, password });
             localStorage.setItem("anixCartUserToken", JSON.stringify(data.encodedToken));
             localStorage.setItem("foundUser", JSON.stringify(data.createdUser));
             setUserToken(data.encodedToken);
             setUserDetail(data.createdUser);
+            Users();
             notifySuccess("signup Successfully");
             console.log(data)
 
@@ -134,7 +149,10 @@ const LoginProvider = ({ children }) => {
                 notifyInfo,
                 notifySuccess,
                 notifyWarn,
-                notifyError
+                notifyError,
+                userData,
+                setUserdata,
+                Users
             }}
         >
             {children}

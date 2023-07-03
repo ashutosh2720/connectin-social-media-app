@@ -16,7 +16,7 @@ import { useGlobalTheme } from "../../contexts/Theme-context";
 import DialogBox from "../../components/dialogBox/DialogBox";
 import { useGlobalPost } from "../../contexts/post-context";
 import PostCard from "../../components/postCard/PostCard";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // import { users } from "../../backend/db/users";
 import { useGlobalLogin } from "../../contexts/login-context";
 import EditProfileDialogBox from "../../components/profileDialogBox/EditProfileDialogBox";
@@ -90,7 +90,7 @@ function Profile() {
                         <h1 className=" text-xl text-gray-400">{user?.username}</h1>
                     </div>
                     <div className="about text-xl">{user?.bio}</div>
-                    <div className="about text-xl">{user?.website}</div>
+                    <div className="about text-xl"> <Link>{user?.website}</Link> </div>
                     <div className=" w-[100%]  post-folllowig-folloers flex justify-between items-center gap-4 " >
                         <div className="post text-xl flex"><h1 className="text-xl text-gray-500">{post?.length} posts</h1></div>
                         <div className="folllowers text-xl"><h1 className="text-xl text-gray-500 cursor-pointer" onClick={() => setModal(true)} > {user?.followers?.length} Followers</h1></div>

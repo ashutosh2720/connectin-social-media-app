@@ -10,7 +10,7 @@ export const posts = [
     _id: "xhzTkUi2Nt",
     content: "Nice Weather Today!!",
     mediaURL:
-      "https://giffiles.alphacoders.com/140/14018.gif",
+      "https://www.livemint.com/lm-img/img/2023/04/22/600x338/heatwave_1682126178495_1682126179096.jpg",
 
     likes: {
       likeCount: 5,
@@ -36,7 +36,7 @@ export const posts = [
     _id: "siFFxfYI1s",
     content: "Started my Baking journey! Look what I made.",
     mediaURL:
-      "https://scontent.fvns2-1.fna.fbcdn.net/v/t39.30808-6/337262442_999080971058518_9091879633088665080_n.jpg?stp=c0.139.843.843a_dst-jpg_p843x403&_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=3tHadmGRsRgAX8PbqXw&_nc_ht=scontent.fvns2-1.fna&oh=00_AfBumW1TiaLqVlhoj5S_KaC3xgP7ewALX1R2LA0T3ebaEQ&oe=648D05D4",
+      "https://insanelygoodrecipes.com/wp-content/uploads/2022/12/Pink-Mini-Cakes-with-Vanilla-and-Berries.jpg",
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -49,9 +49,9 @@ export const posts = [
   },
   {
     _id: "3XHvLP1fg",
-    content: "I made this cake for my friend's birthday. Check it out",
+    content: "I made this model . Check it out",
     mediaURL:
-      "https://i.gifer.com/7nWZ.gif",
+      "https://p.turbosquid.com/ts-thumb/FD/7b4Chy/5j/01/jpg/1614410620/600x600/fit_q87/0d36e52362d71912e56a9e47b8bcb36926cf7afb/01.jpg",
     likes: {
       likeCount: 1,
       likedBy: [],
@@ -76,7 +76,7 @@ export const posts = [
     _id: "MTYtVhecCj",
     content:
       "You are never too old to set another goal or to dream a new dream.",
-    mediaURL: "",
+    mediaURL: "https://uploads-ssl.webflow.com/624377e20c9e225e2e55e2ed/6321ba5da5c575b9fd49578d_soccer-into-goal-success-concept.jpg",
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -89,9 +89,9 @@ export const posts = [
   },
   {
     _id: "3XHvLP9kC",
-    content: "Yayy! Its my Birthday Today. Made this cake for myself!",
+    content: "Yayy! i likes anime!",
     mediaURL:
-      "https://scontent.fvns2-1.fna.fbcdn.net/v/t39.30808-6/318541774_109521598667941_5596671863762518347_n.jpg?stp=c0.93.1080.1080a_dst-jpg_s851x315&_nc_cat=111&ccb=1-7&_nc_sid=da31f3&_nc_ohc=peB8eu4LhLwAX9J-NhF&_nc_ht=scontent.fvns2-1.fna&oh=00_AfAnEDdjebGZT4E5tLo1-mbv7CPa5_wOzgbFt4tIN-CQ8Q&oe=648D544D",
+      "https://www.helpguide.org/wp-content/uploads/2023/02/Seasonal-Affective-Disorder-1200x800.jpeg",
     likes: {
       likeCount: 2,
       likedBy: [],
@@ -125,7 +125,7 @@ export const posts = [
     _id: "tHaThLyFQh",
     content:
       "Life has got all those twists and turns. You’ve got to hold on tight and off you go.",
-    mediaURL: "",
+    mediaURL: "https://avatars.githubusercontent.com/u/109720375?v=4",
     likes: {
       likeCount: 2,
       likedBy: [],
@@ -139,7 +139,7 @@ export const posts = [
   {
     _id: "G-Gi3lSZP9",
     content: "When you have a dream, you’ve got to grab it and never let go.",
-    mediaURL: "",
+    mediaURL: "https://scontent.flko1-2.fna.fbcdn.net/v/t39.30808-6/337262442_999080971058518_9091879633088665080_n.jpg?stp=c0.139.843.843a_dst-jpg_p843x403&_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=uKofVpIMIDEAX8CaLHY&_nc_ht=scontent.flko1-2.fna&oh=00_AfDLi_yjH_0RyN6hbIAHmYnamPkm8j2bH_wdn3N8nvqZgQ&oe=64A6BB14",
     likes: {
       likeCount: 2,
       likedBy: [],
@@ -154,7 +154,7 @@ export const posts = [
     _id: "GeMUAdi9mh",
     content:
       "No matter what people tell you, words and ideas can change the world.",
-    mediaURL: "",
+    mediaURL: "https://scontent.flko1-1.fna.fbcdn.net/v/t39.30808-6/318541774_109521598667941_5596671863762518347_n.jpg?stp=dst-jpg_s960x960&_nc_cat=111&ccb=1-7&_nc_sid=19026a&_nc_ohc=gBFkVbGDkMEAX_DWUtO&_nc_ht=scontent.flko1-1.fna&oh=00_AfDPiT8F_usf-ty5qQbZyYNRAgmdvWDX3KUzkJNk37d6VA&oe=64A7098D",
     likes: {
       likeCount: 2,
       likedBy: [],

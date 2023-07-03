@@ -8,19 +8,19 @@ import { useGlobalLogin } from "./login-context";
 const userContext = createContext();
 
 const UserProvider = ({ children }) => {
-    const [userData, setUserdata] = useState([]);
-    const { notifySuccess, setUserDetail } = useGlobalLogin();
+    // const [userData, setUserdata] = useState([]);
+    const { notifySuccess, setUserDetail, userData, setUserdata, Users } = useGlobalLogin();
     const { userDetail } = useGlobalLogin();
 
-    const Users = async () => {
-        try {
-            const { data } = await axios.get(`/api/users`);
-            setUserdata(data.users);
-            console.log(data.users);
-        } catch (error) {
-            console.log(error);
-        }
-    };
+    // const Users = async () => {
+    //     try {
+    //         const { data } = await axios.get(`/api/users`);
+    //         setUserdata(data.users);
+    //         console.log(data.users);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
 
     const EditProfile = async (userData) => {
         const encodedToken = localStorage.getItem("anixCartUserToken");

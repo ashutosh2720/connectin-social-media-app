@@ -12,7 +12,7 @@ export const users = [
     lastName: "singh",
     username: "ashutosh@",
     password: "ashutosh",
-    bio: "Be yourself!",
+    bio: "Everything is Connected",
     bookmarks: [],
     avatarUrl:
       "https://i.postimg.cc/Gmy05qwV/IMG-20220817-042650-595.jpg",

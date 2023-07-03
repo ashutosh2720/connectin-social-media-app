@@ -22,8 +22,11 @@ import { useGlobalLike } from "../../contexts/liked-context";
 import { useNavigate } from "react-router-dom";
 import { users } from "../../backend/db/users";
 import { useGlobalUser } from "../../contexts/user-context";
+import { useState } from "react";
+import LikedUser from "../likedUserModal/LikedUser";
 
 const PostCard = ({ post }) => {
+    const [likeModal, setLikeModal] = useState(false)
     const { addToBooksMark, bookMark, removeBookMark } = useGlobalBookMark();
     const { addToLike, disLike } = useGlobalLike();
     const { userDetail } = useGlobalLogin();
@@ -53,13 +56,16 @@ const PostCard = ({ post }) => {
                 </h1>
             </div>
             <div
-                className="content cursor-pointer "
+                className="content cursor-pointer flex flex-col justify-center items-start "
                 onClick={() => navigate(`/PostDesscription/${post._id}`)}
             >
                 <p>{post?.content}</p>
-                <img src={post?.mediaURL} alt="" className="rounded-lg" />
+                <img src={post?.mediaURL} alt="" className="rounded-lg h-[90%] " />
             </div>
-
+            <div className="flex gap-3"><p className="text-sm cursor-pointer " onClick={() => setLikeModal(true)} >{post?.likes?.likeCount} Likes</p>
+                {likeModal && <div onClick={() => setLikeModal(false)} > <LikedUser post={post} /> </div>}
+                <p className="text-sm cursor-pointer"  >{post?.comments?.length} Comments</p>
+            </div>
             <hr />
             <div className="socialbtn flex justify-around item start">
                 <div onClick={() => isLiked ? disLike(post._id) : addToLike(post._id)}>
