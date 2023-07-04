@@ -22,7 +22,7 @@ function Explore() {
 
     return (
         <div className="home flex justify-around items-start h-full w-full sm:flex-wrap ">
-            <div className="w-1/3 sticky left-10 top-20  p-9 sm:hidden xs:hidden min-h-full border-r-2 h-screen rounded">
+            <div className="w-[20%] sticky left-[170px]  top-20 p-9  sm:hidden xs:hidden min-h-full  h-screen rounded">
                 <LeftSidebar />
             </div>
             <div className="mid w-[100%]  flex justify-center items-center flex-col  gap-2 ">
@@ -46,7 +46,7 @@ function Explore() {
                 className={`${theme === "dark-theme"
                     ? "bg-neutral-900 text-white"
                     : "bg-white text-black "
-                    }right w-1/3 sticky right-10 top-12 sm:hidden xs:hidden min-h-full sticky top-20 rounded-md border-l-2 h-screen`}
+                    } right  right-[190px]  sm:hidden xs:hidden min-h-full sticky top-20 rounded-md  h-screen`}
             >
                 <RightSidebar />
             </div>

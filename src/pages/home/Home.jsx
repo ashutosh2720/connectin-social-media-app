@@ -59,7 +59,7 @@ function Home() {
     console.log(homeData);
     return (
         <div className="home flex justify-around  h-full w-full sm:flex-wrap ">
-            <div className="max-w-50 sticky  top-20  p-9 sm:hidden xs:hidden min-h-full border-r-2 h-screen rounded">
+            <div className="max-[20%] sticky left-[170px] top-20  p-9 sm:hidden xs:hidden min-h-full  h-screen rounded">
                 <LeftSidebar />
             </div>
             <div className="mid  w-[100%]  flex justify-center items-center flex-col p-2 gap-2 ">
@@ -97,7 +97,7 @@ function Home() {
                 className={`${theme === "dark-theme"
                     ? "bg-neutral-900 text-white"
                     : "bg-white text-black "
-                    } right w-[30%]  r  sm:hidden xs:hidden min-h-full sticky top-20 rounded-md border-l h-screen`}
+                    } right-[190px]   sm:hidden xs:hidden min-h-full sticky top-20 rounded-md h-screen`}
             >
                 <RightSidebar />
             </div>

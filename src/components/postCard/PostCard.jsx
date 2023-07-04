@@ -38,7 +38,7 @@ const PostCard = ({ post }) => {
 
 
     return (
-        <div className="content w-[50%] flex flex-col gap-2  shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md xs:w-full sm:w-full p-3">
+        <div className="content w-[55%] flex flex-col gap-2  shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md xs:w-full sm:w-full p-3">
             <div className="option flex justify-end items-end ">
                 {post?.username === userDetail?.username ? <FadeMenu post={post} /> : ""}
             </div>
@@ -60,7 +60,7 @@ const PostCard = ({ post }) => {
                 onClick={() => navigate(`/PostDesscription/${post._id}`)}
             >
                 <p>{post?.content}</p>
-                <img src={post?.mediaURL} alt="" className="rounded-lg h-[90%] " />
+                <img src={post?.mediaURL} alt="" className="rounded-lg h-[90%] min-w-[100%] " />
             </div>
             <div className="flex gap-3"><p className="text-sm cursor-pointer " onClick={() => setLikeModal(true)} >{post?.likes?.likeCount} Likes</p>
                 {likeModal && <div onClick={() => setLikeModal(false)} > <LikedUser post={post} /> </div>}

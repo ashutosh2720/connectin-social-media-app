@@ -14,13 +14,13 @@ const LeftSidebar = () => {
 
     const active = ({ isActive }) => ({
         fontWeight: isActive ? "800" : "200",
-        color: isActive ? "cyan" : "",
+        color: isActive ? "green" : "",
     });
     return (
         <>
             {" "}
             <div className="left flex justify-start item-start pl-10 flex-col gap-5	">
-                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition ease-in-out delay-15 hover:text-white rounded  cursor-pointer  hover:text-black" >
+                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition hover:text-white ease-in-out delay-15 hover:text-white   cursor-pointer " >
                     <NavLink to={'/home'} style={active}>
 
                         <div className="name flex justify-center item-center gap-2 text-md">

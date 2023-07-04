@@ -24,7 +24,7 @@ const RightSidebar = () => {
             <div
                 className={`${theme === "dark-theme"
                     ? "bg-neutral-900	 text-white"
-                    : "bg-white text-black border-2 border-black-800"
+                    : "bg-white text-black "
                     }suggestion  flex justify-start items-start p-5 gap-5 flex-col`}
             >
                 <h1>Suggestion for you</h1>
