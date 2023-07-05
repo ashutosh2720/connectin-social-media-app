@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
 import "./Signup.css";
 import { Link, useNavigate, Navigate } from "react-router-dom";
 import { useGlobalLogin } from "../../contexts/login-context";
@@ -42,10 +43,16 @@ const Signup = () => {
                 className={`${theme === "dark-theme"
                     ? "bg-neutral-900	 text-white"
                     : "bg-white text-black border-2 shadow-md"
-                    } signup-form-container`}
+                    } signup-form-container min-w-[30%]`}
             >
+                <div className="text-cyan-500 flex gap-3 justify-center items-center font-bold text-6xl italic xs:hidden sm:hidden md:hidden md:inline ">
+                    {" "}
+                    <div className="connect text-6xl">
+                        <ConnectWithoutContactIcon fontSize="" className="" />
+                    </div> <p>ConnectIn </p>
+                </div>
                 <h2>Create an account</h2>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="w-[100%]">
                     <div className="form-group">
                         <label htmlFor="name">First name</label>
                         <input

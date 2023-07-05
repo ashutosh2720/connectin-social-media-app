@@ -31,6 +31,7 @@ const PostCard = ({ post }) => {
     const { addToLike, disLike } = useGlobalLike();
     const { userDetail } = useGlobalLogin();
     const { userData } = useGlobalUser();
+    const { theme } = useGlobalTheme()
 
     const navigate = useNavigate();
     const isLiked = post.likes.likedBy.find((item) => item._id === userDetail._id)
@@ -38,7 +39,7 @@ const PostCard = ({ post }) => {
 
 
     return (
-        <div className="content w-[55%] flex flex-col gap-2  shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md xs:w-full sm:w-full p-3">
+        <div className={` ${theme === 'dark-theme' ? 'bg-neutral-800  text-white' : 'bg-white text-black'} content w-[55%] flex flex-col gap-2  shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md xs:w-full sm:w-full p-3`}>
             <div className="option flex justify-end items-end ">
                 {post?.username === userDetail?.username ? <FadeMenu post={post} /> : ""}
             </div>

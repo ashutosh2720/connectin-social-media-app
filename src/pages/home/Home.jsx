@@ -9,6 +9,8 @@ import FadeMenu from "../../components/option/Option";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import BottomSide from "../../components/bottomSideBar/BottomSide";
 import AccountMenu from "../../components/accountMenu/AccountMenu";
+import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
+import TuneIcon from '@mui/icons-material/Tune';
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import RightSidebar from "../../components/rightSidebar/RightSidebar";
 import { useGlobalTheme } from "../../contexts/Theme-context";
@@ -58,14 +60,15 @@ function Home() {
 
     console.log(homeData);
     return (
-        <div className="home flex justify-around  h-full w-full sm:flex-wrap ">
-            <div className="max-[20%] sticky left-[170px] top-20  p-9 sm:hidden xs:hidden min-h-full  h-screen rounded">
+        <div className={`home flex justify-around  h-full w-full sm:flex-wrap `}>
+            <div className={`${theme === 'dark-theme' ? 'bg-neutral-800  text-white' : ' shadow-md text-black'} max-[20%] sticky left-[260px] top-[91px]  p-5 sm:hidden xs:hidden border-t-[3px]   h-[50%] rounded-lg`}>
                 <LeftSidebar />
             </div>
             <div className="mid  w-[100%]  flex justify-center items-center flex-col p-2 gap-2 ">
 
-                <div className="postModal w-[60%]  h-[210px] flex flex-col gap-5 shadow-md justify-center items-center mt-5 ">
-                    <textarea className={`${theme === 'dark-theme' ? 'bg-neutral-900 flex justify-center items-center	 text-white' : 'bg-white text-black'} resize-none outline-none w-[60%] border-none`} placeholder='whats happening' id=" add-post-input-filed" cols="30" rows="10" onChange={(e) => setNewPost(e.target.value)}></textarea>
+                <div className={`${theme === 'dark-theme' ? 'bg-neutral-800  text-white' : 'bg-white text-black'} postModal w-[55%]  h-[140px] pt-4 pb-3 flex flex-col gap-5 shadow-md justify-center items-center mt-5 rounded-md`}>
+                    <textarea className={`${theme === 'dark-theme' ? 'bg-neutral-800 flex justify-center items-center	 text-white' : 'bg-white text-black'} resize-none outline-none w-[60%] border-none`} placeholder='whats happening' id=" add-post-input-filed" cols="30" rows="10" onChange={(e) => setNewPost(e.target.value)}></textarea>
+                    <hr className="w-[90%]" />
                     <div className="post-items flex justify-between items-center w-[60%]">
                         <div className="image-icon cursor-pointer">
                             <ImageIcon />
@@ -79,6 +82,12 @@ function Home() {
                             Post
                         </h1>
                     </div>
+                </div>
+
+                <div className="filters w-[55%] flex justify-between items-center ">
+                    <div className="left">post</div>
+                    <div className="mid w-[90%]"><hr /></div>
+                    <div className="right cursor-pointer"> <TuneIcon /> </div>
                 </div>
 
                 {homeData?.map((post) => (
@@ -95,9 +104,9 @@ function Home() {
             </div>
             <div
                 className={`${theme === "dark-theme"
-                    ? "bg-neutral-900 text-white"
+                    ? "bg-neutral-00 text-white"
                     : "bg-white text-black "
-                    } right-[190px]   sm:hidden xs:hidden min-h-full sticky top-20 rounded-md h-screen`}
+                    } right-[260px]  w-[300px]  sm:hidden xs:hidden min-h-full sticky top-[95px] rounded-md h-screen`}
             >
                 <RightSidebar />
             </div>

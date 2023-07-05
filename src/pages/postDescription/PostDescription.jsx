@@ -28,7 +28,7 @@ function PostDescription() {
 
     return (
         <div className="home flex justify-around items-start h-full w-full sm:flex-wrap ">
-            <div className="max-w-50 sticky left-10 top-20  p-9 sm:hidden xs:hidden min-h-full border-r-2 h-screen rounded">
+            <div className={`${theme === 'dark-theme' ? 'bg-neutral-800  text-white' : ' shadow-md text-black'} max-[20%] sticky left-[260px] top-[91px]  p-5 sm:hidden xs:hidden border-t-[3px]   h-[50%] rounded-lg`}>
                 <LeftSidebar />
             </div>
             <div className="mid  w-[100%]  flex justify-center items-center flex-col  gap-2 ">
@@ -55,9 +55,9 @@ function PostDescription() {
             </div>
             <div
                 className={`${theme === "dark-theme"
-                    ? "bg-neutral-900 text-white"
+                    ? "bg-neutral-00 text-white"
                     : "bg-white text-black "
-                    } right max-w-50  right-5  sm:hidden xs:hidden min-h-full sticky top-20 rounded-md border-l h-screen`}
+                    } right-[260px]  w-[300px]  sm:hidden xs:hidden min-h-full sticky top-[95px] rounded-md h-screen`}
             >
                 <RightSidebar />
             </div>

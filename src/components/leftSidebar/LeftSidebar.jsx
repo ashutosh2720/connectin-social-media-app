@@ -19,8 +19,8 @@ const LeftSidebar = () => {
     return (
         <>
             {" "}
-            <div className="left flex justify-start item-start pl-10 flex-col gap-5	">
-                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition hover:text-white ease-in-out delay-15 hover:text-white   cursor-pointer " >
+            <div className="left flex justify-start item-start p-7 flex-col gap-5	">
+                <div className="home flex justify-start item-start gap-3 hover:bg-cyan-900 transition hover:text-white ease-in-out delay-15 rounded p-1   cursor-pointer " >
                     <NavLink to={'/home'} style={active}>
 
                         <div className="name flex justify-center item-center gap-2 text-md">

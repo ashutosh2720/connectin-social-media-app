@@ -19,21 +19,21 @@ const RightSidebar = () => {
     // const isFollowing = userData?.followers.find(user => user?._id === userDetail?._id)
 
     return (
-        <div className=" right-side w-[100%] flex justify-around flex-col">
+        <div className=" right-side w-[100%] flex justify-center flex-col rounded-md">
 
             <div
                 className={`${theme === "dark-theme"
-                    ? "bg-neutral-900	 text-white"
-                    : "bg-white text-black "
-                    }suggestion  flex justify-start items-start p-5 gap-5 flex-col`}
+                    ? "bg-neutral-800	 text-white"
+                    : " text-black "
+                    } suggestion border-t-2 flex justify-center items-center rounded-md  shadow-md flex-col`}
             >
                 <h1>Suggestion for you</h1>
                 {userData.map((user) => (
-                    <div className="seacrh-item flex  justify-between items-start gap-3 p-1">
+                    <div className="seacrh-item w-[100%] flex p-2 justify-around items-start gap-3">
                         <img
                             src={user.avatarUrl}
                             alt=""
-                            className="rounded-full h-[40px] w-[40px] cursor-pointer"
+                            className="rounded-full h-[40px] w-[40px]  cursor-pointer"
                             onClick={() => navigate(`/profile/${user?.username}`)}
 
                         />
@@ -42,7 +42,7 @@ const RightSidebar = () => {
                             <p className=" text-xs"> {user.username}</p>
                         </div>
                         <button
-                            className="border rounded-md pl-2 pr-2"
+                            className="border rounded-md "
                             onClick={() =>
                                 user?.followers?.find((user) => user?._id === userDetail?._id)
                                     ? UnfollowUser(user._id)
@@ -54,8 +54,11 @@ const RightSidebar = () => {
                                 ? "following"
                                 : "follow"}{" "}
                         </button>
+
                     </div>
+
                 ))}
+
             </div>
         </div>
     );
