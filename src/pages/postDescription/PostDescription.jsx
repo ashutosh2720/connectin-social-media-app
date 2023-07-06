@@ -57,7 +57,7 @@ function PostDescription() {
                 className={`${theme === "dark-theme"
                     ? "bg-neutral-00 text-white"
                     : "bg-white text-black "
-                    } right-[260px]  w-[300px]  sm:hidden xs:hidden min-h-full sticky top-[95px] rounded-md h-screen`}
+                    } right-[260px]  w-[350px]  sm:hidden xs:hidden min-h-full sticky top-[95px] rounded-md h-screen`}
             >
                 <RightSidebar />
             </div>

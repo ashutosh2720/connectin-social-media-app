@@ -54,7 +54,7 @@ const Navbar = () => {
                     className={`${theme === "dark-theme"
                         ? "bg-neutral-900 text-white"
                         : "bg-white text-black border-2 border-black"
-                        } rounded-md     h-10  border-2 border-white-100 pl-3 pr-3 outline-none`}
+                        } rounded-md     h-10  border-2 border-white-100 pl-6 pr-3  outline-none`}
                 />
                 <SearchBox searchInput={searchInput} setSearchInput={setSearchInput} />
             </div>

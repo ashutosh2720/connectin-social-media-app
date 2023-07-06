@@ -24,6 +24,7 @@ import { useGlobalUser } from "../../contexts/user-context";
 import { useState } from "react";
 
 function Home() {
+    const [isFilterOpen, setIsFilterOpen] = useState(false)
     const [filter, setFilter] = useState("latest");
 
     const [newPost, setNewPost] = React.useState()
@@ -85,9 +86,17 @@ function Home() {
                 </div>
 
                 <div className="filters w-[55%] flex justify-between items-center ">
-                    <div className="left">post</div>
-                    <div className="mid w-[90%]"><hr /></div>
-                    <div className="right cursor-pointer"> <TuneIcon /> </div>
+                    <div className="left text-2xl">{filter}</div>
+                    <div className="mid w-[70%]"><hr /></div>
+                    <div className="right cursor-pointer " >
+                        <div className="filter-options  z-5 ">
+                            <select className="bg-cyan-800 text-white p-2 rounded-md" value={filter} onChange={(e) => setFilter(e.target.value)}>
+                                <option value="trending">Trending</option>
+                                <option value="latest">Latest</option>
+                                <option value="oldest">Oldest</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
 
                 {homeData?.map((post) => (
@@ -106,7 +115,7 @@ function Home() {
                 className={`${theme === "dark-theme"
                     ? "bg-neutral-00 text-white"
                     : "bg-white text-black "
-                    } right-[260px]  w-[300px]  sm:hidden xs:hidden min-h-full sticky top-[95px] rounded-md h-screen`}
+                    } right-[260px]  w-[350px]  sm:hidden xs:hidden min-h-full sticky top-[95px] rounded-md h-screen`}
             >
                 <RightSidebar />
             </div>
