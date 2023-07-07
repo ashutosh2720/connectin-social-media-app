@@ -29,7 +29,7 @@ export const users = [
     bio: "Hello World",
     bookmarks: [],
     avatarUrl:
-      "https://i.postimg.cc/nLhWtk6n/images-3.jpg",
+      "https://scontent.fvns2-1.fna.fbcdn.net/v/t1.18169-9/972046_1380432585513387_1929490854_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=de6eea&_nc_ohc=K9wOiqFbtPwAX-X64s9&_nc_ht=scontent.fvns2-1.fna&oh=00_AfAp5MYm6laQq0e1LPhuolbp07VJ8ByOVPl8PzPTu610IA&oe=64CDF955",
     website: "https://google.com/",
     createdAt: "2022-01-02T10:55:06+05:30",
     updatedAt: formatDate(),
@@ -43,7 +43,7 @@ export const users = [
     bio: "Whats in bio?",
     bookmarks: [],
     avatarUrl:
-      "https://i.postimg.cc/XY7LZvx8/IMG-20220817-043311-003.jpg",
+      "https://scontent.fvns2-1.fna.fbcdn.net/v/t1.6435-9/60335806_633499770449637_6950103395348774912_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=19026a&_nc_ohc=iJWa-35Mu1UAX_z9Zwy&_nc_ht=scontent.fvns2-1.fna&oh=00_AfDEsGyGyDhLNT4xdt6Wk3bmszyEdP6pL9nZmV3fyHejlA&oe=64CDD4F7",
     website: "https://romabulani.netlify.app/",
     createdAt: "2022-01-01T10:55:06+05:30",
     updatedAt: formatDate(),
@@ -56,8 +56,7 @@ export const users = [
     password: "niket123",
     bio: "Whats in bio?",
     avatarUrl:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1651563581/socialmedia/avatars/carl-smith_mehw0u.webp",
-    website: "https://romabulani.netlify.app/",
+      "https://scontent.fvns2-1.fna.fbcdn.net/v/t39.30808-6/274620241_3084176255245423_1092928864219700103_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=174925&_nc_ohc=HAhYCJ0P0ssAX-r-uNt&_nc_ht=scontent.fvns2-1.fna&oh=00_AfC4D_fu-rQNreHwfgnVp89LAHdXxrggada2MEW7e31axA&oe=64ABC39C",
     createdAt: "2022-01-03T10:55:06+05:30",
     updatedAt: formatDate(),
   },
@@ -71,7 +70,7 @@ export const users = [
     bio: "Aspiring Frontend Engineer",
     bookmarks: [],
     avatarUrl:
-      "https://i.postimg.cc/66bpsjgp/IMG-20220814-WA0011.jpg",
+      "https://avatars.githubusercontent.com/u/109124944?v=4",
     website: "https://romabulani.hashnode.dev/",
     createdAt: "2022-01-04T10:55:06+05:30",
     updatedAt: formatDate(),
@@ -101,7 +100,7 @@ export const users = [
     bio: "Frontend Engineer",
     bookmarks: [],
     avatarUrl:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1652525510/socialmedia/avatars/sophia-jones.webp",
+      "https://img.buzzfeed.com/buzzfeed-static/static/2017-11/27/4/asset/buzzfeed-prod-fastlane-02/sub-buzz-19439-1511775348-3.jpg?crop=1277%3A634%3B0%2C0&downsize=700%3A%2A&output-quality=auto&output-format=auto",
     website: "",
     createdAt: "2022-01-06T10:55:06+05:30",
     updatedAt: formatDate(),

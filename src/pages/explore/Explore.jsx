@@ -22,7 +22,7 @@ function Explore() {
 
     return (
         <div className="home flex justify-around items-start h-full w-full sm:flex-wrap ">
-            <div className={`${theme === 'dark-theme' ? 'bg-neutral-800  text-white' : ' shadow-md text-black'} max-[20%] sticky left-[260px] top-[91px]  p-5 sm:hidden xs:hidden border-t-[3px]   h-[50%] rounded-lg`}>
+            <div className={`${theme === 'dark-theme' ? 'bg-neutral-800  text-white' : ' shadow-md text-black'} max-[20%] sticky left-[220px] top-[91px]  p-5 sm:hidden xs:hidden border-t-[3px]   h-[50%] rounded-lg`}>
                 <LeftSidebar />
             </div>
             <div className="mid w-[100%]  flex justify-center items-center flex-col  gap-2 ">
@@ -46,7 +46,7 @@ function Explore() {
                 className={`${theme === "dark-theme"
                     ? "bg-neutral-00 text-white"
                     : "bg-white text-black "
-                    } right-[260px]  w-[350px]  sm:hidden xs:hidden min-h-full sticky top-[95px] rounded-md h-screen`}
+                    } right-[220px]  w-[350px]  sm:hidden xs:hidden min-h-full sticky top-[95px] rounded-md h-screen`}
             >
                 <RightSidebar />
             </div>

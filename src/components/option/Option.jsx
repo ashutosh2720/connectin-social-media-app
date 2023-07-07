@@ -6,9 +6,10 @@ import CreateIcon from '@mui/icons-material/Create';
 import Fade from '@mui/material/Fade';
 import DialogBox from '../dialogBox/DialogBox';
 import { useGlobalPost } from '../../contexts/post-context';
+import { useState } from 'react';
 
 export default function FadeMenu({ post }) {
-
+    const [isDelete, setIsDelete] = useState(false)
     const { DeletePost } = useGlobalPost()
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -17,7 +18,14 @@ export default function FadeMenu({ post }) {
     };
     const handleClose = () => {
         setAnchorEl(null);
+        setIsDelete(false)
     };
+
+    const handleDelete = () => {
+        DeletePost(post._id)
+
+    }
+
 
     return (
         <div>

@@ -22,11 +22,11 @@ import ImageIcon from '@mui/icons-material/Image';
 import { useGlobalLogin } from "../../contexts/login-context";
 import { useGlobalUser } from "../../contexts/user-context";
 import { useState } from "react";
+import Loader from "../../components/loader/Loader";
 
 function Home() {
-    const [isFilterOpen, setIsFilterOpen] = useState(false)
+    const [media, setMedia] = useState()
     const [filter, setFilter] = useState("latest");
-
     const [newPost, setNewPost] = React.useState()
     const { NewPost } = useGlobalPost()
     const { theme } = useGlobalTheme();
@@ -53,26 +53,36 @@ function Home() {
         );
     }
 
+    const mediahandler = (e) => {
+        const objectURL = URL.createObjectURL(e.target.files[0])
+        setMedia(objectURL)
+    }
+
     function handlePost() {
-        NewPost({ username: userDetail.username, content: newPost })
+        NewPost({ username: userDetail.username, content: newPost, mediaURL: media })
+        // setOpen(false);
+
 
 
     }
 
     console.log(homeData);
     return (
+
         <div className={`home flex justify-around  h-full w-full sm:flex-wrap `}>
-            <div className={`${theme === 'dark-theme' ? 'bg-neutral-800  text-white' : ' shadow-md text-black'} max-[20%] sticky left-[260px] top-[91px]  p-5 sm:hidden xs:hidden border-t-[3px]   h-[50%] rounded-lg`}>
+
+            <div className={`${theme === 'dark-theme' ? 'bg-neutral-800  text-white' : ' shadow-md text-black'}  sticky left-[220px] top-[91px]  p-5 sm:hidden xs:hidden border-t-[3px]   h-[80%] rounded-lg`}>
                 <LeftSidebar />
             </div>
             <div className="mid  w-[100%]  flex justify-center items-center flex-col p-2 gap-2 ">
+
 
                 <div className={`${theme === 'dark-theme' ? 'bg-neutral-800  text-white' : 'bg-white text-black'} postModal w-[55%]  h-[140px] pt-4 pb-3 flex flex-col gap-5 shadow-md justify-center items-center mt-5 rounded-md`}>
                     <textarea className={`${theme === 'dark-theme' ? 'bg-neutral-800 flex justify-center items-center	 text-white' : 'bg-white text-black'} resize-none outline-none w-[60%] border-none`} placeholder='whats happening' id=" add-post-input-filed" cols="30" rows="10" onChange={(e) => setNewPost(e.target.value)}></textarea>
                     <hr className="w-[90%]" />
                     <div className="post-items flex justify-between items-center w-[60%]">
                         <div className="image-icon cursor-pointer">
-                            <ImageIcon />
+                            <input type="file" name="" id="" onChange={mediahandler} />
                         </div>
                         <div className="imojie cursor-pointer">
                             <AddReactionIcon />
@@ -115,7 +125,7 @@ function Home() {
                 className={`${theme === "dark-theme"
                     ? "bg-neutral-00 text-white"
                     : "bg-white text-black "
-                    } right-[260px]  w-[350px]  sm:hidden xs:hidden min-h-full sticky top-[95px] rounded-md h-screen`}
+                    } right-[220px]  w-[350px]  sm:hidden xs:hidden min-h-full sticky top-[95px] rounded-md h-screen`}
             >
                 <RightSidebar />
             </div>

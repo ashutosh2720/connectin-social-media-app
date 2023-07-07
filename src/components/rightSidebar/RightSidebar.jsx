@@ -27,7 +27,7 @@ const RightSidebar = () => {
                     : " text-black "
                     } suggestion border-t-2  flex justify-center items-center rounded-md  shadow-md flex-col`}
             >
-                <h1 className="text-2xl">Suggestion for you</h1>
+                <h1 className="text-xl bg-cyan-800 text-white p-2 rounded-md">Suggestion for you</h1>
                 {userData.map((user) => (
                     <div className="seacrh-item w-[100%] flex p-5 justify-around items-start gap-3">
                         <img
