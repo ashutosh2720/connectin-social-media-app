@@ -23,6 +23,7 @@ import EditProfileDialogBox from "../../components/profileDialogBox/EditProfileD
 import { useState } from "react";
 import { useGlobalUser } from "../../contexts/user-context";
 import FollowersModal from "../../components/folllowersModal/FollowersModal";
+import FollowingUsers from "../../components/followingModal/FollowingUsers";
 
 function Profile() {
     const { isProfileOpen, setIsProfileOpen, Profilehandler } = useGlobalPost();
@@ -32,6 +33,7 @@ function Profile() {
     const { userDetail, logoutUser, logoutAction } = useGlobalLogin();
     const { userData, FollowUser, UnfollowUser } = useGlobalUser();
     const [modal, setModal] = useState(false)
+    const [followingModal, setFollowingModal] = useState(false)
 
 
     const post = postsData.filter((item) => item.username === username);
@@ -93,9 +95,11 @@ function Profile() {
                     <div className="about text-xl"> <Link>{user?.website}</Link> </div>
                     <div className=" w-[100%]  post-folllowig-folloers flex justify-between items-center gap-4 " >
                         <div className="post text-xl flex"><h1 className="text-xl text-gray-500">{post?.length} posts</h1></div>
-                        <div className="folllowers text-xl"><h1 className="text-xl text-gray-500 cursor-pointer" onClick={() => setModal(true)} > {user?.followers?.length} Followers</h1></div>
-                        {modal && <div className="cursor-pointer" onClick={() => setModal(false)}><FollowersModal user={user} /></div>}
-                        <div className="foollowing text-xl"><h1 className="text-xl text-gray-500">  {user?.following?.length} Following</h1></div>
+                        <div className="folllowers  text-xl"><h1 className="text-xl text-gray-500 cursor-pointer" onClick={() => setModal(true)} > {user?.followers?.length} Followers</h1></div>
+                        {modal && <div className="cursor-pointer fixed flex right-[660px]  " onClick={() => setModal(false)}><FollowersModal user={user} setModal={setModal} /></div>}
+                        <div className="foollowing text-xl"><h1 className="text-xl cursor-pointer text-gray-500" onClick={() => setModal(true)}>  {user?.following?.length} Following</h1></div>
+                        {followingModal && <div className="cursor-pointer fixed flex right-[660px]  " onClick={() => setFollowingModal(false)}><FollowingUsers user={user} setFollowingModal={setFollowingModal} /></div>}
+
                     </div>
                 </div>
 

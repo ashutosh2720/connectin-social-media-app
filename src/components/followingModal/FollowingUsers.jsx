@@ -2,19 +2,19 @@ import React from 'react'
 import CancelIcon from '@mui/icons-material/Cancel';
 import { useGlobalTheme } from '../../contexts/Theme-context'
 
-const FollowersModal = ({ user, setModal }) => {
+const FollowingUsers = ({ user, setFollowingModal }) => {
     const { theme } = useGlobalTheme()
     console.log(user)
     return (
         <div className={` ${theme === "dark-theme"
             ? "bg-neutral-800 shadow-lg 	 text-white"
             : "bg-white text-black border-2 border-black-800"
-            }min-w-[900px] min-h-[100px] shadow-md rounded-md`}>
-            <div className="div w-[100%] flex justify-end items-end " onClick={() => setModal(false)}>
+            } min-w-[900px] min-h-[100px] shadow-md rounded-md`}>
+            <div className="div w-[100%] flex justify-end items-end " onClick={() => setFollowingModal(false)}>
                 <CancelIcon />
             </div>
             {
-                user?.followers?.map((item) =>
+                user?.following?.map((item) =>
                     <div className="followwers flex justify-center gap-5 p-1 items-center ">
                         <img src={item.avatarUrl} alt="" className='h-[60px] w-[60px] rounded-full' />
                         <div className="name flex justify-center flex-col">
@@ -27,4 +27,4 @@ const FollowersModal = ({ user, setModal }) => {
     )
 }
 
-export default FollowersModal
+export default FollowingUsers

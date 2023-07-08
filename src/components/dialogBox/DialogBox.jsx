@@ -55,7 +55,7 @@ BootstrapDialogTitle.propTypes = {
 
 export default function DialogBox({ post }) {
     console.log(post)
-    const [media, setMedia] = useState()
+    const [media, setMedia] = useState(post.mediaURL)
     const [open, setOpen] = React.useState(false);
     const [content, setContent] = useState(post.content); // Initial content state
     const [isEditing, setIsEditing] = useState(false); // State to track editing mode
@@ -105,16 +105,15 @@ export default function DialogBox({ post }) {
                 open={open}
 
             >
-                <div className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black border-2 border-black-800'} p-5  rounded-lg`}>
+                <div className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black border-2 border-black-800'} w-[100%] p-5  rounded-lg`}>
                     <h1 className="p-10">edit post</h1>
                     <textarea type="text" name="" id="" value={content} className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black'}p-10 resize-none outline-none border-none`} onChange={handleInputChange} />
+                    <img src={media} alt="" className="h-[200px] w-[200px] rounded-md mb-3" />
                     <div className="image-icon cursor-pointer">
 
-                        <input type="file" name="select" id="" className='' onChange={mediahandler} />
+                        <input type="file" name="select" id="" className='bg-cyan-800 text-white' onChange={mediahandler} />
                     </div>
-                    <div className="imojie cursor-pointer">
-                        <AddReactionIcon />
-                    </div>
+
 
                     <DialogActions>
                         <h1 className="bg-cyan-800 text-white border rounded pl-2 pr-2 pb-1 hover:bg-cyan-600 cursor-pointer " onClick={handlePost}>
