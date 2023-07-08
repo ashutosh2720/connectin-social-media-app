@@ -40,7 +40,7 @@ function PostDescription() {
                             <div className="commentData">
 
                                 <h1 className="text-xl font-bold">{comment.username}</h1>
-                                <h1 className="text-gray-600">{comment.text}</h1>
+                                <h1 className="text-gray-400">{comment.text}</h1>
                             </div>)
                     }
                 </div>

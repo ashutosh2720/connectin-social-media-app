@@ -154,7 +154,7 @@ export const posts = [
     _id: "GeMUAdi9mh",
     content:
       "No matter what people tell you, words and ideas can change the world.",
-    mediaURL: "https://scontent.flko1-1.fna.fbcdn.net/v/t39.30808-6/318541774_109521598667941_5596671863762518347_n.jpg?stp=dst-jpg_s960x960&_nc_cat=111&ccb=1-7&_nc_sid=19026a&_nc_ohc=gBFkVbGDkMEAX_DWUtO&_nc_ht=scontent.flko1-1.fna&oh=00_AfDPiT8F_usf-ty5qQbZyYNRAgmdvWDX3KUzkJNk37d6VA&oe=64A7098D",
+    mediaURL: "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?cs=srgb&dl=pexels-lukas-rychvalsky-670720.jpg&fm=jpg",
     likes: {
       likeCount: 2,
       likedBy: [],
