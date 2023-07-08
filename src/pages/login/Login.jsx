@@ -84,7 +84,7 @@ const Login = () => {
                             onClick={setDummyData}
                             className="bg-cyan-800 	 text-white px-2 py-1 rounded-md hover:bg-yellow-300 hover:text-black"
                         >
-                            Apply Dummy Sata
+                            Apply Dummy Data
                         </button>
                     </div>
                     <h1>don't have an account</h1> <p onClick={() => navigate('/signup')} className='cursor-pointer bg-cyan-700 borer rounded pl-2 pr-2 pb-1   hover:bg-yellow-300 hover:text-black"' >Signup</p>

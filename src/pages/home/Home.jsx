@@ -68,8 +68,6 @@ function Home() {
 
     }
 
-
-
     console.log(homeData);
     return (
         <div className={`home flex justify-around  h-full w-full sm:flex-wrap `}>
@@ -103,14 +101,19 @@ function Home() {
                     <hr className="w-[90%]" />
                     <div className="post-items flex justify-between items-center w-[60%]">
                         <div className="image-icon cursor-pointer">
-                            <input
-                                type="file"
-                                name=""
-                                id=""
-                                onChange={mediahandler}
-                                className="bg-cyan-800 w-60 text-white"
-                            />
+                            <label className="cursor-pointer">
+                                <ImageIcon />
+                                <input
+                                    type="file"
+                                    name="file"
+                                    id=""
+                                    onChange={mediahandler}
+                                    className="bg-cyan-800 w-60 text-white hidden"
+                                />
+                            </label>
+
                         </div>
+                        <img src={media} alt="" className='h-[100px] w-[100px] rounded-lg' />
 
                         <h1
                             className="bg-cyan-800  text-white  pl-2 pr-2 pb-1 hover:bg-cyan-600 cursor-pointer"
