@@ -55,13 +55,13 @@ const PostCard = ({ post }) => {
 
                 <h1 className="text-md  text-gray-400 font-serif">
                     <h1> {user?.firstName} {user?.lastName}</h1>
-                    <h1 className="text-sm">{user.username}</h1>
+                    <h1 className="text-sm">{user?.username}</h1>
                 </h1>
-                <h1 className="text-sm text-gray-400">{new Date(post.createdAt).toDateString()}</h1>
+                <h1 className="text-sm text-gray-400">{new Date(post?.createdAt).toDateString()}</h1>
             </div>
             <div
                 className="content cursor-pointer flex flex-col justify-center items-start "
-                onClick={() => navigate(`/PostDesscription/${post._id}`)}
+                onClick={() => navigate(`/PostDesscription/${post?._id}`)}
             >
                 <p>{post?.content}</p>
                 <img src={post?.mediaURL} alt="" className="rounded-lg h-[90%] min-w-[100%] " />

@@ -167,9 +167,9 @@ export const posts = [
   },
   {
     _id: "IyUlYXTrzZ",
-    content: "Who's up for Pineapple Pastry?",
+    content: "Sad memories",
     mediaURL:
-      "https://scontent.fvns2-1.fna.fbcdn.net/v/t39.30808-6/332213073_570144121831877_454660744082516000_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=e3f864&_nc_ohc=l4KpxIfIvwIAX9hP39X&_nc_ht=scontent.fvns2-1.fna&oh=00_AfCMFASKgcWSikM2kPLM1e1xRmJXL2k4sjzoTHLbx-L1Lg&oe=648D170B",
+      "https://media.cnn.com/api/v1/images/stellar/prod/230331134441-waking-up-distressed-dream-stock.jpg?c=16x9&q=h_720,w_1280,c_fill",
     likes: {
       likeCount: 10,
       likedBy: [],
@@ -193,8 +193,8 @@ export const posts = [
   {
     _id: "Ie92xOSVeU",
     content:
-      "Check out this amazing video from BakinZone https://bakinzone.netlify.app/videos/qtlhdIfojmc",
-    mediaURL: "",
+      "i got selected for Big Boss",
+    mediaURL: "https://www.filmibeat.com/img/2023/06/puneetbbott2f1-1687176182.jpg",
     likes: {
       likeCount: 1,
       likedBy: [],
@@ -211,7 +211,7 @@ export const posts = [
         },
       },
     ],
-    username: "kamlesh@",
+    username: "puneet@",
     createdAt: "2022-04-12T10:55:06+05:30",
     updatedAt: formatDate(),
   },
@@ -259,7 +259,7 @@ export const posts = [
     _id: "Z_TZT_3EAw",
     content:
       "If you believe something needs to exist, if it's something you want to use yourself, don't let anyone ever stop you from doing it.",
-    mediaURL: "",
+    mediaURL: "https://www.incimages.com/uploaded_files/image/1920x1080/getty_601403390_370517.jpg",
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -274,14 +274,14 @@ export const posts = [
   {
     _id: "e-knMEsoLq",
     content: "More is lost by indecision than wrong decision.",
-    mediaURL: "",
+    mediaURL: "https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2023/06/18/1222630-puneet-superstar-bigg-boss.jpg",
     likes: {
       likeCount: 5,
       likedBy: [],
       dislikedBy: [],
     },
     comments: [],
-    username: "kamlesh@",
+    username: "puneet@",
     createdAt: "2022-01-26T10:55:06+05:30",
     updatedAt: formatDate(),
   },
@@ -290,7 +290,7 @@ export const posts = [
     _id: "VY14RsXC7G",
     content:
       "The reason we struggle with insecurity is because we compare our behind-the-scenes with everyone else’s highlight reel.",
-    mediaURL: "",
+    mediaURL: "https://images.unsplash.com/photo-1545241201-fee9df605ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RydWdnbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
     likes: {
       likeCount: 7,
       likedBy: [],
@@ -305,7 +305,7 @@ export const posts = [
   {
     _id: "l9pedEMjZS",
     content: "If you don’t risk anything, you risk even more.",
-    mediaURL: "",
+    mediaURL: "https://focus.namirial.global/wp-content/uploads/sites/4/2023/02/RISK-MANAGEMENT.jpg",
     likes: {
       likeCount: 6,
       likedBy: [],
@@ -320,7 +320,7 @@ export const posts = [
   {
     _id: "lbW4dlCpNC",
     content: "If it makes you nervous, you’re doing it right.",
-    mediaURL: "",
+    mediaURL: "https://www.verywellhealth.com/thmb/GM6xq49GkruiRtss1GazzI9aMWs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1295833423-27233bda8ea14eb7b870932551ed4370.jpg",
     likes: {
       likeCount: 12,
       likedBy: [],
@@ -368,14 +368,14 @@ export const posts = [
     _id: "G5xd30tMCR",
     content:
       "Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.",
-    mediaURL: "",
+    mediaURL: "https://img.indiaforums.com/media/640x0/58/0559-puneet-kumar.jpg",
     likes: {
       likeCount: 8,
       likedBy: [],
       dislikedBy: [],
     },
     comments: [],
-    username: "kamlesh@",
+    username: "puneet@",
     createdAt: "2022-02-14T10:55:06+05:30",
     updatedAt: formatDate(),
   },

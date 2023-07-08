@@ -93,14 +93,14 @@ export const users = [
 
   {
     _id: "qq8zWjEeXd",
-    firstName: "kamlesh",
-    lastName: "kumar",
-    username: "kamlesh@",
+    firstName: "Puneet",
+    lastName: "Superstar",
+    username: "puneet@",
     password: "kamlesh123",
-    bio: "Frontend Engineer",
+    bio: "SUPERSTAR OF MEEMS  ",
     bookmarks: [],
     avatarUrl:
-      "https://img.buzzfeed.com/buzzfeed-static/static/2017-11/27/4/asset/buzzfeed-prod-fastlane-02/sub-buzz-19439-1511775348-3.jpg?crop=1277%3A634%3B0%2C0&downsize=700%3A%2A&output-quality=auto&output-format=auto",
+      "https://www.videomeme.in/wp-content/uploads/2022/12/1671998060722.jpg",
     website: "",
     createdAt: "2022-01-06T10:55:06+05:30",
     updatedAt: formatDate(),
