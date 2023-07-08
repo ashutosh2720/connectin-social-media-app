@@ -52,9 +52,12 @@ const PostCard = ({ post }) => {
                     alt=""
                     className="h-[40px] w-[40px] rounded-full"
                 />
-                <h1 className="text-md font-bold text-gray-600 font-serif">
-                    {user?.firstName} {user?.lastName}
+
+                <h1 className="text-md  text-gray-400 font-serif">
+                    <h1> {user?.firstName} {user?.lastName}</h1>
+                    <h1 className="text-sm">{user.username}</h1>
                 </h1>
+                <h1 className="text-sm text-gray-400">{new Date(post.createdAt).toDateString()}</h1>
             </div>
             <div
                 className="content cursor-pointer flex flex-col justify-center items-start "

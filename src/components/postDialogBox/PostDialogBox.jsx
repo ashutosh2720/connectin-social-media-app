@@ -93,7 +93,7 @@ export default function PostDialogBox() {
             >
                 <div className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black border-2 border-black-800'} p-6  rounded-lg`}>
                     <textarea className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black'} p-3 resize-none outline-none border-none`} placeholder='whats happening' id=" add-post-input-filed" cols="30" rows="10" onChange={(e) => setNewPost(e.target.value)}></textarea>
-                    <img src={media} alt="" className='h-[300px] w-[300px] rounded-lg' />
+                    {media ? <img src={media} alt="" className='h-[300px] w-[300px] rounded-lg' /> : ''}
                     <hr className='w-[100%]' />
                     <div className="post-items flex justify-around items-center w-[100%]">
                         <div className="image-icon cursor-pointer">

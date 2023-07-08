@@ -21,7 +21,7 @@ function Explore() {
     const { postsData } = useGlobalPost()
 
     return (
-        <div className="home flex justify-around items-start h-full w-full sm:flex-wrap ">
+        <div className="home flex justify-around items-start h-full w-full sm:flex-wrap mt-[30px] ">
             <div className={`${theme === 'dark-theme' ? 'bg-neutral-800  text-white' : ' shadow-md text-black'} max-[20%] sticky left-[220px] top-[91px]  p-5 sm:hidden xs:hidden border-t-[3px]   h-[50%] rounded-lg`}>
                 <LeftSidebar />
             </div>

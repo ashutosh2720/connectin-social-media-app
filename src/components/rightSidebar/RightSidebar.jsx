@@ -19,17 +19,17 @@ const RightSidebar = () => {
     // const isFollowing = userData?.followers.find(user => user?._id === userDetail?._id)
 
     return (
-        <div className=" right-side w-[100%] flex justify-center flex-col rounded-md">
+        <div className=" right-side bg-cyan-800 w-[100%] flex justify-center flex-col rounded-md">
 
             <div
                 className={`${theme === "dark-theme"
-                    ? "bg-neutral-800	 text-white"
-                    : " text-black "
+                    ? "bg-neutral-800 text-white"
+                    : " text-black bg-white"
                     } suggestion border-t-2  flex justify-center items-center rounded-md  shadow-md flex-col`}
             >
                 <h1 className="text-xl bg-cyan-800 text-white p-2 ">Suggestion for you</h1>
                 {userData.map((user) => (
-                    <div className="seacrh-item w-[100%] flex p-5 justify-around items-start gap-3">
+                    <div className="seacrh-item w-[100%] flex p-2 justify-around items-start gap-3">
                         <img
                             src={user.avatarUrl}
                             alt=""

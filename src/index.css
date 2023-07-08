@@ -3,10 +3,7 @@
 @tailwind utilities;
 
 
-
-
-/* @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap'); */
-
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@200&display=swap');
 
 
 body {
@@ -14,11 +11,6 @@ body {
   font-family: 'Cinzel', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: #000000; */
-  font-size: 1.1rem;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Ysabeau SC', sans-serif;
+  font-size: 1.3rem;
 }

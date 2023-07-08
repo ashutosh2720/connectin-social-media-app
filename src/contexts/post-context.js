@@ -6,9 +6,8 @@ import { useGlobalLogin } from "./login-context";
 const postContext = createContext();
 
 const PostProvider = ({ children }) => {
+    const [loading, setLoading] = useState(false)
     const { notifySuccess } = useGlobalLogin()
-
-
     const [postsData, setPostsData] = useState([]);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [users, setUsers] = useState([]);
@@ -18,9 +17,11 @@ const PostProvider = ({ children }) => {
     };
 
     const Posts = async () => {
+        setLoading(true)
         try {
             const { data } = await axios.get(`/api/posts`);
             setPostsData(data.posts);
+            setLoading(false)
         } catch (error) {
             console.log(error);
         }
@@ -125,6 +126,7 @@ const PostProvider = ({ children }) => {
                 isProfileOpen,
                 setIsProfileOpen,
                 Profilehandler,
+                loading
             }}
         >
             {children}
