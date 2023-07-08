@@ -71,6 +71,7 @@ export default function DialogBox({ post }) {
         EditPost({ ...post, content: content, mediaURL: media }, post._id)
         handleClose()
         handleSaveClick()
+        setIsEditing(false)
 
     }
 
@@ -95,7 +96,7 @@ export default function DialogBox({ post }) {
     };
 
     return (
-        <div>
+        <div className="">
             <p onClick={handleClickOpen} className="cursor-pointer">
                 Edit
             </p>
@@ -106,8 +107,8 @@ export default function DialogBox({ post }) {
 
             >
                 <div className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black border-2 border-black-800'} w-[100%] p-5  rounded-lg`}>
-                    <h1 className="p-10">edit post</h1>
-                    <textarea type="text" name="" id="" value={content} className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black'}p-10 resize-none outline-none border-none`} onChange={handleInputChange} />
+                    <h1 className="text-2xl p-2">edit post</h1><hr />
+                    <textarea type="text" name="" id="" value={content} className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black'} resize-none outline-none border-none`} onChange={handleInputChange} />
                     <img src={media} alt="" className="h-[200px] w-[200px] rounded-md mb-3" />
                     <div className="image-icon cursor-pointer">
 

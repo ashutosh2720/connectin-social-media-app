@@ -68,9 +68,7 @@ function Home() {
 
     }
 
-    useEffect(() => {
-        setMedia('')
-    },);
+
 
     console.log(homeData);
     return (
