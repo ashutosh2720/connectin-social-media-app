@@ -14,7 +14,7 @@ const LeftSidebar = () => {
 
     const active = ({ isActive }) => ({
         fontWeight: isActive ? "800" : "200",
-        color: isActive ? "green" : "",
+        color: isActive ? "cyan" : "",
     });
     return (
         <>

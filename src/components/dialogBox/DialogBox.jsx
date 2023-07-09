@@ -109,7 +109,7 @@ export default function DialogBox({ post }) {
                 <div className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black border-2 border-black-800'} w-[100%] p-5  rounded-lg`}>
                     <h1 className="text-2xl p-2">edit post</h1><hr />
                     <textarea type="text" name="" id="" value={content} className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black'} resize-none outline-none border-none`} onChange={handleInputChange} />
-                    <img src={media} alt="" className="h-[200px] w-[200px] rounded-md mb-3" />
+                    {media && <img src={media} alt="" className="h-[200px] w-[200px] rounded-md mb-3" />}
                     <div className="image-icon cursor-pointer">
 
                         <input type="file" name="select" id="" className='bg-cyan-800 text-white' onChange={mediahandler} />

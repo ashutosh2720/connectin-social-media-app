@@ -37,7 +37,6 @@ const PostCard = ({ post }) => {
     const isLiked = post.likes.likedBy.find((item) => item._id === userDetail._id)
     const user = userData?.find((item) => item.username === post?.username);
 
-
     return (
         <div className={` ${theme === 'dark-theme' ? 'bg-neutral-800  text-white' : 'bg-white text-black'} content w-[55%] flex flex-col gap-2  shadow-[0_3px_10px_rgb(0,0,0,0.2)]  rounded-md text-md xs:w-full sm:w-full p-3`}>
             <div className="option flex justify-end items-end ">
@@ -68,7 +67,7 @@ const PostCard = ({ post }) => {
             </div>
             <div className="flex gap-3 relative" ><p className="text-sm cursor-pointer  " onClick={() => setLikeModal(!likeModal)} >{post?.likes?.likeCount} Likes</p>
                 {likeModal && <div className="fixed z-8 top-[400px]" > <LikedUser post={post} setLikeModal={setLikeModal} /> </div>}
-                <p className="text-sm cursor-pointer"  >{post?.comments?.length} Comments</p>
+                <p className="text-sm cursor-pointer">{post?.comments?.length} Comments</p>
             </div>
             <hr />
             <div className="socialbtn flex justify-around item start">
@@ -88,7 +87,7 @@ const PostCard = ({ post }) => {
                     {bookMark.find((id) => id === post._id) ? (
                         <BookmarkRemoveIcon />
                     ) : (
-                        <BookmarkAddOutlinedIcon className="text-gray-600" />
+                        <BookmarkAddOutlinedIcon className="text-gray-200" />
                     )}
                 </div>
                 <div>

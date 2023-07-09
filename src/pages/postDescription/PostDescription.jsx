@@ -35,6 +35,7 @@ function PostDescription() {
                 <PostCard post={post} />
                 <div className="comments shadow-md p-10 w-[550px] flex flex-col gap-2">
                     <p className="text-gray-400">comments......</p>
+
                     {
                         post?.comments?.map((comment) =>
                             <div className="commentData">
@@ -42,6 +43,10 @@ function PostDescription() {
                                 <h1 className="text-xl font-bold">{comment.username}</h1>
                                 <h1 className="text-gray-400">{comment.text}</h1>
                             </div>)
+                    }
+
+                    {
+
                     }
                 </div>
                 <div

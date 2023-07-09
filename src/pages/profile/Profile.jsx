@@ -94,12 +94,15 @@ function Profile() {
                     </div>
                     <div className="about text-xl">{user?.bio}</div>
                     <div className="about text-xl text-blue-300">  <LinkIcon />  <Link>{user?.website}</Link> </div>
-                    <div className=" w-[100%]  post-folllowig-folloers flex justify-between items-center gap-4 " >
-                        <div className="post text-xl flex"><h1 className="text-xl text-gray-500">{post?.length} posts</h1></div>
-                        <div className="folllowers  text-xl"><h1 className="text-xl text-gray-500 cursor-pointer" onClick={() => setModal(true)} > {user?.followers?.length} Followers</h1></div>
+                    <div className=" w-[100%] h-[40%]  post-folllowig-folloers flex justify-between items-center gap-4 " >
+                        <div className="post text-xl flex"><h1 className="text-xl text-gray-400 font-semibold">{post?.length} posts</h1></div>
+                        <div className="folllowers  text-xl"><h1 className="text-xl text-gray-400 font-semibold cursor-pointer" onClick={() => setModal(true)} > {user?.followers?.length} Followers</h1></div>
+
                         {modal && <div className="cursor-pointer fixed flex right-[660px]  " onClick={() => setModal(false)}><FollowersModal user={user} setModal={setModal} /></div>}
-                        <div className="foollowing text-xl"><h1 className="text-xl cursor-pointer text-gray-500" onClick={() => setModal(true)}>  {user?.following?.length} Following</h1></div>
-                        {followingModal && <div className="cursor-pointer fixed flex right-[660px]  " onClick={() => setFollowingModal(false)}><FollowingUsers user={user} setFollowingModal={setFollowingModal} /></div>}
+                        <div className="foollowing text-xl"><h1 className="text-xl cursor-pointer text-gray-400 font-semibold" onClick={() => setFollowingModal(true)}>  {user?.following?.length} Following</h1></div>
+
+
+                        {followingModal && <div className="cursor-pointer fixed flex right-[660px] "><FollowingUsers user={user} setFollowingModal={setFollowingModal} /></div>}
 
                     </div>
                 </div>
