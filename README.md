@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Social media application
+ConnectIn Social  is a Social Media App where you can share posts and learnings.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Screens in this project
 
-## Available Scripts
+Authentication (Login, Signup) Pages
+Profile Page
+Home Page
+Explore Page
+Bookmarks Page
+Liked Posts Page
+Single Post Page
+404 (Not Found) Page
 
-In the project directory, you can run:
+# Features
 
-### `yarn start`
+Authentication using JWT along with form validation for Login and Signup Pages. All the below features are present after login.
+User can create, edit and delete the post.
+Image, Video and Emojis can be added to the Post.
+User can add, edit and delete comment on any post.
+User can like or unlike any post.
+User can add or remove post from bookmarks.
+Home Page where user can see their posts and the posts of friends followed by user. Trending and Latest Feature where user can sort the posts based on maximum likes and by date.
+Explore Page where all the posts will be visible.
+Infinite scrolling on Explore Page while fetching posts.
+Liked Page where all the posts liked by user will be visble.
+Bookmarks Page where all the posts bookmarked by user will be visible.
+User can follow or unfollow other users.
+Profile Page where user can edit their profile. It contains details like Account Creation Date, Avatar, Bio and Portfolio URL. User can edit the profile.
+User can view the profile of other users as well.
+Search Functionality with search suggestions.
+Suggestions with Follow Button on all pages.
+User can view all the comments of the post on the Individual Post Page.
+User can share the link of post with others.
+Loader is shown while the posts are fetched.
+Alerts in the app to notify the users about success/failure operations.
+Toogle between Light and Dark Themes.
+All the screens are Responsive.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# ech Stack and Tools
 
-### `yarn test`
+React 
+useState
+React Router v6
+material UI
+Git For Version Control
+Netlify for Deployment
+Cloudinary for Image and Video Storage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+# Auth page
+![image](https://github.com/ashutosh2720/connectin-social-media-app/assets/109720375/4ca1fbc6-3978-4ea9-9196-3e4f5dff9e12)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Home page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://github.com/ashutosh2720/connectin-social-media-app/assets/109720375/320941cc-68a0-41dc-bcca-97e742e22753)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Explore page
+![image](https://github.com/ashutosh2720/connectin-social-media-app/assets/109720375/301f8673-d17d-40dc-9aa2-091f055fb94e)
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Profile Page
+![image](https://github.com/ashutosh2720/connectin-social-media-app/assets/109720375/5e823665-0f0a-4814-8e75-b95174900bf0)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
