@@ -37,7 +37,7 @@ ConnectIn Social  is a Social Media App where you can share posts and learnings.
 - All the screens are Responsive.
 
 
-# ech Stack and Tools
+# Tech Stack and Tools
 
 - React 
 - useState
