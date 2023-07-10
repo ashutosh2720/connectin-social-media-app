@@ -63,6 +63,10 @@ ConnectIn Social  is a Social Media App where you can share posts and learnings.
 # Profile Page
 ![image](https://github.com/ashutosh2720/connectin-social-media-app/assets/109720375/5e823665-0f0a-4814-8e75-b95174900bf0)
 
+# Responsive Screen
+![image](https://github.com/ashutosh2720/connectin-social-media-app/assets/109720375/ee8d3d71-532d-4b5d-a276-f672709e36ac)
+
+
 
 
 
