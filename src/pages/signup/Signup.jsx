@@ -32,8 +32,9 @@ const Signup = () => {
     };
 
     const handleSubmit = (e) => {
+        signupHandler(formData.firstName, formData.lastName, formData.username, formData.email, formData.password)
         e.preventDefault();
-        signupHandler();
+
         // Handle form submission logic here
     };
 
@@ -115,7 +116,7 @@ const Signup = () => {
                             required
                         />
                     </div>
-                    <button type="submit" onClick={() => signupHandler(formData.firstName, formData.lastName, formData.username, formData.email, formData.password)}>signup</button>
+                    <button type="submit" >signup</button>
                 </form>
 
                 <p>

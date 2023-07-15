@@ -36,7 +36,7 @@ const Login = () => {
     return (
         <div className={`${theme === 'dark-theme' ? 'bg-neutral-900	 text-white' : 'bg-white text-black'} flex min-h-[100px] w-full flex-row-reverse border border-black justify-center items-center`}>
             <div className={` ${theme === 'dark-theme' ? 'bg-neutral-900 text-white' : 'bg-white text-black'} lg:min-w-full xs:min-w-full flex  justify-center items-center`}>
-                <form className="  flex xs:min-w-[90%] sm:min-w-[90%] md:min-w-[90%] lg:w-[90%] flex-col justify-center items-center my-10 shadow-lg shadow-cyan-100/50 border border-black rounded-md	gap-5 h-[20%] p-20">
+                <form onSubmit={loginAction} className="  flex xs:min-w-[90%] sm:min-w-[90%] md:min-w-[90%] lg:w-[90%] flex-col justify-center items-center my-10 shadow-lg shadow-cyan-100/50 border border-black rounded-md	gap-5 h-[20%] p-20">
                     <div className="text-cyan-500 flex gap-3 justify-center items-center font-bold text-6xl italic xs:hidden sm:hidden md:hidden md:inline ">
                         {" "}
                         <div className="connect text-6xl">
@@ -74,7 +74,7 @@ const Login = () => {
                     <div className="btn flex flex-col gap-5 ">
                         <button
                             type="submit"
-                            onClick={loginAction}
+
                             className="bg-cyan-800	 text-white px-2 py-1 rounded-md hover:bg-yellow-300 hover:text-black"
                         >
                             Sign In
