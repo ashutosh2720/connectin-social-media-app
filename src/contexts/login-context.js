@@ -49,7 +49,7 @@ const LoginProvider = ({ children }) => {
     }, [userToken]);
 
     const dummyData = {
-        username: "ashutosh@",
+        username: "ashutosh",
         password: "ashutosh",
     };
 

@@ -54,7 +54,7 @@ const PostCard = ({ post }) => {
 
                 <h1 className="text-md  text-gray-400 font-serif">
                     <h1> {user?.firstName} {user?.lastName}</h1>
-                    <h1 className="text-sm">{user?.username}</h1>
+                    <h1 className="text-sm">@{user?.username}</h1>
                 </h1>
                 <h1 className="text-sm text-gray-400">{new Date(post?.createdAt).toDateString()}</h1>
             </div>

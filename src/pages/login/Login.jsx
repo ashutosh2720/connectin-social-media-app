@@ -50,9 +50,9 @@ const Login = () => {
                             Email
                         </label>
                         <input
-                            type="email"
+                            type="text"
                             id="email"
-                            value={input.username}
+                            value={input?.username}
                             onChange={setInputUsername}
                             className={` ${theme === 'dark-theme' ? 'bg-neutral-900 text-white' : 'bg-white text-black'} w-full border border-gray-700 px-3 py-2 rounded-md focus:outline-none focus:border-blue-500`}
                             required

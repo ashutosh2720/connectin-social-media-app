@@ -90,7 +90,7 @@ function Profile() {
                             )}
                             {isProfileOpen && <EditProfileDialogBox user={user} />}
                         </div>
-                        <h1 className=" text-xl text-gray-400">{user?.username}</h1>
+                        <h1 className=" text-xl text-gray-400">@{user?.username}</h1>
                     </div>
                     <div className="about text-xl">{user?.bio}</div>
                     <div className="about text-xl text-blue-300">  <LinkIcon />  <Link>{user?.website}</Link> </div>

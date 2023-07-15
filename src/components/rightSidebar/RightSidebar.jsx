@@ -41,7 +41,7 @@ const RightSidebar = () => {
                         />
                         <div className="userDetail flex flex-col ">
                             <h1>{user.firstName}</h1>
-                            <p className=" text-xs"> {user.username}</p>
+                            <p className=" text-xs">@ {user.username}</p>
                         </div>
                         <button
                             className=" pl-2 pr-2 bg-cyan-800 text-white "
