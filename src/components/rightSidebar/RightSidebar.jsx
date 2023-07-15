@@ -14,7 +14,7 @@ const RightSidebar = () => {
     const navigate = useNavigate();
 
 
-    const users = userData.filter((user) => user.username !== userDetail.username)
+    const users = userData?.filter((user) => user?.username !== userDetail?.username)
 
 
 
