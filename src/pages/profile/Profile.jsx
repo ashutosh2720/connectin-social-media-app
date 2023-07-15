@@ -55,9 +55,9 @@ function Profile() {
                     className={`${theme === "dark-theme"
                         ? "bg-neutral-800	 text-white"
                         : "bg-white text-black border rounded-md border-black-800"
-                        }profile w-[55%]  flex flex-col justify-center items-start p-5 gap-2`}
+                        } profile lg:w-[100%] sm:w-[100%] xm:w-[100%] flex flex-col justify-center items-start p-5 gap-2`}
                 >
-                    <div className="profile-detail flex flex-col justify-center items-start gap-3  ">
+                    <div className="profile-detail lg:w-[100%] sm:w-[100%] xm:w-[100%] flex flex-col justify-center items-start gap-3  ">
                         {" "}
                         <img
                             src={user?.avatarUrl}

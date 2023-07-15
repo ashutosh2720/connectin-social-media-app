@@ -12,6 +12,8 @@ import AddReactionIcon from '@mui/icons-material/AddReaction';
 import Typography from '@mui/material/Typography';
 import ImageIcon from '@mui/icons-material/Image';
 import IosShareIcon from '@mui/icons-material/IosShare';
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+
 import { useGlobalTheme } from '../../contexts/Theme-context';
 import { useGlobalPost } from '../../contexts/post-context';
 import { useState } from 'react';
@@ -85,7 +87,7 @@ export default function PostDialogBox() {
 
     return (
         <div>
-            <p onClick={handleClickOpen} className='cursor-pointer' >Post</p>
+            <p onClick={handleClickOpen} className='cursor-pointer' > <AddCircleIcon fontSize='large' /> </p>
             <BootstrapDialog
                 onClose={handleClose}
                 aria-labelledby="customized-dialog-title"
