@@ -2,7 +2,6 @@ import React from "react";
 import { useGlobalTheme } from "../../contexts/Theme-context";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
 import { useGlobalPost } from "../../contexts/post-context";
-import { users } from "../../backend/db/users";
 import { useGlobalUser } from "../../contexts/user-context";
 import { useGlobalLogin } from "../../contexts/login-context";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +12,9 @@ const RightSidebar = () => {
     const { userDetail } = useGlobalLogin();
     const { userData, FollowUser, UnfollowUser } = useGlobalUser();
     const navigate = useNavigate();
+
+
+    const users = userData.filter((user) => user.username !== userDetail.username)
 
 
 
@@ -28,7 +30,7 @@ const RightSidebar = () => {
                     } suggestion border-t-2  flex justify-center items-center rounded-md  shadow-md flex-col`}
             >
                 <h1 className="text-xl bg-cyan-800 text-white p-2 ">Suggestion for you</h1>
-                {userData.map((user) => (
+                {users.map((user) => (
                     <div className="seacrh-item w-[100%] flex p-2 justify-around items-start gap-3">
                         <img
                             src={user.avatarUrl}
