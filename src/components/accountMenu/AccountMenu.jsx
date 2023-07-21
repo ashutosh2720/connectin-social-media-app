@@ -45,7 +45,9 @@ export default function AccountMenu() {
                     >
                         {/* <Avatar sx={{ width: 32, height: 32 }}>M</Avatar> */}
                         {
-                            userToken ? <img src={userDetail?.avatarUrl} alt="" className='h-[40px] w-[40px] rounded-full' /> : ''
+                            userToken ? <div className='border-2 rounded-full'>
+                                {userDetail?.avatarUrl ? <img src={userDetail?.avatarUrl} alt="" className='h-[40px] w-[40px] rounded-full' /> : <img src="https://img.freepik.com/free-icon/user_318-159711.jpg" alt="" className='h-[40px] w-[40px] rounded-full' />}
+                            </div> : ''
                         }
                     </IconButton>
                 </Tooltip>

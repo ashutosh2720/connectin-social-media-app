@@ -31,7 +31,7 @@ function Profile() {
     const { theme } = useGlobalTheme();
     const { postsData } = useGlobalPost();
     const { username } = useParams();
-    const { userDetail, logoutUser, logoutAction } = useGlobalLogin();
+    const { userDetail, userToken, logoutUser, logoutAction } = useGlobalLogin();
     const { userData, FollowUser, UnfollowUser } = useGlobalUser();
     const [modal, setModal] = useState(false)
     const [followingModal, setFollowingModal] = useState(false)
@@ -58,12 +58,11 @@ function Profile() {
                         } profile lg:w-[100%] sm:w-[100%] xm:w-[100%] flex flex-col justify-center items-start p-5 gap-2`}
                 >
                     <div className="profile-detail lg:w-[100%] sm:w-[100%] xm:w-[100%] flex flex-col justify-center items-start gap-3  ">
-                        {" "}
-                        <img
-                            src={user?.avatarUrl}
-                            alt=""
-                            className="h-[110px] w-[110px] rounded-full"
-                        />
+                        {
+                            userToken ? <div className='border-2 rounded-full'>
+                                {user?.avatarUrl ? <img src={user?.avatarUrl} alt="" className='h-[120px] w-[120px] rounded-full' /> : <img src="https://img.freepik.com/free-icon/user_318-159711.jpg" alt="" className='h-[120px] w-[120px] rounded-full' />}
+                            </div> : ''
+                        }
                         <div className="div flex justify-between items-center gap-5">
                             <h1 className="text-3xl">
                                 {user?.firstName} {user?.lastName}
