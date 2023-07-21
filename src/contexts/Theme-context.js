@@ -46,8 +46,6 @@ const ThemeProvider = ({ children }) => {
                 notifySuccess,
                 notifyWarn,
                 notifyError
-
-
             }}
         >
             {children}

@@ -44,7 +44,9 @@ export default function AccountMenu() {
                         aria-expanded={open ? 'true' : undefined}
                     >
                         {/* <Avatar sx={{ width: 32, height: 32 }}>M</Avatar> */}
-                        <img src={userDetail?.avatarUrl} alt="" className='h-[40px] w-[40px] rounded-full' />
+                        {
+                            userToken ? <img src={userDetail?.avatarUrl} alt="" className='h-[40px] w-[40px] rounded-full' /> : ''
+                        }
                     </IconButton>
                 </Tooltip>
             </Box>
