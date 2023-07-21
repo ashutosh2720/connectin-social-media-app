@@ -77,7 +77,7 @@ function Home() {
                 className={`${theme === "dark-theme"
                     ? "bg-neutral-800  text-white"
                     : " shadow-md text-black"
-                    }  sticky left-[220px] top-[91px]  p-5 sm:hidden xs:hidden border-t-[3px]   h-[80%] rounded-lg`}
+                    }  sticky left-[220px] top-[91px]  p-5 xs:hidden  border-t-[3px]   h-[80%] rounded-lg`}
             >
                 <LeftSidebar />
             </div>
@@ -89,7 +89,7 @@ function Home() {
                     className={`${theme === "dark-theme"
                         ? "bg-neutral-800  text-white"
                         : "bg-white text-black"
-                        } postModal w-[55%]  h-[140px] pt-4 pb-3 flex flex-col gap-5 shadow-md justify-center items-center mt-5 rounded-md`}
+                        } postModal w-[55%] xs:hidden  h-[140px] pt-4 pb-3 flex flex-col gap-5 shadow-md justify-center items-center mt-5 rounded-md`}
                 >
                     <textarea
                         className={`${theme === "dark-theme"
